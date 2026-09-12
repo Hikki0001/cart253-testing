@@ -23,6 +23,8 @@
 
 > I want people to laugh, to have fun, to cry, all of the above. I want to simple give people an experience to remember, I want to hopefully with my dumb little games, make their lives just a bit better.
 
+--------
+
 > ![Lucaschilling](./images/Lucaschilling.png)
 
 
