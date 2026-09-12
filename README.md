@@ -4,7 +4,7 @@ Matteo Edmonds-Tiano (Matt or Hikki(Actually dont say this one its too cringe!))
 
 [View this project online](URL_FOR_THE_RUNNING_PROJECT)
 
-Here's my journal: [Reflective Journal](./journal)
+Here's my journal: [Reflective Journal](./journal.md)
 ## Description
 
 > **Cart 253 Creative Computation 1**
