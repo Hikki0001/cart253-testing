@@ -1,4 +1,4 @@
-# TITLE OF PROJECT
+# CART 253 
 
 AUTHOR NAME
 
@@ -6,7 +6,9 @@ AUTHOR NAME
 
 ## Description
 
-This description should help the reader understand what the program is, anything they should know to be able to experience it (controls, special features, etc.), and what the desired user experience is. For example:
+> *Cart 253 Creative Computation 1*
+
+This is a website is designed to show the progess of learning javascript, p5js, and my overall growth throught out this class. This website will hold all of the prototypes that I will be doing in this class and will in all be an archive of all the prototypes we've done in CART 253.
 
 > *The Mayor of Clown Town* is a simulator experience that allows the user to control a small town populated entirely by clowns.
 
