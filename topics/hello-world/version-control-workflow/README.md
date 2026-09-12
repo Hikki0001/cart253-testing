@@ -6,7 +6,7 @@ AUTHOR NAME
 
 ## Description
 
-> *Cart 253 Creative Computation 1*
+> **Cart 253 Creative Computation 1**
 
 This is a website is designed to show the progess of learning javascript, p5js, and my overall growth throught out this class. This website will hold all of the prototypes that I will be doing in this class and will in all be an archive of all the prototypes we've done in CART 253.
 
@@ -18,7 +18,7 @@ This is a website is designed to show the progess of learning javascript, p5js, 
 
 ## Screenshot(s)
 
-This bit should have some images of the program running so that the reader has a sense of what it looks like. For example:
+These are some of my favorite images. I hope you enjoy them(espically the pig... he's my spirit animal.)
 
 > ![pih](./assets/images/pig.jpg)
 > ![kamijo](./assets/images/kamijo.png)
