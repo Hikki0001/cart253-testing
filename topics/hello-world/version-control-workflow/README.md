@@ -12,17 +12,16 @@ Matteo Edmonds-Tiano (Matt or Hikki(Actually dont say this one its too cringe!))
 
 This is a website is designed to show the progess of learning javascript, p5js, and my overall growth throught out this class. This website will hold all of the prototypes that I will be doing in this class and will in all be an archive of all the prototypes we've done in CART 253.
 
-> *The Mayor of Clown Town* is a simulator experience that allows the user to control a small town populated entirely by clowns.
+> *Hi* Leaving this here for when needed.
 
-> The experience is controlled via the mouse, with left click selecting a clown and bringing up a menu of options such as "slip of banana peel" or "get into impossible capacious clown-car."
+> Will leave here for when explinations of controls is needed.
 
-> The project is meant to give the user a sense of what it would be the mayor of a town of clowns, eventually getting the sense that clowns are not taking their civic duties seriously.
+> What these prototypes or specific prototyope is trying to show.(Keeping here for when needed.)
 
 ## Screenshot(s)
 
-These are some of my favorite images. I hope you enjoy them(espically the pig... he's my spirit animal.)
+This is my favorite image right now. I hope you enjoy it!
 
-> ![pih](./assets/images/pig.jpg)
 > ![kamijo](./assets/images/kamijo.png)
 
 ## Attribution
