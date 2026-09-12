@@ -11,6 +11,6 @@
 
 - If I have to say aspirations or why I'm taking this course or degree, firstly to answer that im doing it because I want to make plugins for rpg maker games. Overall my dream game is made in the engine I want as much control as I can have in it. But for my aspirations... Thats difficult to really pinpoint but if I had to say I would say I want to make others feel what I've felt with gaming and more so story games(fata morgana, persona 3, ff7, etc.) I want people to laugh, to have fun, to cry, all of the above. I want to simple give people an experience to remember, I want to hopefully with my dumb little games, make their lives just a bit better.
 
-![Lucaschilling]((topics/hello-world/version-control-workflow/assets/images/Lucaschilling.png)
-)
+![Lucaschilling](./assets/images/Lucaschilling.png)
+
 
