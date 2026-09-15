@@ -4,13 +4,13 @@ Matteo Edmonds-Tiano (Matt or Hikki(Actually dont say this one its too cringe!))
 
 ## Reflective Journal
 
-Here's my journal: [Reflective Journal](./journal.md)
+[Reflective Journal](./journal.md)
 
 ## Description
 
 > **Cart 253 Creative Computation 1**
 
-> ![pigbanner](./images/pigbanner.jpg)
+> ![pigbanner](./images/pigbanner.jpp)
 
 This is a website that is designed to show the progess of learning javascript, p5js, and my overall growth throught out this class. This website will hold all of the prototypes that I will be doing in this class and will in all be an archive of all the prototypes we've done in CART 253.
 
