@@ -10,7 +10,7 @@ Matteo Edmonds-Tiano (Matt or Hikki(Actually dont say this one its too cringe!))
 
 > **Cart 253 Creative Computation 1**
 
-> ![pigbanner](./images/pigbanner.jpp)
+> ![pigbanner](./images/pigbanner.jpg)
 
 This is a website that is designed to show the progess of learning javascript, p5js, and my overall growth throught out this class. This website will hold all of the prototypes that I will be doing in this class and will in all be an archive of all the prototypes we've done in CART 253.
 
@@ -19,6 +19,11 @@ This is a website that is designed to show the progess of learning javascript, p
 > Will leave here for when explinations of controls is needed.
 
 > What these prototypes or specific prototyope is trying to show.(Keeping here for when needed.)
+
+
+## Prototypes:
+
+> Here will host all of the prototypes we will do in the class.
 
 ## Screenshot(s)
 
