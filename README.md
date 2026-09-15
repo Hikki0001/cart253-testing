@@ -12,7 +12,7 @@ Here's my journal: [Reflective Journal](./journal.md)
 
 > ![pigbanner](./images/pigbanner.jpg)
 
-This is a website is designed to show the progess of learning javascript, p5js, and my overall growth throught out this class. This website will hold all of the prototypes that I will be doing in this class and will in all be an archive of all the prototypes we've done in CART 253.
+This is a website that is designed to show the progess of learning javascript, p5js, and my overall growth throught out this class. This website will hold all of the prototypes that I will be doing in this class and will in all be an archive of all the prototypes we've done in CART 253.
 
 > *Hi* Leaving this here for when needed.
 
