@@ -27,6 +27,56 @@ function draw() {
     drawGrass();
     drawMoon();
     drawMont();
+    drawHouse();
+    drawAlien();
+}
+
+
+function drawAlien() {
+
+    function drawAliencraft() {
+        push();
+        stroke(0);
+        fill(128, 128, 128)
+        ellipse(200, 100, 80, 20)
+        pop();
+    }
+
+
+
+}
+
+
+function drawHouse() {
+    drawHouseBody();
+    drawHouseRoof();
+    drawHouseDoor();
+
+    function drawHouseBody() {
+        push();
+        stroke(0);
+        fill(250, 0, 20);
+        rect(400, 480, 40, 40);
+        pop();
+    }
+
+    function drawHouseRoof() {
+        push();
+        stroke(0);
+        fill(250, 0, 0);
+        triangle(390, 480, 450, 480, 420, 440);
+        pop();
+    }
+
+    function drawHouseDoor() {
+        push();
+        stroke(0);
+        fill(0, 0, 0)
+        rect(415, 500, 10, 20);
+        pop();
+    }
+
+
 }
 
 function drawStars() {
