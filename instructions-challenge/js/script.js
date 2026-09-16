@@ -34,6 +34,9 @@ function draw() {
 
 function drawAlien() {
 
+    drawAlienUfotop();
+    drawAliencraft();
+
     function drawAliencraft() {
         push();
         stroke(0);
@@ -42,6 +45,13 @@ function drawAlien() {
         pop();
     }
 
+    function drawAlienUfotop() {
+        push();
+        stroke(0);
+        fill(234, 240, 240);
+        ellipse(200, 90, 40, 40)
+        pop();
+    }
 
 
 }
