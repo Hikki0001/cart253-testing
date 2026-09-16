@@ -1,15 +1,15 @@
 /**
- * Title of Project
- * Author Name
+ * Instructions Challenge
+ * Matteo Edmonds-Tiano
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * This is well a sky scene... I wanted to draw a pig and an alien in a mountain area.
+ * 
  */
 
 "use strict";
 
 /**
- * OH LOOK I DIDN'T DESCRIBE SETUP!!
+ * I created a canvas...
 */
 function setup() {
     createCanvas(640, 640);
@@ -18,7 +18,7 @@ function setup() {
 
 
 /**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
+ * I drew a sky scene with a house, a pig, and an alien friend.
 */
 function draw() {
     background(19, 24, 98);
@@ -26,7 +26,7 @@ function draw() {
     drawStars();
     drawGrass();
     drawMoon();
-    drawMont();
+    drawMount();
     drawHouse();
     drawAlien();
     drawPig();
@@ -34,7 +34,6 @@ function draw() {
 
 function drawPig() {
 
-    drawPigTail();
     drawPigLegs();
     drawPigBody();
     drawPigHead();
@@ -229,7 +228,7 @@ function drawMoon() {
 
 }
 
-function drawMont() {
+function drawMount() {
 
     /**
      * seventh Mont in the back to the left 
@@ -242,7 +241,7 @@ function drawMont() {
     pop();
 
     /**
-     * sixth Mont in the back
+     * sixth Mount in the back
      */
     push();
     translate(150, 100)
@@ -252,7 +251,7 @@ function drawMont() {
     pop();
 
     /**
-     * Fifth farthest Mont to the right
+     * Fifth farthest Mount to the right
      */
     push();
     translate(200, 100)
@@ -262,7 +261,7 @@ function drawMont() {
     pop();
 
     /**
-     * Fourth farthest Mont to the left
+     * Fourth farthest Mount to the left
      */
     push();
     translate(-200, 100)
@@ -272,7 +271,7 @@ function drawMont() {
     pop();
 
     /**
-     * Third Mont
+     * Third Mount
      */
     push();
     translate(-50, 100)
@@ -282,7 +281,7 @@ function drawMont() {
     pop();
 
     /**
-     * Second Mont
+     * Second Mount
      */
     push();
     translate(0, 100)
@@ -292,7 +291,7 @@ function drawMont() {
     pop();
 
     /**
-     * First smallest Mont
+     * First smallest Mount
      */
     push();
     translate(0, 100)
