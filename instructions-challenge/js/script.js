@@ -23,9 +23,29 @@ function setup() {
 function draw() {
     background(19, 24, 98);
 
+    drawStars();
     drawGrass();
     drawMoon();
     drawMont();
+}
+
+function drawStars() {
+    push();
+    fill(255);
+    noStroke();
+    ellipse(100, 100, 5, 5);
+    ellipse(200, 150, 3, 3);
+    ellipse(67, 67, 5, 5);
+    ellipse(50, 200, 3, 3);
+    ellipse(333, 147, 5, 5);
+    ellipse(321, 86, 3, 3);
+    ellipse(350, 80, 6, 6);
+    ellipse(450, 150, 4, 4);
+    ellipse(550, 120, 7, 7);
+    ellipse(150, 232, 4, 3);
+    ellipse(250, 80, 3, 3);
+    pop();
+
 }
 
 function drawGrass() {
@@ -82,7 +102,7 @@ function drawMont() {
      */
     push();
     translate(-200, 100)
-    noStroke();
+    stroke(0);
     fill(160, 180, 190);
     triangle(100, 400, 500, 400, 300, 100);
     pop();
@@ -92,7 +112,7 @@ function drawMont() {
      */
     push();
     translate(-50, 100)
-    noStroke();
+    stroke(0);
     fill(170, 180, 190);
     triangle(100, 400, 500, 400, 300, 100);
     pop();
@@ -102,7 +122,7 @@ function drawMont() {
      */
     push();
     translate(0, 100)
-    noStroke();
+    stroke(0);
     fill(180, 194, 190);
     triangle(100, 400, 500, 400, 300, 100);
     pop();
@@ -112,9 +132,10 @@ function drawMont() {
      */
     push();
     translate(0, 100)
-    noStroke();
+    stroke(0);
     fill(200, 194, 190);
     triangle(300, 400, 500, 400, 400, 200);
     pop();
 
 }
+
