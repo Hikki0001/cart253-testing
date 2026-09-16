@@ -156,6 +156,10 @@ function drawHouse() {
     drawHouseRoof();
     drawHouseDoor();
 
+
+    /**
+     * Body of House
+     */
     function drawHouseBody() {
         push();
         stroke(0);
@@ -164,6 +168,9 @@ function drawHouse() {
         pop();
     }
 
+    /**
+     * Roof of the House
+     */
     function drawHouseRoof() {
         push();
         stroke(0);
@@ -172,6 +179,9 @@ function drawHouse() {
         pop();
     }
 
+    /**
+     * Door of the mini House
+     */
     function drawHouseDoor() {
         push();
         stroke(0);
@@ -179,8 +189,6 @@ function drawHouse() {
         rect(415, 500, 10, 20);
         pop();
     }
-
-
 }
 
 function drawStars() {
@@ -229,7 +237,6 @@ function drawMoon() {
 }
 
 function drawMount() {
-
     /**
      * seventh Mont in the back to the left 
      */
