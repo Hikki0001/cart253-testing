@@ -32,9 +32,9 @@ function draw() {
     drawPig();
 }
 
-
 function drawPig() {
 
+    drawPigTail();
     drawPigLegs();
     drawPigBody();
     drawPigHead();
@@ -42,6 +42,9 @@ function drawPig() {
 
 
     function drawPigBody() {
+        /**
+         * HIS BODYYYYY!
+         */
         push();
         fill(253, 215, 228)
         ellipse(280, 500, 80, 30);
@@ -49,6 +52,9 @@ function drawPig() {
     }
 
     function drawPigHead() {
+        /**
+         * The pigs head
+         */
         push();
         fill(253, 215, 228)
         ellipse(240, 490, 40, 40);
@@ -90,26 +96,29 @@ function drawPig() {
         ellipse(243, 490, 5, 5);
         pop();
 
+        /**
+         * Pigs Snout
+         */
         push();
         fill(253, 215, 228);
         ellipse(236, 500, 10, 10);
         pop();
 
+        /**
+         * Pigs nostrils left
+         */
         push();
         fill(0, 0, 0);
         ellipse(234, 500, 2, 2);
         pop();
-
+        /**
+        * Pigs nostrils right
+        */
         push();
         fill(0, 0, 0);
         ellipse(238, 500, 2, 2);
         pop();
-
     }
-
-
-
-
 }
 
 function drawAlien() {
@@ -118,6 +127,9 @@ function drawAlien() {
     drawAliencraft();
 
     function drawAliencraft() {
+        /**
+         * The bottom of the space craft
+         */
         push();
         stroke(0);
         fill(128, 128, 128)
@@ -126,6 +138,9 @@ function drawAlien() {
     }
 
     function drawAlienUfotop() {
+        /**
+         * Cockpit for the little alien
+         */
         push();
         stroke(0);
         fill(234, 240, 240);
@@ -170,6 +185,9 @@ function drawHouse() {
 }
 
 function drawStars() {
+    /**
+     * I didnt know how to do stars at random so I just played around with really small circles
+     */
     push();
     fill(255);
     noStroke();
@@ -189,6 +207,9 @@ function drawStars() {
 }
 
 function drawGrass() {
+    /**
+     * Basic ground/grass
+     */
     push();
     noStroke();
     fill(1, 50, 32);
@@ -197,6 +218,9 @@ function drawGrass() {
 }
 
 function drawMoon() {
+    /** 
+     * THE MOON!
+     */
     push();
     stroke(0);
     fill(240, 194, 32);
