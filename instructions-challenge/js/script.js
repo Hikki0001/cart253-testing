@@ -29,8 +29,88 @@ function draw() {
     drawMont();
     drawHouse();
     drawAlien();
+    drawPig();
 }
 
+
+function drawPig() {
+
+    drawPigLegs();
+    drawPigBody();
+    drawPigHead();
+    drawPigFace();
+
+
+    function drawPigBody() {
+        push();
+        fill(253, 215, 228)
+        ellipse(280, 500, 80, 30);
+        pop();
+    }
+
+    function drawPigHead() {
+        push();
+        fill(253, 215, 228)
+        ellipse(240, 490, 40, 40);
+        pop();
+    }
+
+    function drawPigLegs() {
+        /**
+         * Leg 1
+         */
+        push();
+        fill(253, 215, 228)
+        ellipse(260, 520, 10, 20);
+        pop();
+
+        /**
+         * Leg 2
+         */
+        push();
+        fill(253, 215, 228)
+        ellipse(300, 520, 10, 20);
+        pop();
+    }
+
+    function drawPigFace() {
+        /**
+         * Eye 1
+         */
+        push();
+        fill(0, 0, 0);
+        ellipse(230, 490, 5, 5);
+        pop();
+
+        /** 
+         * Eye 2
+         */
+        push();
+        fill(0, 0, 0);
+        ellipse(243, 490, 5, 5);
+        pop();
+
+        push();
+        fill(253, 215, 228);
+        ellipse(236, 500, 10, 10);
+        pop();
+
+        push();
+        fill(0, 0, 0);
+        ellipse(234, 500, 2, 2);
+        pop();
+
+        push();
+        fill(0, 0, 0);
+        ellipse(238, 500, 2, 2);
+        pop();
+
+    }
+
+
+
+
+}
 
 function drawAlien() {
 
