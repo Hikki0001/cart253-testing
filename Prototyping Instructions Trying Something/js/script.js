@@ -24,8 +24,10 @@ function draw() {
     background(255, 0, 0)
 
     drawStairs();
+    drawDoor();
 
 }
+
 
 function drawStairs() {
     push();
@@ -74,5 +76,47 @@ function drawStairs() {
     noStroke();
     fill(0);
     rect(200, 380, 200, 50);
+    pop();
+
+    push();
+    noStroke();
+    fill(0);
+    rect(300, 410, 300, 50);
+    pop();
+
+    push();
+    noStroke();
+    fill(0);
+    rect(120, 440, 250, 50);
+    pop();
+
+    push();
+    noStroke();
+    fill(0);
+    rect(40, 465, 300, 50);
+    pop();
+
+    push();
+    noStroke();
+    fill(0);
+    rect(200, 490, 400, 50);
+    pop();
+
+    push();
+    noStroke();
+    fill(0);
+    rect(400, 520, 500, 50);
+    pop();
+
+    push();
+    noStroke();
+    fill(0);
+    rect(200, 560, 400, 50);
+    pop();
+
+    push();
+    noStroke();
+    fill(0);
+    rect(100, 590, 600, 50);
     pop();
 }
