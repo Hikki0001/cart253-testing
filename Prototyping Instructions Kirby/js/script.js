@@ -27,7 +27,8 @@ function draw() {
     drawSky();
     drawGrass();
     drawMoon();
-    drawKirby1();
+    drawKirby();
+    drawKirbyMouth();
 }
 
 function drawSky() {
@@ -89,12 +90,10 @@ function drawMoon() {
     pop();
 }
 
-function drawKirby1() {
-
+function drawKirby() {
     /**
-         * Kirby's left arm
-         */
-
+    * Kirby's left arm
+    */
     push();
     noStroke();
     fill(249, 136, 190);
@@ -109,7 +108,6 @@ function drawKirby1() {
     fill(249, 136, 190);
     ellipse(500, 480, 120, 200)
     pop();
-
 
     /**
      * His left leg
@@ -128,9 +126,6 @@ function drawKirby1() {
     fill(236, 85, 104);
     ellipse(420, 590, 150, 250)
     pop();
-
-
-
 
     /**
      * His Base Body
@@ -195,7 +190,27 @@ function drawKirby1() {
     fill(249, 136, 190)
     ellipse(430, 480, 80, 60)
     pop();
+}
 
+function drawKirbyMouth() {
+
+    /**
+     * Kirby's tongue
+     */
+    push();
+    stroke(0);
+    fill(140, 0, 55);
+    rect(300, 480, 50, 40)
+    pop();
+
+    /**
+     * Kirby's mouth
+     */
+    push();
+    stroke(0);
+    fill(225, 0, 92);
+    ellipse(325, 520, 50, 50);
+    pop();
 
 
 }
