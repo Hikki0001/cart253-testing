@@ -1,15 +1,15 @@
 /**
- * Title of Project
- * Author Name
+ * Heavenly Stairs
+ * Matteo Edmonds-Tiano
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
- */
+ * I genuinely have no idea what the heck I made 
+ * I just saw something in my head and wanted to try to make it. 
+ * Just It's idk kind of creepy...
 
 "use strict";
 
 /**
- * OH LOOK I DIDN'T DESCRIBE SETUP!!
+ * creating the Canvas
 */
 function setup() {
     createCanvas(640, 640)
@@ -18,7 +18,7 @@ function setup() {
 
 
 /**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
+ * The background and functions
 */
 function draw() {
     background(255, 0, 0)
@@ -118,6 +118,9 @@ function drawEye() {
 }
 
 function drawDoor() {
+    /**
+     * The white door
+     */
     push();
     noStroke();
     fill(255, 255, 255);
@@ -126,6 +129,9 @@ function drawDoor() {
 }
 
 function drawStairs() {
+    /**
+     * All the abstract stairs going down in descending order
+     */
     push();
     noStroke();
     fill(0);
