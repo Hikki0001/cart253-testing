@@ -29,6 +29,8 @@ function draw() {
     drawMoon();
     drawKirby();
     drawKirbyMouth();
+    drawKirbyHat();
+    drawKirbyMonocle();
 }
 
 function drawSky() {
@@ -193,6 +195,10 @@ function drawKirby() {
 }
 
 function drawKirbyMouth() {
+
+    /**
+     * His Smirk
+     */
     push();
     noFill();
     stroke(0);
@@ -202,3 +208,16 @@ function drawKirbyMouth() {
     arc(365, 500, 20, 30, 80, HALF_PI);
     pop();
 }
+
+function drawKirbyHat() {
+    push();
+    noStroke();
+    fill(20, 20, 20);
+    ellipse(320, 230, 220, 40);
+    rectMode(CENTER);
+    rect(320, 150, 140, 160);
+    ellipse(320, 70, 140, 30);
+    pop();
+}
+
+
