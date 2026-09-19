@@ -193,25 +193,12 @@ function drawKirby() {
 }
 
 function drawKirbyMouth() {
-
-    /**
-     * Kirby's tongue
-     */
     push();
+    noFill();
     stroke(0);
-    fill(140, 0, 55);
-    rect(300, 480, 50, 40)
+    strokeWeight(4);
+    strokeCap(ROUND);
+    bezier(280, 500, 300, 520, 340, 520, 360, 505);
+    arc(365, 500, 20, 30, 80, HALF_PI);
     pop();
-
-    /**
-     * Kirby's mouth
-     */
-    push();
-    stroke(0);
-    fill(225, 0, 92);
-    ellipse(325, 520, 50, 50);
-    pop();
-
-
 }
-
