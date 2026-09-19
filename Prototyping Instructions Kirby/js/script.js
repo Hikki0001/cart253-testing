@@ -1,15 +1,14 @@
 /**
- * Title of Project
- * Author Name
+ * Fancy Kirby
+ * Matteo Edmonds-Tiano
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * It's a Kirby with class what's not to love.
  */
 
 "use strict";
 
 /**
- * OH LOOK I DIDN'T DESCRIBE SETUP!!
+ * Creating a Canvas
 */
 function setup() {
 
@@ -19,8 +18,8 @@ function setup() {
 
 
 /**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
-*/
+ * All of the functions
+ */
 function draw() {
     background(173, 216, 240)
 
@@ -34,6 +33,9 @@ function draw() {
 }
 
 function drawSky() {
+    /**
+     * First rect of the sky
+     */
     push();
     noStroke();
     colorMode(HSL, 100);
@@ -41,6 +43,9 @@ function drawSky() {
     rect(0, 0, 640, 400);
     pop();
 
+    /**
+     * Second rect of the sky thats above the first
+     */
     push();
     noStroke();
     colorMode(HSL, 100);
@@ -50,6 +55,9 @@ function drawSky() {
 }
 
 function drawGrass() {
+    /**
+     * First piece of grass 
+     */
     push();
     noStroke();
     colorMode(HSL, 100)
@@ -57,6 +65,10 @@ function drawGrass() {
     ellipse(450, 600, 600, 300)
     pop();
 
+
+    /**
+     * Far and darker colored grass
+     */
     push();
     noStroke();
     colorMode(HSL, 100)
@@ -197,7 +209,7 @@ function drawKirby() {
 function drawKirbyMouth() {
 
     /**
-     * His Smirk
+     * His Smirk I still dont fully understand beziers lol 
      */
     push();
     noFill();
@@ -210,14 +222,35 @@ function drawKirbyMouth() {
 }
 
 function drawKirbyHat() {
+    /**
+     * His hat
+     */
     push();
     noStroke();
     fill(20, 20, 20);
     ellipse(320, 230, 220, 40);
+
+    /**
+     * Helps center all the parts
+     */
     rectMode(CENTER);
     rect(320, 150, 140, 160);
     ellipse(320, 70, 140, 30);
     pop();
 }
+
+function drawKirbyMonocle() {
+    /**
+     * Giving him a Monocle that fits his eyes lol
+     */
+    push();
+    noFill();
+    stroke(20, 20, 20);
+    strokeWeight(5);
+    ellipse(375, 360, 90, 140);
+    pop();
+}
+
+
 
 
