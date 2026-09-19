@@ -26,6 +26,55 @@ function draw() {
     drawStairs();
     drawDoor();
     drawEye();
+    drawClouds();
+
+}
+
+function drawClouds() {
+    /**
+     * Top cloud 1 to the left
+     */
+    push();
+    noStroke();
+    fill(255, 255, 255);
+    ellipse(100, 0, 300, 100)
+    pop();
+
+    /**
+    * Top cloud in the middle
+    */
+    push();
+    noStroke();
+    fill(255, 255, 255);
+    ellipse(300, 0, 300, 100)
+    pop();
+
+    /**
+    * Top cloud to the left
+    */
+    push();
+    noStroke();
+    fill(255, 255, 255);
+    ellipse(500, 0, 300, 100)
+    pop();
+
+    /**
+     * Clouds on the sides
+     */
+    push();
+    noStroke();
+    fill(255, 255, 255);
+    ellipse(0, 100, 100, 600)
+    pop();
+
+    /**
+    * Clouds on the sides
+    */
+    push();
+    noStroke();
+    fill(255, 255, 255);
+    ellipse(640, 100, 100, 600)
+    pop();
 
 }
 
@@ -36,15 +85,36 @@ function drawEye() {
     push();
     stroke(0);
     fill(255, 255, 255)
-    ellipse(500, 100, 120, 90)
+    ellipse(500, 100, 110, 90)
     pop();
 
+
+    /**
+     * Black part of the Eye
+     */
     push();
     stroke(0);
     fill(0, 0, 0)
-    ellipse(500, 100, 80, 50)
+    ellipse(500, 100, 80, 70)
     pop();
 
+    /**
+     * Red part of the Eye
+     */
+    push();
+    stroke(0);
+    fill(255, 0, 0)
+    ellipse(490, 100, 40, 45)
+    pop();
+
+    /**
+     * Inside of the eye black part
+     */
+    push();
+    stroke(0);
+    fill(0, 0, 0)
+    ellipse(490, 100, 20, 30)
+    pop();
 }
 
 function drawDoor() {
