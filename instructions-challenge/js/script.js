@@ -16,7 +16,6 @@ function setup() {
 
 }
 
-
 /**
  * I drew a sky scene with a house, a pig, and an alien friend.
 */
