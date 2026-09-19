@@ -25,9 +25,35 @@ function draw() {
 
     drawStairs();
     drawDoor();
+    drawEye();
 
 }
 
+function drawEye() {
+    /** 
+     * White part of the eye
+     */
+    push();
+    stroke(0);
+    fill(255, 255, 255)
+    ellipse(500, 100, 120, 90)
+    pop();
+
+    push();
+    stroke(0);
+    fill(0, 0, 0)
+    ellipse(500, 100, 80, 50)
+    pop();
+
+}
+
+function drawDoor() {
+    push();
+    noStroke();
+    fill(255, 255, 255);
+    rect(200, 100, 50, 100);
+    pop();
+}
 
 function drawStairs() {
     push();
