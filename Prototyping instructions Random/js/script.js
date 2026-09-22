@@ -25,6 +25,14 @@ function draw() {
 
     drawpurpleguy();
     drawpurpleguyhead();
+    drawpurpleguyface();
+
+}
+
+function drawpurpleguyface() {
+
+
+
 
 }
 
@@ -64,10 +72,6 @@ function drawpurpleguyhead() {
     fill(0, 0, 0)
     rect(240, 10, 50, 50)
     pop();
-
-
-
-
 
 }
 
