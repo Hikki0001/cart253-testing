@@ -27,11 +27,12 @@ function draw() {
     drawpurpleguyhead();
     drawpurpleguyface();
 
+
 }
 
 function drawpurpleguyface() {
     /**
-     * mouth top part
+     *  Mouth top part
      */
     push();
     noStroke();
@@ -40,13 +41,32 @@ function drawpurpleguyface() {
     pop();
 
     /**
-     * mouth bottom part
+     * Mouth bottom part
      */
     push();
     noStroke();
     fill(0, 0, 0)
     rect(90, 170, 140, 15)
     pop();
+
+    /**
+     * His left eye
+     */
+    push();
+    noStroke();
+    fill(255, 255, 255);
+    rect(90, 100, 30, 30)
+    pop();
+
+    /**
+     * His right eye
+     */
+    push();
+    noStroke();
+    fill(255, 255, 255);
+    rect(170, 100, 30, 30)
+    pop();
+
 
 
 
