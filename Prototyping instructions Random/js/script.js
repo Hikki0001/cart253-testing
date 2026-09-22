@@ -30,8 +30,40 @@ function draw() {
 
 function drawpurpleguyhead() {
     /**
-     * Head
+     * Head square shape
      */
+    push();
+    noStroke();
+    fill(113, 42, 149);
+    rect(80, 40, 180, 180)
+    pop();
+
+    /**
+     * Mini sqares to make indents to the head (left top)
+     */
+    push();
+    noStroke();
+    fill(0, 0, 0)
+    rect(50, 10, 50, 50)
+    pop();
+
+    /**
+     * Mini sqares to make indents to the head (left bottom)
+     */
+    push();
+    noStroke();
+    fill(0, 0, 0)
+    rect(50, 200, 50, 50)
+    pop();
+
+    /**
+     * Mini sqares to make indents to the head (right top)
+     */
+    push();
+    noStroke();
+    fill(0, 0, 0)
+    rect(240, 10, 50, 50)
+    pop();
 
 
 
