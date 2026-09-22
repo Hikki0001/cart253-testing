@@ -30,6 +30,23 @@ function draw() {
 }
 
 function drawpurpleguyface() {
+    /**
+     * mouth top part
+     */
+    push();
+    noStroke();
+    fill(0, 0, 0)
+    rect(110, 170, 100, 40)
+    pop();
+
+    /**
+     * mouth bottom part
+     */
+    push();
+    noStroke();
+    fill(0, 0, 0)
+    rect(90, 170, 140, 15)
+    pop();
 
 
 
