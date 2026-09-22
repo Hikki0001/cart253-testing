@@ -24,6 +24,18 @@ function draw() {
     background(0, 0, 0);
 
     drawpurpleguy();
+    drawpurpleguyhead();
+
+}
+
+function drawpurpleguyhead() {
+    /**
+     * Head
+     */
+
+
+
+
 
 }
 
