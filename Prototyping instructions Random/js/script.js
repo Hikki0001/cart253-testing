@@ -26,7 +26,14 @@ function draw() {
     drawpurpleguy();
     drawpurpleguyhead();
     drawpurpleguyface();
+    drawpurpleguyeyebrows();
 
+}
+
+function drawpurpleguyeyebrows() {
+    /**
+     * His eyebrows
+     */
 
 }
 
