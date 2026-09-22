@@ -25,15 +25,30 @@ function draw() {
 
     drawpurpleguy();
     drawpurpleguyhead();
-    drawpurpleguyface();
     drawpurpleguyeyebrows();
+    drawpurpleguyface();
+
 
 }
 
 function drawpurpleguyeyebrows() {
     /**
-     * His eyebrows
+     * His right eyebrow
      */
+    push();
+    noStroke();
+    fill(0, 0, 0)
+    rect(150, 100, 60, 20)
+    pop();
+
+    /**
+     * His left eyebrow
+     */
+    push();
+    noStroke();
+    fill(0, 0, 0)
+    rect(70, 100, 60, 20)
+    pop();
 
 }
 
@@ -62,7 +77,7 @@ function drawpurpleguyface() {
     push();
     noStroke();
     fill(255, 255, 255);
-    rect(90, 100, 30, 30)
+    rect(85, 110, 30, 30)
     pop();
 
     /**
@@ -71,7 +86,7 @@ function drawpurpleguyface() {
     push();
     noStroke();
     fill(255, 255, 255);
-    rect(170, 100, 30, 30)
+    rect(165, 110, 30, 30)
     pop();
 
 
