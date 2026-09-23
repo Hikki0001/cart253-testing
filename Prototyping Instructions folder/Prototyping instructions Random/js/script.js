@@ -27,8 +27,6 @@ function draw() {
     drawpurpleguyhead();
     drawpurpleguyeyebrows();
     drawpurpleguyface();
-
-
 }
 
 function drawpurpleguyeyebrows() {
