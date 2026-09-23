@@ -27,12 +27,15 @@ This is a website that is designed to show the progess of learning javascript, p
 ### Prototype Instructions assignment
 
 > [Fancy Kirby](https://hikki0001.github.io/cart253-testing/Prototyping%20Instructions%20folder/Prototyping%20Instructions%20Kirby/)
+
 ![Kirby](./images/Kirby.png)
 
 > [Heavenly Stairs](https://hikki0001.github.io/cart253-testing/Prototyping%20Instructions%20folder/Prototyping%20Instructions%20Trying%20Something/)
+
 ![Stairs](./images/Stairs.png)
 
 > [That One Guy Thats Purple](https://hikki0001.github.io/cart253-testing/Prototyping%20Instructions%20folder/Prototyping%20instructions%20Random/)
+
 ![Purple](./images/Purple.png)
 
 
