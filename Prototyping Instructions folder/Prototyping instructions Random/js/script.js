@@ -97,7 +97,7 @@ function drawpurpleguyhead() {
      */
     push();
     noStroke();
-    fill(113, 42, 149);
+    fill(mouseX, mouseY, 149);
     rect(80, 40, 180, 180)
     pop();
 
@@ -136,7 +136,7 @@ function drawpurpleguy() {
      */
     push();
     noStroke();
-    fill(113, 42, 149);
+    fill(mouseX, mouseY, 149);
     rect(200, 200, 180, 280);
     pop();
 
@@ -145,7 +145,7 @@ function drawpurpleguy() {
      */
     push();
     noStroke();
-    fill(113, 42, 149);
+    fill(mouseX, mouseY, 149);
     rect(200, 400, 50, 200)
     pop();
 
@@ -154,7 +154,7 @@ function drawpurpleguy() {
      */
     push();
     noStroke();
-    fill(113, 42, 149);
+    fill(mouseX, mouseY, 149);
     rect(330, 400, 50, 400);
     pop();
 
@@ -163,7 +163,7 @@ function drawpurpleguy() {
     */
     push();
     noStroke();
-    fill(113, 42, 149);
+    fill(mouseX, mouseY, 149);
     rect(170, 600, 100, 100)
     pop();
 
@@ -172,7 +172,7 @@ function drawpurpleguy() {
      */
     push();
     noStroke();
-    fill(113, 42, 149);
+    fill(mouseX, mouseY, 149);
     rect(300, 620, 100, 100)
     pop();
 
@@ -181,7 +181,7 @@ function drawpurpleguy() {
      */
     push();
     noStroke();
-    fill(113, 42, 149);
+    fill(mouseX, mouseY, 149);
     rect(80, 250, 130, 70);
     pop();
 
@@ -190,7 +190,7 @@ function drawpurpleguy() {
     */
     push();
     noStroke();
-    fill(113, 42, 149);
+    fill(mouseX, mouseY, 149);
     rect(30, 340, 200, 70);
     pop();
 
