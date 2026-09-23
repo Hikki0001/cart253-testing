@@ -28,7 +28,7 @@ This is a website that is designed to show the progess of learning javascript, p
 
 Fancy Kirby 
 
-> https://hikki0001.github.io/cart253-testing/Prototyping%20Instructions%20folder/Prototyping%20Instructions%20Kirby/
+> [Kirby](https://hikki0001.github.io/cart253-testing/Prototyping%20Instructions%20folder/Prototyping%20Instructions%20Kirby/)
 
 Heavenly Stairs
 
