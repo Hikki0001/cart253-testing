@@ -20,10 +20,24 @@ This is a website that is designed to show the progess of learning javascript, p
 
 > What these prototypes or specific prototyope is trying to show.(Keeping here for when needed.)
 
+------------
 
 ## Prototypes:
 
-> Here will host all of the prototypes we will do in the class.
+# Prototype Instructions assignment
+
+Fancy Kirby 
+
+> https://hikki0001.github.io/cart253-testing/Prototyping%20Instructions%20folder/Prototyping%20Instructions%20Kirby/
+
+Heavenly Stairs
+
+> https://hikki0001.github.io/cart253-testing/Prototyping%20Instructions%20folder/Prototyping%20Instructions%20Trying%20Something/
+
+That One Guy Thats Purple
+
+> https://hikki0001.github.io/cart253-testing/Prototyping%20Instructions%20folder/Prototyping%20instructions%20Random/
+
 
 ## Screenshot(s)
 
