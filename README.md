@@ -34,7 +34,7 @@ This is a website that is designed to show the progess of learning javascript, p
 
 ![Stairs](./images/Stairs.png)
 
-> [That One Guy Thats Purple](https://hikki0001.github.io/cart253-testing/Prototyping%20Instructions%20folder/Prototyping%20instructions%20Random/)
+> [That One Guy Thats Purple] 
 
 ![Purple](./images/Purple.png)
 
