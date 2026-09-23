@@ -31,4 +31,11 @@
 
 > ![Lucaschilling](./images/Lucaschilling.png)
 
+--------
+## September 23th, 2026 
+> **Thoughts**
+
+-
+
+
 
