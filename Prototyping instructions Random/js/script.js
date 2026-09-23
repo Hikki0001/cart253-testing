@@ -1,15 +1,15 @@
 /**
- * Title of Project
- * Author Name
+ * Purple guy
+ * Matteo Edmonds-Tiano
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * He's a guy that like to stay at a popular animatronic restoraunt. 
+ * I think it's called freddy's of something like that
  */
 
 "use strict";
 
 /**
- * OH LOOK I DIDN'T DESCRIBE SETUP!!
+ * Setting up the canvas size
 */
 function setup() {
     createCanvas(640, 640);
@@ -18,7 +18,7 @@ function setup() {
 
 
 /**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
+ * Drawing my background and functions
 */
 function draw() {
     background(0, 0, 0);
@@ -89,10 +89,6 @@ function drawpurpleguyface() {
     rect(165, 110, 30, 30)
     pop();
 
-
-
-
-
 }
 
 function drawpurpleguyhead() {
@@ -141,7 +137,7 @@ function drawpurpleguy() {
     push();
     noStroke();
     fill(113, 42, 149);
-    rect(200, 200, 180, 250);
+    rect(200, 200, 180, 280);
     pop();
 
     /**
