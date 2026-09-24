@@ -22,7 +22,7 @@ This is a website that is designed to show the progess of learning javascript, p
 
 ------------
 
-# Prototypes:
+ # [Prototypes Journal](./journal.md) Prototypes:
 
 ### Prototype Instructions assignment
 
