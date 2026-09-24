@@ -35,7 +35,21 @@
 ## September 23th, 2026 
 > **Thoughts**
 
--
+- For this week we learned about variables. Overall this concept seems easy to understand, but when in practice it's a bit harder. 
+
+> My brain understood the concepts but how to display them was a different story...
+
+- Variables is not a new concept to me, but once again I am second guessing myself with my knowledge so I'm trying to figure out how to beat my self doubt.
+
+> After talking and asking questions in class it's become incerdibly coherent. 
+
+- I will say the challenge was very fun. Learning to use my pre-existing knowledge with something new is weird and fun, so solving that puzzle was fun.
+
+> But at the same time I'm starting to slowly see the complexity and adaptability of these things though.
+
+- I'm quite interested to know how to work with physics like the velocity and acceleration of objects seems very fun to play arond with.
+
+> Overall I'm exicted to learn more and try to push and challenge my abilities and knowledge.
 
 
 
