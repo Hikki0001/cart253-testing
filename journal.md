@@ -51,5 +51,8 @@
 
 > Overall I'm exicted to learn more and try to push and challenge my abilities and knowledge.
 
+- I just will say I wish I had more to say it's just maybe I haven't thought enough on my opinions about either my progression or the module of the week. I just feel like to truly feel or see if I have any more difficulties I need to test out on the prototype assignment or even when we go deeper into the world of coding.
+
+
 
 
