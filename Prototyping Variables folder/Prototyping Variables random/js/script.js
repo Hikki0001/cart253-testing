@@ -9,8 +9,10 @@
 "use strict";
 
 let bgImg;
+let cover;
 let eraser = {
     size: 70,
+    weight: 1.5,
     fill: {
         r: 255,
         g: 255,
@@ -19,7 +21,7 @@ let eraser = {
 }
 
 function preload() {
-    bgImg = loadImage(assets / images / happydog.png);
+    bgImg = loadImage("assets/happydog.png");
 }
 
 /**
@@ -28,6 +30,9 @@ function preload() {
 function setup() {
     let w = 640, h = 480
     createCanvas(w, h);
+
+    cover = createGraphics(w, h);
+    cover.background(eraser.fill.r, eraser.fill.g, eraser.fill.b);
 
 }
 
@@ -38,11 +43,20 @@ function setup() {
 function draw() {
     background(20);
 
+    /**
+     * draws the image of the dog
+     */
+    Image(bgImg, 0, 0)
+
     mouseCursor();
 
 }
 
 function mouseCursor() {
+    push();
     noFill();
+    strokeWeight(eraser.weight);
+    stroke(255);
     ellipse(mouseX, mouseY, eraser.size);
+    pop();
 }
