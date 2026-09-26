@@ -9,7 +9,10 @@
 "use strict";
 
 let bgImg;
-let cover;
+let cover = {
+    erase: 0,
+    noErase: 0,
+}
 let eraser = {
     size: 70,
     weight: 1.5,
@@ -21,7 +24,7 @@ let eraser = {
 }
 
 function preload() {
-    bgImg = loadImage("assets/happydog.png");
+
 }
 
 /**
@@ -43,12 +46,26 @@ function setup() {
 function draw() {
     background(20);
 
+
     /**
      * draws the image of the dog
      */
-    Image(bgImg, 0, 0)
 
+    image(cover, 0, 0);
+
+    eraseCover();
     mouseCursor();
+
+}
+
+function eraseCover() {
+    push();
+    noStroke();
+    cover.erase();
+    cover.ellipse(mouseX, mouseY, eraser.size)
+    cover.noErase();
+    pop();
+
 
 }
 
