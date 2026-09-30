@@ -54,6 +54,8 @@ let usagi = {
         burst: 0,
         spike: 0,
         bounce: 0,
+        squash: 0,
+        size: 0
     }
 };
 
@@ -73,6 +75,9 @@ let hachi = {
     bob: { //hi bob (not important just couldnt think of another name for the variable...)
         dist: 6, //same as before but for up and down
         speed: 0.06 //how fast the bobbing is... ha bobbing!
+    },
+    state: {
+        sway: 0 //the value of the sway for the frame
     }
 }
 
@@ -140,8 +145,18 @@ function drawUsagi() {
     pop();
 }
 
+function drawHachiware() {
+    hachi.state.sway = cos(t * hachi.sway.speed);
 
-
+    push();
+    translate(
+        hachi.x + hachi.state.sway * hachi.sway.dist,
+        hachi.y + sin(t * hachi.bob.speed) * hachi.bob.dist
+    );
+    rotate(hachi.state.sway * hachi.sway.tilt);
+    image(hachiImg, hachi.offset.x, hachi.offset.y, hachi.size, hachi.size);
+    pop();
+}
 
 function mousePressed() {
     usagi.state.burst = 1;
