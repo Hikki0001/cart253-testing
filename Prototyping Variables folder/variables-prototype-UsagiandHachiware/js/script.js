@@ -30,6 +30,10 @@ let usagi = {
     x: 180,
     y: 280,
     size: 120,
+    offset: {
+        x: 0,
+        y: 0,
+    },
     hop: {
         hopHeight: 60, //the normal jump
         burstHop: 100, //extra hop thats bigger
@@ -108,10 +112,9 @@ function drawUsagi() {
         usagi.x + random(-usagi.ability.shake, usagi.ability.shake) * usagi.state.burst,
         usagi.y, - usagi.state.bounce * (usagi.hopHeight + usagi.state.burst * usagi.hop.burstHop)
     );
-    scale(
+    scale(usagi.state.squash, usagi.ability.normal / usagi.state.squash);
 
-
-    );
+    image(usagi)
 
 
 
