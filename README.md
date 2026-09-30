@@ -26,7 +26,7 @@ This is a website that is designed to show the progess of learning javascript, p
 
 ## [Prototypes Instructions Journal](./journal.md)
 
-### Prototype Instructions assignment
+### Prototype Instructions assignment 1
 
 > [Fancy Kirby](https://hikki0001.github.io/cart253-testing/Prototyping%20Instructions%20folder/Prototyping%20Instructions%20Kirby/)
 
@@ -45,6 +45,10 @@ This is a website that is designed to show the progess of learning javascript, p
 > [Code](https://github.com/Hikki0001/cart253-testing/blob/main/Prototyping%20Instructions%20folder/Prototyping%20instructions%20Purple/js/script.js)
 
 ![Purple](./images/Purple.png)
+
+### Prototype Variables assignment 2
+
+> [HappyDog] 
 
 
 ## Screenshot(s)
