@@ -1,24 +1,30 @@
 /**
- * Title of Project
- * Author Name
+ * Duality of Animal
+ * Matteo Edmonds-Tiano
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * This project shows the duality between usagi and hachiware(chiikawa characters). 
+ * While usagi is hyper, hachiware is calm and yeah... dont know what else to say.
  */
 
 "use strict";
 
+/**
+ * color of the sky/background
+ */
 let bgColor = {
-    r: 255,
-    g: 240,
+    r: 210,
+    g: 235,
     b: 255
 };
 
+/**
+ * colors the floor
+ */
 let ground = {
     fill: {
-        r: 255,
-        g: 220,
-        b: 230
+        r: 195,
+        g: 235,
+        b: 185
     },
     x: 0,
     y: 300,
@@ -26,11 +32,14 @@ let ground = {
     h: 100
 }
 
+/**
+ * holds usagi and the variables that make him go crazy
+ */
 let usagi = {
     x: 180,
     y: 280,
     size: 120,
-    offset: {
+    offset: { //moves him from his center point
         x: 0,
         y: 0,
     },
@@ -49,21 +58,24 @@ let usagi = {
         chance: 0.01, // the chance to go crazier each frame
         fade: 0.97 // how fast it fades back to normal
     },
-    state: {
-        phase: 0,
-        burst: 0,
-        spike: 0,
-        bounce: 0,
-        squash: 0,
-        size: 0
+    state: { //recalculated values that change every frame
+        phase: 0, //for the bounce
+        burst: 0, //how exicted or hyper he is
+        spike: 0, // for 1 frame a burst will happen if 0 then nothing or normal state
+        bounce: 0, //how high
+        squash: 0, // how squash he is my boy
+        size: 0 // his size in that specific frame
     }
 };
 
+/**
+ * hachiware the calm swaying one
+ */
 let hachi = {
     x: 420,
     y: 270,
     size: 120,
-    offset: {
+    offset: { // like for usagi moves him from the center point
         x: 0,
         y: 0,
     },
@@ -81,10 +93,18 @@ let hachi = {
     }
 }
 
-
+/**
+ * loading images
+ */
 let usagiImg, hachiImg
+/**
+ * time counter (t = time or frame)
+ */
 let t = 0;
 
+/**
+ * canvas size
+ */
 let canvash = 600;
 let canvasw = 400;
 
@@ -92,7 +112,7 @@ let canvasw = 400;
 
 
 /**
- * OH LOOK I DIDN'T DESCRIBE SETUP!!
+ * Creates the canvas and loads the images of both usagi and hachiware
 */
 async function setup() {
     createCanvas(canvash, canvasw)
@@ -105,9 +125,12 @@ async function setup() {
 
 
 /**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
+ * Drawing the functions
 */
 function draw() {
+    /**
+     * 1 to every frame
+     */
     t += 1;
 
     background(bgColor.r, bgColor.g, bgColor.b)
@@ -117,6 +140,9 @@ function draw() {
     drawHachiware();
 }
 
+/**
+ * draws the ground 
+ */
 function drawGround() {
     push();
     noStroke();
@@ -125,39 +151,80 @@ function drawGround() {
     pop();
 }
 
+/**
+ * draws usagi and lets him go crazy 
+ */
 function drawUsagi() {
+    /**
+     * adds a 1% chance to burst but will fade after its done
+     * */
     usagi.state.spike = floor(random() + usagi.ability.chance);
     usagi.state.burst = max(usagi.state.burst * usagi.ability.fade, usagi.state.spike);
 
+    /**
+     * burst will speed up his bouncing and abs(sin) is there to turn waves into hops for the state
+     */
     usagi.state.phase += usagi.ability.speed + usagi.state.burst * usagi.ability.burstSpeed;
     usagi.state.bounce = abs(sin(usagi.state.phase));
+
+    /**
+     * Makes his squash the biggest it can be when his lands aka 0 
+     */
     usagi.state.squash = usagi.ability.normal + (usagi.ability.peak - usagi.state.bounce) * usagi.ability.squash;
     usagi.state.size = usagi.size + usagi.state.burst * usagi.hop.burstGrow;
 
     push();
+    /**
+     * moves him to his spots so he can shake and hop depending on his burst
+     */
     translate(
         usagi.x + random(-usagi.ability.shake, usagi.ability.shake) * usagi.state.burst,
         usagi.y - usagi.state.bounce * (usagi.hop.hopHeight + usagi.state.burst * usagi.hop.burstHop)
     );
+    /**
+     * makes him wide and short when he lands
+     */
     scale(usagi.state.squash, usagi.ability.normal / usagi.state.squash);
 
+    /**
+     * simply showing the image and its size/placement
+     */
     image(usagiImg, usagi.offset.x, usagi.offset.y, usagi.state.size, usagi.state.size);
     pop();
 }
 
+
+/**
+ * draws hachiware and makes him sway as a calm little dude
+ */
 function drawHachiware() {
+    /**
+     * cos will allow the wave to be between -1 to 1
+     */
     hachi.state.sway = cos(t * hachi.sway.speed);
 
     push();
+    /**
+     * sway makes him move either left or right and the sin part is there for bobbing up and down
+     */
     translate(
         hachi.x + hachi.state.sway * hachi.sway.dist,
         hachi.y + sin(t * hachi.bob.speed) * hachi.bob.dist
     );
+    /**
+     * makes movement and tilt match so it looks smooth
+     */
     rotate(hachi.state.sway * hachi.sway.tilt);
+    /**
+     * simply showing the image and its size/placement
+     */
     image(hachiImg, hachi.offset.x, hachi.offset.y, hachi.size, hachi.size);
     pop();
 }
 
+/**
+* makes him go crazy on click
+*/
 function mousePressed() {
     usagi.state.burst = 1;
 }
