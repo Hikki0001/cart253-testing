@@ -48,6 +48,8 @@ This is a website that is designed to show the progess of learning javascript, p
 
 ---------
 
+## [Prototypes Variables Journal](./journal.md)
+
 ### Prototype Variables assignment 2
 
 > [HappyDog](https://hikki0001.github.io/cart253-testing/Prototyping%20Variables%20folder/Prototyping%20Variables%20Happy%20Dog)
@@ -55,6 +57,13 @@ This is a website that is designed to show the progess of learning javascript, p
 > [Code](https://github.com/Hikki0001/cart253-testing/blob/main/Prototyping%20Variables%20folder/Prototyping%20Variables%20Happy%20Dog/js/script.js)
 
 ![HappyDog](./images/happydog.png)
+
+> [UsagiandHachiware](https://hikki0001.github.io/cart253-testing/Prototyping%20Variables%20folder/variables-prototype-UsagiandHachiware/)
+
+> [Code](https://github.com/Hikki0001/cart253-testing/blob/main/Prototyping%20Variables%20folder/variables-prototype-UsagiandHachiware/js/script.js)
+
+![UsagiandHachiware](./images/usagiandhachiware.png)
+
 
 
 ## Screenshot(s)
