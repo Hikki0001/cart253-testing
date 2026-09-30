@@ -1,18 +1,23 @@
 /**
- * Title of Project
- * Author Name
+ * The Shy Happy Dog
+ * Matteo Edmonds-Tiano
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * He's a bit shy but can you find him
  */
 
 "use strict";
 
+/**
+ * variables for adding an image(png) and a cover over it
+ */
 let bgImg;
 let cover = {
     erase: 0,
     noErase: 0,
 }
+/**
+ * A eraser variable
+ */
 let eraser = {
     size: 70,
     weight: 1.5,
@@ -22,7 +27,25 @@ let eraser = {
         b: 255
     }
 }
+/**
+ * tracks the image if its fully revealed yet.
+ */
+let revealed = false;
 
+/**
+ * adds a little bounce to show you fully revealed him
+ */
+let bounce = {
+    y: 0,
+    vy: 0, //vertical velocity 
+    gravity: 0.5,
+    damping: 0.60 // energy thats stored after the bounce
+
+}
+
+/**
+ * took me forever to figure out but shows the image and cover hiding the dog image with creating the overall canvas
+ */
 async function setup() {
     let w = 640, h = 480
     createCanvas(w, h);
@@ -36,7 +59,9 @@ async function setup() {
 }
 
 
-
+/**
+ * draws everything on the screen
+ */
 function draw() {
     background(20);
 
@@ -52,6 +77,9 @@ function draw() {
 
 }
 
+/**
+ * the cover that needs to be eraser
+ */
 function eraseCover() {
     push();
     noStroke();
@@ -63,6 +91,9 @@ function eraseCover() {
 
 }
 
+/**
+ * the eraser thats controlled by the mouse cursor
+ */
 function mouseCursor() {
     push();
     noFill();
