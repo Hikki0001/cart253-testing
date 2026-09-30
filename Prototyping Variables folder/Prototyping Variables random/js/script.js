@@ -23,16 +23,12 @@ let eraser = {
     }
 }
 
-function preload() {
-
-}
-
-/**
- * creating the canvas
-*/
-function setup() {
+async function setup() {
     let w = 640, h = 480
     createCanvas(w, h);
+
+    bgImg = await loadImage("assets/images/happydog.png");
+
 
     cover = createGraphics(w, h);
     cover.background(eraser.fill.r, eraser.fill.g, eraser.fill.b);
@@ -40,16 +36,14 @@ function setup() {
 }
 
 
-/**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
-*/
+
 function draw() {
     background(20);
 
 
-    /**
-     * draws the image of the dog
-     */
+    if (bgImg) {
+        image(bgImg, 0, 0, width, height);
+    }
 
     image(cover, 0, 0);
 
