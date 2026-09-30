@@ -39,16 +39,21 @@ let usagi = {
         shake: 2, //shaking  at full speed
         squash: 0.25, //the squashing for the landing
         speed: 0.12, //normal speed
+        burstSpeed: 0.3, //extra speed when bursting
         chance: 0.01, // the chance to go crazier each frame
         fade: 0.97 // how fast it fades back to normal
+    },
+    state: {
+        phase: 0,
+        burst: 0,
+        spike: 0,
+        bounce: 0,
     }
 };
 
 
 let usagiImg, hachiImg
 let t = 0;
-let phase = 0;
-let burst = 0;
 
 let canvash = 600;
 let canvasw = 400;
@@ -91,7 +96,18 @@ function drawGround() {
 }
 
 function drawUsagi() {
+    usagi.state.spike = floor(random() + usagi.ability.chance);
+    usagi.state.burst = max(usagi.state.burst * usagi.ability.fade, usagi.state.spike);
+
+    usagi.state.phase += usagi.ability.speed + usagi.state.burst * usagi.ability.burstSpeed;
+    usagi.state.bounce = abs(sin(usagi.state.phase));
+
     push();
+    translate(
+        usagi.x + random(-usagi.ability.shake, usagi.ability.shake) * usagi.state.burst,
+        usagi.y, - usagi.state.bounce * (usagi.hopHeight + usagi.state.burst * usagi.hop.burstHop)
+    );
+
 
     pop();
 }
