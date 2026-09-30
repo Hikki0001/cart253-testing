@@ -57,6 +57,25 @@ let usagi = {
     }
 };
 
+let hachi = {
+    x: 420,
+    y: 270,
+    size: 120,
+    offset: {
+        x: 0,
+        y: 0,
+    },
+    sway: {
+        dist: 40, //distance from left and right
+        speed: 0.03, //how fast the sway is
+        tilt: 0.15 // how much he tilts
+    },
+    bob: { //hi bob (not important just couldnt think of another name for the variable...)
+        dist: 6, //same as before but for up and down
+        speed: 0.06 //how fast the bobbing is... ha bobbing!
+    }
+}
+
 
 let usagiImg, hachiImg
 let t = 0;
@@ -119,4 +138,11 @@ function drawUsagi() {
 
     image(usagiImg, usagi.offset.x, usagi.offset.y, usagi.state.size, usagi.state.size);
     pop();
+}
+
+
+
+
+function mousePressed() {
+    usagi.state.burst = 1;
 }
