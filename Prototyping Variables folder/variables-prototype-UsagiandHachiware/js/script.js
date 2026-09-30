@@ -8,13 +8,22 @@
 
 "use strict";
 
+let bgcolor = {
+    r: 255,
+    g: 240,
+    b: 255
+};
+
 let usagiImg, hachiImgl
 let t = 0;
-let phase 0;
+let phase = 0;
 let burst = 0;
 
-let h: 600;
-let w: 400;
+let canvash = 600;
+let canvasw = 400;
+
+
+
 
 
 
@@ -22,7 +31,7 @@ let w: 400;
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
 async function setup() {
-    createCanvas(h, w)
+    createCanvas(canvash, canvasw)
     imageMode(CENTER);
 
     usagiImg = await loadImage("assets/images/Usagi.png");
@@ -35,7 +44,8 @@ async function setup() {
  * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
 */
 function draw() {
+    background(bgColor.r, bgColor.g, bgColor.b)
 
-    
+
 
 }
