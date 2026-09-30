@@ -72,7 +72,9 @@ function draw() {
 
     image(bgImg, 0, 0, width, height);
 
-
+    /**
+     * main functions that need to be drawn
+     */
     image(cover, 0, 0);
     eraseCover();
     mouseCursor();
@@ -85,6 +87,9 @@ function draw() {
 function eraseCover() {
     push();
     noStroke();
+    /**
+     * makes it so that the cover is stuct to these parts
+     */
     cover.erase();
     cover.ellipse(mouseX, mouseY, eraser.size)
     cover.noErase();
