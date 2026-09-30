@@ -8,13 +8,25 @@
 
 "use strict";
 
-let bgcolor = {
+let bgColor = {
     r: 255,
     g: 240,
     b: 255
 };
 
-let usagiImg, hachiImgl
+let floor = {
+    fill: {
+        r: 255,
+        g: 220,
+        b: 230
+    },
+    x: 0,
+    y: 300,
+    w: 600,
+    h: 100
+}
+
+let usagiImg, hachiImg
 let t = 0;
 let phase = 0;
 let burst = 0;
@@ -46,6 +58,14 @@ async function setup() {
 function draw() {
     background(bgColor.r, bgColor.g, bgColor.b)
 
+    ground();
+}
 
+function ground() {
+    push();
+    noStroke();
+    fill(floor.fill.r, floor.fill.g, floor.fill.b);
+    rect(floor.x, floor.y, floor.w, floor.h)
+    pop();
 
 }
