@@ -14,7 +14,7 @@ let bgColor = {
     b: 255
 };
 
-let floor = {
+let ground = {
     fill: {
         r: 255,
         g: 220,
@@ -56,16 +56,19 @@ async function setup() {
  * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
 */
 function draw() {
+    t += 1;
+
     background(bgColor.r, bgColor.g, bgColor.b)
 
-    ground();
+    drawGround();
+    drawUsagi();
+    drawHachiware();
 }
 
-function ground() {
+function drawGround() {
     push();
     noStroke();
-    fill(floor.fill.r, floor.fill.g, floor.fill.b);
-    rect(floor.x, floor.y, floor.w, floor.h)
+    fill(ground.fill.r, ground.fill.g, ground.fill.b);
+    rect(ground.x, ground.y, ground.w, ground.h)
     pop();
-
 }
