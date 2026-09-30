@@ -46,6 +46,8 @@ This is a website that is designed to show the progess of learning javascript, p
 
 ![Purple](./images/Purple.png)
 
+---------
+
 ### Prototype Variables assignment 2
 
 > [HappyDog](https://hikki0001.github.io/cart253-testing/Prototyping%20Variables%20folder/Prototyping%20Variables%20Happy%20Dog)
