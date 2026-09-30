@@ -41,6 +41,7 @@ let usagi = {
     },
     ability: {
         normal: 1, //normal scale of him when he isnt squashed
+        peak: 1, // highest value that his bounce/jump can reach
         shake: 2, //shaking  at full speed
         squash: 0.25, //the squashing for the landing
         speed: 0.12, //normal speed
@@ -106,17 +107,16 @@ function drawUsagi() {
 
     usagi.state.phase += usagi.ability.speed + usagi.state.burst * usagi.ability.burstSpeed;
     usagi.state.bounce = abs(sin(usagi.state.phase));
+    usagi.state.squash = usagi.ability.normal + (usagi.ability.peak - usagi.state.bounce) * usagi.ability.squash;
+    usagi.state.size = usagi.size + usagi.state.burst * usagi.hop.burstGrow;
 
     push();
     translate(
         usagi.x + random(-usagi.ability.shake, usagi.ability.shake) * usagi.state.burst,
-        usagi.y, - usagi.state.bounce * (usagi.hopHeight + usagi.state.burst * usagi.hop.burstHop)
+        usagi.y - usagi.state.bounce * (usagi.hop.hopHeight + usagi.state.burst * usagi.hop.burstHop)
     );
     scale(usagi.state.squash, usagi.ability.normal / usagi.state.squash);
 
-    image(usagi)
-
-
-
+    image(usagiImg, usagi.offset.x, usagi.offset.y, usagi.state.size, usagi.state.size);
     pop();
 }
