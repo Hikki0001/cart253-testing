@@ -36,6 +36,7 @@ let usagi = {
         burstGrow: 30 //exra growth for the burst
     },
     ability: {
+        normal: 1, //normal scale of him when he isnt squashed
         shake: 2, //shaking  at full speed
         squash: 0.25, //the squashing for the landing
         speed: 0.12, //normal speed
@@ -107,6 +108,11 @@ function drawUsagi() {
         usagi.x + random(-usagi.ability.shake, usagi.ability.shake) * usagi.state.burst,
         usagi.y, - usagi.state.bounce * (usagi.hopHeight + usagi.state.burst * usagi.hop.burstHop)
     );
+    scale(
+
+
+    );
+
 
 
     pop();
