@@ -26,6 +26,25 @@ let ground = {
     h: 100
 }
 
+let usagi = {
+    x: 180,
+    y: 280,
+    size: 120,
+    hop: {
+        hopHeight: 60, //the normal jump
+        burstHop: 100, //extra hop thats bigger
+        burstGrow: 30 //exra growth for the burst
+    },
+    ability: {
+        shake: 2, //shaking  at full speed
+        squash: 0.25, //the squashing for the landing
+        speed: 0.12, //normal speed
+        chance: 0.01, // the chance to go crazier each frame
+        fade: 0.97 // how fast it fades back to normal
+    }
+};
+
+
 let usagiImg, hachiImg
 let t = 0;
 let phase = 0;
@@ -33,8 +52,6 @@ let burst = 0;
 
 let canvash = 600;
 let canvasw = 400;
-
-
 
 
 
@@ -70,5 +87,11 @@ function drawGround() {
     noStroke();
     fill(ground.fill.r, ground.fill.g, ground.fill.b);
     rect(ground.x, ground.y, ground.w, ground.h)
+    pop();
+}
+
+function drawUsagi() {
+    push();
+
     pop();
 }
