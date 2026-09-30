@@ -66,12 +66,14 @@ function draw() {
     background(20);
 
 
-    if (bgImg) {
-        image(bgImg, 0, 0, width, height);
-    }
+    /**
+     * draws the image of the shy dog
+     */
+
+    image(bgImg, 0, 0, width, height);
+
 
     image(cover, 0, 0);
-
     eraseCover();
     mouseCursor();
 
