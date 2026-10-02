@@ -1,9 +1,8 @@
 /**
- * Title of Project
- * Author Name
+ * Paranoid Eye
+ * Matteo Edmonds-Tiano
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * Control the eye but at the same time maybe the eye is controlling you?!
  */
 
 "use strict";
@@ -17,6 +16,9 @@ let canvasSize = {
     h: 400
 };
 
+/**
+ * background color
+ */
 let bgColor = {
     r: 235,
     g: 235,
@@ -92,7 +94,7 @@ function setup() {
 
 
 /**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
+ * Draws the background and the functions
 */
 function draw() {
     background(bgColor.r, bgColor.g, bgColor.b)
@@ -105,6 +107,9 @@ function draw() {
 
 }
 
+/**
+ * draws the eye
+ */
 function drawEye() {
     push();
     noStroke();
