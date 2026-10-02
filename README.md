@@ -64,6 +64,14 @@ This is a website that is designed to show the progess of learning javascript, p
 
 ![UsagiandHachiware](./images/usagiandhachiware.png)
 
+> [ParanoidEye](https://hikki0001.github.io/cart253-testing/Prototyping%20Variables%20folder/variables-prototype-eyeball/)
+
+> [Code](https://github.com/Hikki0001/cart253-testing/blob/main/Prototyping%20Variables%20folder/variables-prototype-eyeball/js/script.js)
+
+![Eye](./images/Eye.png)
+
+
+
 
 
 ## Screenshot(s)
