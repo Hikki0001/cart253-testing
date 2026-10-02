@@ -33,7 +33,7 @@
 
 --------
 ## September 23th, 2026 
-> **Thoughts**
+> **Thoughts on Variables**
 
 - For this week we learned about variables. Overall this concept seems easy to understand, but when in practice it's a bit harder. 
 
@@ -52,6 +52,29 @@
 > Overall I'm exicted to learn more and try to push and challenge my abilities and knowledge.
 
 - I just will say I wish I had more to say it's just maybe I haven't thought enough on my opinions about either my progression or the module of the week. I just feel like to truly feel or see if I have any more difficulties I need to test out on the prototype assignment or even when we go deeper into the world of coding.
+
+-------
+## October 1st, 2026 
+> **Thoughts on Conditionals**
+
+- This week I wanted to really challenge myself a little bit to the point where I was running out of ideas for the final 2 prototypes, but hopefully they turned out good.
+
+> That usagi one took forever and Im really proud of it!
+
+- This assignment was fun though with variables at least for me its kind of therapeutic for me to have everything very organized and espically to know where everything is and what it is.
+
+> Don't forget it also helps me allow to change the values way easier!
+
+- I felt even though my prototypes for this assignment are kind of subpart compared to my one masterpiece... I feel like im beginning to find a rhythm with my code. In the past I always found myself kind of being everywhere with random numbers and stuff like that so this has been a test for me I guess.
+
+- About conditionals now that stuff is fun. Overall I do know already know about them from my previous coding journey of self taught... not the best but still something lol! But more so from formal logic, as philosophy is one of my favorite things to read and learn about. This started all due to my love of formal and obviously everyday logic, but due to their similarities for me its quite easy to pick up.
+
+> Hopefully I'm not jinxing myself...
+
+- I am really exicted for the conditional prototypes as I really want to try to make an npc with random dialogue kind of like the money example that was used in class.
+
+> Hopefully it'll go well!
+
 
 
 

@@ -70,15 +70,7 @@ This is a website that is designed to show the progess of learning javascript, p
 
 ![Eye](./images/Eye.png)
 
-
-
-
-
-## Screenshot(s)
-
-This is my favorite image right now. I hope you enjoy it!
-
-> ![kamijo](./images/kamijo.png)
+---------
 
 ## Attribution
 
