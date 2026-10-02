@@ -32,7 +32,7 @@ let eye = {
     size: {
         calm: 120,
         scared: 300
-    }
+    },
     /**
      * the white part of the eye
      */
@@ -51,8 +51,8 @@ let eye = {
         /**
          * following the mouse cursor
          */
-        follow: 0.1
-        fill{
+        follow: 0.1,
+        fill: {
             r: 17,
             g: 17,
             b: 17
@@ -66,7 +66,7 @@ let paranoia = {
     /**
      * For every frame
      */
-    rise: 0.001 
+    rise: 0.001
 };
 
 /**
@@ -101,5 +101,16 @@ function draw() {
     updateEye();
     drawEye();
 
+}
+
+/**
+ * makes the paranoia slowly rise but it has a min to stop from reaching the max
+ */
+function updateParanoia() {
+    state.paranoia = min(paranoia.max, state.paranoia + paranoia.rise);
+}
+
+function updateEye() {
 
 }
+
