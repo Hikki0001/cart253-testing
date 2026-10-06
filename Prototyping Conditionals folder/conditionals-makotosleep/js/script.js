@@ -134,13 +134,34 @@ function updateState() {
     else {
         makoto.state = "awake";
     }
-
 }
 
+/**
+ * draws the bgroom
+ */
 function drawRoom() {
+    push();
     image(room.image, room.x, room.y, canvasSize.w, canvasSize.h);
+    pop();
 }
 
+/**
+ * draws makoto and his states
+ */
 function drawMakoto() {
+    push();
     image(makoto.images[makoto.state], makoto.x, makoto.y, makoto.w, makoto.h);
+    pop();
+}
+
+/**
+ * draws whats makoto's saying i.e dialogue box sort of
+ */
+function drawText() {
+    push();
+    noStroke();
+    fill(dialogue.fill);
+    textSize(dialogue.size);
+    text(dialogue.current, dialogue.x, dialogue.y);
+    pop();
 }
