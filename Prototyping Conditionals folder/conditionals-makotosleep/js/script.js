@@ -23,10 +23,10 @@ let room = {
  * will hold all of makoto's states and where he's drawn
  */
 let makoto = {
-    x: 400,
-    y: 270,
-    w: 300,
-    h: 380,
+    x: 355,
+    y: 250,
+    w: 150,
+    h: 200,
     images: {
         awake: undefined,
         sleeping: undefined,
@@ -82,9 +82,9 @@ let messages = {
 
 let dialogue = {
     current: messages.default,
-    x: 400,
-    y: 40,
-    size: 20,
+    x: 350,
+    y: 100,
+    size: 40,
     fill: 255
 };
 
