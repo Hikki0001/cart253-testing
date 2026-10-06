@@ -1,18 +1,24 @@
 /**
- * Title of Project
- * Author Name
+ * Makoto Sleeping
+ * Matteo Edmonds-Tiano
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * Imagine having makoto yuki as a pet well no longer do you have to imagine!
+ * he can sleep and well... sleep!
  */
 
 "use strict";
 
+/**
+ * canvas size
+ */
 let canvasSize = {
     w: 800,
     h: 500
 };
 
+/**
+ * the background room image
+ */
 let room = {
     image: undefined,
     x: 400,
@@ -71,6 +77,9 @@ let tracker = {
     pokeTimes: []
 };
 
+/**
+ * all of the dialogue he can say
+ */
 let messages = {
     default: "...",
     poked: "What?",
@@ -80,6 +89,9 @@ let messages = {
     angry: "STOP THAT!"
 }
 
+/**
+ * the dialogues values and where its placed
+ */
 let dialogue = {
     current: messages.default,
     x: 350,
@@ -88,14 +100,16 @@ let dialogue = {
     fill: 255
 };
 
-
+/**
+ * for the mouse state control
+ */
 let mouse = {
     now: 0,
     idle: 0
 }
 
 /**
- * OH LOOK I DIDN'T DESCRIBE SETUP!!
+ * Sets up the drawing for the images and text
 */
 async function setup() {
     createCanvas(canvasSize.w, canvasSize.h);
@@ -113,7 +127,7 @@ async function setup() {
 
 
 /**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
+ * Draws all of the functions
 */
 function draw() {
     updateState();
@@ -173,6 +187,10 @@ function drawText() {
     pop();
 }
 
+
+/**
+ * Makes it so depending on the clicks he changes what state he is
+ */
 function mousePressed() {
     mouse.now = millis();
     mouse.idle = mouse.now - tracker.lastActive;
@@ -185,24 +203,41 @@ function mousePressed() {
     tracker.pokeTimes = tracker.pokeTimes.filter(function (time) {
         return mouse.now - time < rules.pokeWindow;
     });
-
+    /**
+     * for angry state
+     */
     if (tracker.pokeTimes.length >= rules.pokesToAnger) {
         tracker.angryUntil = mouse.now + rules.angryDuration;
         dialogue.current = messages.angry;
     }
+    /**
+     * for wokenup state
+     */
     else if (mouse.idle > rules.sleepAfter) {
         dialogue.current = messages.wokenUp;
     }
+    /**
+     * for annoyed state
+     */
     else if (tracker.pokes > rules.annoyedAfter) {
         dialogue.current = messages.annoyed
     }
+    /**
+     * for just being poked reaction
+     */
     else {
         dialogue.current = messages.poked
     }
 
+    /**
+     * tracks the last active clicks
+     */
     tracker.lastActive = mouse.now
 }
 
+/**
+ * for clicking and default state
+ */
 function keyPressed() {
     tracker.lastActive = millis();
     dialogue.current = messages.default;
