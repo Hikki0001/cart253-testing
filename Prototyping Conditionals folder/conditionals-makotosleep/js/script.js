@@ -19,7 +19,6 @@ let room = {
     y: 250
 };
 
-
 /**
  * will hold all of makoto's states and where he's drawn
  */
@@ -39,6 +38,41 @@ let makoto = {
     state: "awake"
 }
 
+/**
+ * for controlling his states 
+ * like how many second itll take to go back to awake state
+ */
+let rules = {
+    /**
+     * for controlling how many ms needs to pass before 
+     * he will go to his to sleep status
+     */
+    sleepAfter: 6000,
+    /**
+     * to keep track of recent clicks so that it has a fair balance
+     */
+    pokeWindow: 3000,
+    pokesToAnger: 4,
+    angryDuration: 2000,
+    annoyedAfter: 10
+};
+
+/**
+ * so I can track how many clicks have been registered 
+ */
+let tracker = {
+    lastActive: 0,
+    angryUntil: 0,
+    pokes: 0,
+    /**
+     * just found out you can use this sign for recent activity 
+     * but this will let me get a timestamp of clicks
+     */
+    pokeTimes: []
+};
+
+
+
 
 
 
@@ -50,6 +84,11 @@ async function setup() {
     imageMode(CENTER);
 
     room.image = await loadImage("assets/images/p3room.png");
+    makoto.images.awake = await loadImage("assests/images/makotoawake.jpg");
+    makoto.images.sleeping = await loadImage("assests/images/makotosleep.jpg");
+    makoto.images.angry = await loadImage("assests/images/makotomad.jpg");
+
+
 
 }
 
