@@ -23,7 +23,7 @@ let room = {
  * will hold all of makoto's states and where he's drawn
  */
 let makoto = {
-    x: 355,
+    x: 353,
     y: 250,
     w: 150,
     h: 200,
