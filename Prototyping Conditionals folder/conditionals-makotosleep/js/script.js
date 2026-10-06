@@ -180,6 +180,26 @@ function mousePressed() {
     tracker.pokeTimes.push(mouse.now);
     tracker.pokeTimes = tracker.pokeTimes.filter(function (time) {
         return now - time < rules.pokeWindow;
-    })
+    });
 
+    if (tracker.pokeTimes.length >= rules.pokesToAnger) {
+        tracker.angryUntil = mouse.now + rules.angryDuration;
+        dialogue.current = messages.angry;
+    }
+    else if (mouse.idle > rules.sleepAfter) {
+        dialogue.current = messages.wokenUp;
+    }
+    else if (tracker.pokes > rules.annoyedAfter) {
+        dialogue.current = messages.annoyed
+    }
+    else {
+        dialogue.current = messages.poked
+    }
+
+    tracker.lastActive = mouse.now
+}
+
+function keyPressed() {
+    tracker.lastActive = millis();
+    dialogue.current = messages.default;
 }
