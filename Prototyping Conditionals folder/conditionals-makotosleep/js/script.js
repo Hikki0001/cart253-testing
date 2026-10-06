@@ -88,11 +88,6 @@ let messages = {
     angry: "STOP THAT!"
 }
 
-
-
-
-
-
 /**
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
@@ -106,7 +101,7 @@ async function setup() {
     makoto.images.angry = await loadImage("assests/images/makotomad.jpg");
 
 
-
+    tracker.lastActive = millis();
 }
 
 
@@ -114,13 +109,38 @@ async function setup() {
  * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
 */
 function draw() {
+    updateState();
 
     drawRoom();
     drawMakoto();
     drawText();
 
+
+}
+
+/**
+ * for deciding the states
+ */
+function updateState() {
+    let idle = millis() - tracker.lastActive;
+
+    if (millis() < tracker.angryUntil) {
+        makoto.state = "angry";
+    }
+    else if (idle > rules.sleepAfter) {
+        makoto.state = "sleeping";
+        dialogue.current = messages.sleeping;
+    }
+    else {
+        makoto.state = "awake";
+    }
+
 }
 
 function drawRoom() {
     image(room.image, room.x, room.y, canvasSize.w, canvasSize.h);
+}
+
+function drawMakoto() {
+    image(makoto.images[makoto.state], makoto.x, makoto.y, makoto.w, makoto.h);
 }
