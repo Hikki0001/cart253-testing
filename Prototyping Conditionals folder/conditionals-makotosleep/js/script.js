@@ -9,27 +9,36 @@
 "use strict";
 
 let canvasSize = {
-    w: 400,
+    w: 600,
     h: 500
 };
 
-let bgColors = {
-    awake: {
-        r: 120,
-        g: 170,
-        b: 220,
-    },
-    sleeping: {
-        r: 15,
-        g: 25,
-        b: 50,
-    },
-    angry: {
-        r: 90,
-        g: 20,
-        b: 30
-    }
+let room = {
+    image: undefined,
+    x: 600,
+    y: 500
 };
+
+
+/**
+ * will hold all of makoto's states and where he's drawn
+ */
+let makoto = {
+    x: 200,
+    y: 270,
+    w: 300,
+    h: 380,
+    images: {
+        awake: undefined,
+        sleeping: undefined,
+        angry: undefined,
+    },
+    /**
+     * reminder for myself so it can be recalculated every frame
+     */
+    state: "awake"
+}
+
 
 
 
