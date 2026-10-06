@@ -71,6 +71,23 @@ let tracker = {
     pokeTimes: []
 };
 
+let dialogue = {
+    current: message.default,
+    x: 200,
+    y: 40,
+    size: 20,
+    fill: 255
+};
+
+let messages = {
+    default: "...",
+    poked: "What?",
+    sleeping: "zzzzzz.",
+    wokenUp: "Burgersssss...",
+    annoyed: "Are you bored...",
+    angry: "STOP THAT!"
+}
+
 
 
 
@@ -99,6 +116,8 @@ async function setup() {
 function draw() {
 
     drawRoom();
+    drawMakoto();
+    drawText();
 
 }
 
