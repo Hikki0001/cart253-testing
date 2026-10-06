@@ -9,14 +9,14 @@
 "use strict";
 
 let canvasSize = {
-    w: 600,
+    w: 800,
     h: 500
 };
 
 let room = {
     image: undefined,
-    x: 600,
-    y: 500
+    x: 400,
+    y: 250
 };
 
 
@@ -47,6 +47,9 @@ let makoto = {
 */
 async function setup() {
     createCanvas(canvasSize.w, canvasSize.h);
+    imageMode(CENTER);
+
+    room.image = await loadImage("assets/images/p3room.png");
 
 }
 
@@ -56,4 +59,10 @@ async function setup() {
 */
 function draw() {
 
+    drawRoom();
+
+}
+
+function drawRoom() {
+    image(room.image, room.x, room.y, canvasSize.w, canvasSize.h);
 }
