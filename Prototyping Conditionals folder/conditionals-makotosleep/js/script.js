@@ -88,6 +88,11 @@ let messages = {
     angry: "STOP THAT!"
 }
 
+let mouse = {
+    now: millis(),
+    idle: now - tracker.lastActive
+}
+
 /**
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
@@ -164,4 +169,17 @@ function drawText() {
     textSize(dialogue.size);
     text(dialogue.current, dialogue.x, dialogue.y);
     pop();
+}
+
+function mousePressed() {
+    tracker.pokes += 1;
+
+    /**
+     * will make it so that only recent clicks are kept
+     */
+    tracker.pokeTimes.push(mouse.now);
+    tracker.pokeTimes = tracker.pokeTimes.filter(function (time) {
+        return now - time < rules.pokeWindow;
+    })
+
 }
