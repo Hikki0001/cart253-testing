@@ -23,7 +23,7 @@ let room = {
  * will hold all of makoto's states and where he's drawn
  */
 let makoto = {
-    x: 200,
+    x: 400,
     y: 270,
     w: 300,
     h: 380,
@@ -71,14 +71,6 @@ let tracker = {
     pokeTimes: []
 };
 
-let dialogue = {
-    current: message.default,
-    x: 200,
-    y: 40,
-    size: 20,
-    fill: 255
-};
-
 let messages = {
     default: "...",
     poked: "What?",
@@ -88,9 +80,18 @@ let messages = {
     angry: "STOP THAT!"
 }
 
+let dialogue = {
+    current: messages.default,
+    x: 400,
+    y: 40,
+    size: 20,
+    fill: 255
+};
+
+
 let mouse = {
-    now: millis(),
-    idle: now - tracker.lastActive
+    now: 0,
+    idle: 0
 }
 
 /**
@@ -99,11 +100,12 @@ let mouse = {
 async function setup() {
     createCanvas(canvasSize.w, canvasSize.h);
     imageMode(CENTER);
+    textAlign(CENTER);
 
     room.image = await loadImage("assets/images/p3room.png");
-    makoto.images.awake = await loadImage("assests/images/makotoawake.jpg");
-    makoto.images.sleeping = await loadImage("assests/images/makotosleep.jpg");
-    makoto.images.angry = await loadImage("assests/images/makotomad.jpg");
+    makoto.images.awake = await loadImage("assets/images/makotoawake.png");
+    makoto.images.sleeping = await loadImage("assets/images/makotosleep.png");
+    makoto.images.angry = await loadImage("assets/images/makotomad.png");
 
 
     tracker.lastActive = millis();
@@ -172,6 +174,8 @@ function drawText() {
 }
 
 function mousePressed() {
+    mouse.now = millis();
+    mouse.idle = mouse.now - tracker.lastActive;
     tracker.pokes += 1;
 
     /**
@@ -179,7 +183,7 @@ function mousePressed() {
      */
     tracker.pokeTimes.push(mouse.now);
     tracker.pokeTimes = tracker.pokeTimes.filter(function (time) {
-        return now - time < rules.pokeWindow;
+        return mouse.now - time < rules.pokeWindow;
     });
 
     if (tracker.pokeTimes.length >= rules.pokesToAnger) {
