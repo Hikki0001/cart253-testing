@@ -158,7 +158,7 @@ function drawCat() {
     /**
      * so for when the cat isnt alive shown by the ! symbol
      */
-    if (!expirement.alive) {
+    if (!experiment.alive) {
         tint(cat.deadTint);
         /**
          * for making it turn upside down i.e 180 and pie is half of a circle
@@ -218,11 +218,19 @@ function mousePressed() {
 
     experiment.isOpen = true;
 
-    if (expirement.alive) {
+    if (experiment.alive) {
         message.current = words.alive;
     }
     else {
         message.current = words.dead;
+    }
+}
+
+function keyPressed() {
+    if (key === "r" || key === "R") {
+        experiment.decided = false;
+        experiment.isOpen = false;
+        message.current = words.start;
     }
 }
 
