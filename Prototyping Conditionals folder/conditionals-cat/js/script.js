@@ -24,13 +24,13 @@ let box = {
     w: 200,
     h: 160,
     closedFill: {
-        r: 110, 
+        r: 110,
         g: 80,
         b: 60,
     },
     openFill: {
         r: 235,
-        g: 225, 
+        g: 225,
         b: 205
     }
 };
@@ -39,7 +39,7 @@ let box = {
  * the cat and when its drawn when the box is open
  */
 let cat = {
-    x: 240, 
+    x: 240,
     y: 270,
     w: 120,
     h: 100,
@@ -75,6 +75,7 @@ let message = {
     current: "The cat is alive and dead... Maybe try to click the box to see?",
     x: 240,
     y: 440,
+    fill: 255,
     size: 16
 };
 
@@ -84,13 +85,13 @@ let message = {
 let words = {
     start: "The cat is alive and dead... Maybe try to click the box to see?",
     alive: "The cat is alive!!! Press R to close the box again.",
-    dead: "The cat is dead... Press R to close the box again."
+    dead: "The cat is dead... Press R to close the box again.",
     closed: "The box is closed. Is the cat still the same?"
 };
 
 let questionMark = {
     symbol: "?",
-    fill: 255, 
+    fill: 255,
     size: 60,
     offsetY: 20
 };
@@ -103,7 +104,7 @@ async function setup() {
     imageMode(CENTER);
     rectMode(CENTER);
     textAlign(CENTER);
-    
+
 
     backgroundImg = await loadImage("assets/images/background.png");
     catImg = await loadImage("assets/images/cat.png");
@@ -162,8 +163,31 @@ function drawCat() {
          */
         rotate(PI)
     }
-    
+
     image(catImg, 0, 0, cat.w, cat.h);
     pop();
 }
-   
+
+/**
+ * draws the messages that'll be drawn on the screen
+ */
+function drawText() {
+    push();
+    noStroke();
+    fill(message.fill);
+    textSize(message.size);
+    text(message.current, message.x, message.y);
+    pop();
+}
+
+/**
+ * click on the box will either open it or close it 
+ */
+function mousePressed() {
+
+}
+
+
+
+
+
