@@ -96,6 +96,8 @@ let questionMark = {
     offsetY: 20
 };
 
+let onBox = false;
+
 /**
  * creating the canvas
 */
@@ -184,7 +186,44 @@ function drawText() {
  * click on the box will either open it or close it 
  */
 function mousePressed() {
+    /**
+     * Checks if the mouse is inside the box 
+     * I use && to check if all 4 checks are true at the same time
+     */
+    onBox = mouseX > box.x - box.w / 2 &&
+        mouseX < box.x + box.w / 2 &&
+        mouseY > box.y - box.h / 2 &&
+        mouseY < box.y + box.h / 2;
 
+    if (!onBox) {
+        return;
+    }
+
+    /**
+     * for closing the box
+     */
+    if (experiment.isOpen) {
+        experiment.isOpen = false;
+        message.current = words.closed;
+        return;
+    }
+
+    /**
+     * opening the box and itll randomly decide if the cat is alive or dead
+     */
+    if (!experiment.decided) {
+        experiment.alive = random() < experiment.chanceAlive;
+        experiment.decided = true;
+    }
+
+    experiment.isOpen = true;
+
+    if (expirement.alive) {
+        message.current = words.alive;
+    }
+    else {
+        message.current = words.dead;
+    }
 }
 
 
