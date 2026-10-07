@@ -1,33 +1,47 @@
 /**
- * Title of Project
- * Author Name
+ * Schrodingers Cat
+ * Matteo Edmonds-Tiano
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * This prototype shows well the popular expirement of schrodingers cat.
  */
 
 "use strict";
 
+/**
+ * canvas size
+ */
 let canvasSize = {
     w: 480,
     h: 480
 };
 
+/**
+ * the image variables
+ */
 let images = {
     backgroundImg: undefined,
     catImg: undefined
 };
 
+/**
+ * the box
+ */
 let box = {
     x: 240,
     y: 270,
-    w: 200,
-    h: 160,
+    w: 280,
+    h: 240,
+    /**
+     * its closed colors
+     */
     closedFill: {
         r: 110,
         g: 80,
         b: 60,
     },
+    /**
+     * its opened colors
+     */
     openFill: {
         r: 235,
         g: 225,
@@ -41,8 +55,8 @@ let box = {
 let cat = {
     x: 240,
     y: 270,
-    w: 120,
-    h: 100,
+    w: 150,
+    h: 180,
     /**
      * for showing the death of the cat :(
      */
@@ -76,7 +90,7 @@ let message = {
     x: 240,
     y: 440,
     fill: 255,
-    size: 16
+    size: 15
 };
 
 /**
@@ -89,6 +103,9 @@ let words = {
     closed: "The box is closed. Is the cat still the same?"
 };
 
+/**
+ * the big question mark on the box
+ */
 let questionMark = {
     symbol: "?",
     fill: 255,
@@ -108,8 +125,8 @@ async function setup() {
     textAlign(CENTER);
 
 
-    backgroundImg = await loadImage("assets/images/background.png");
-    catImg = await loadImage("assets/images/cat.png");
+    images.backgroundImg = await loadImage("assets/images/background.png");
+    images.catImg = await loadImage("assets/images/cat.png");
 }
 
 
@@ -117,12 +134,15 @@ async function setup() {
  * draws text, the box, and the room
 */
 function draw() {
-    image(backgroundImg, canvasSize.w / 2, canvasSize.h / 2, canvasSize.w, canvasSize.h);
+    image(images.backgroundImg, canvasSize.w / 2, canvasSize.h / 2, canvasSize.w, canvasSize.h);
 
     drawBox();
     drawText();
 }
 
+/**
+ * draws the actual box on the screen
+ */
 function drawBox() {
     push();
     noStroke();
@@ -161,12 +181,12 @@ function drawCat() {
     if (!experiment.alive) {
         tint(cat.deadTint);
         /**
-         * for making it turn upside down i.e 180 and pie is half of a circle
+         * for making it turn upside down i.e 180 
          */
         rotate(PI)
     }
 
-    image(catImg, 0, 0, cat.w, cat.h);
+    image(images.catImg, 0, 0, cat.w, cat.h);
     pop();
 }
 
@@ -218,6 +238,9 @@ function mousePressed() {
 
     experiment.isOpen = true;
 
+    /**
+     * shows specific text depending on the states of the cats aliveness or deadness(these arent words lol)
+     */
     if (experiment.alive) {
         message.current = words.alive;
     }
@@ -226,6 +249,9 @@ function mousePressed() {
     }
 }
 
+/**
+ * for the reloading on the box makes it so when r is pressed it resets the possibilities 
+ */
 function keyPressed() {
     if (key === "r" || key === "R") {
         experiment.decided = false;
