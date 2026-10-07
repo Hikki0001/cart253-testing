@@ -88,7 +88,12 @@ let words = {
     closed: "The box is closed. Is the cat still the same?"
 };
 
-
+let questionMark = {
+    symbol: "?",
+    fill: 255, 
+    size: 60,
+    offsetY: 20
+};
 
 /**
  * creating the canvas
@@ -133,10 +138,32 @@ function drawBox() {
         fill(box.closedFill.r, box.closedFill.g, box.closedFill.b);
         rect(box.x, box.y, box.w, box.h);
 
-        fill();
-        textSize();
-        text("?", box.x, box.y + )
+        fill(questionMark.fill);
+        textSize(questionMark.size);
+        text(questionMark.symbol, box.x, box.y + questionMark.offsetY);
     }
+    pop();
+}
+
+/**
+ * when alive the cat will be drawn normally and when dead its upside down well to show its dead :(
+ */
+function drawCat() {
+    push();
+    translate(cat.x, cat.y);
+
+    /**
+     * so for when the cat isnt alive shown by the ! symbol
+     */
+    if (!expirement.alive) {
+        tint(cat.deadTint);
+        /**
+         * for making it turn upside down i.e 180 and pie is half of a circle
+         */
+        rotate(PI)
+    }
+    
+    image(catImg, 0, 0, cat.w, cat.h);
     pop();
 }
    
