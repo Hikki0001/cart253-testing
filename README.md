@@ -72,6 +72,22 @@ This is a website that is designed to show the progess of learning javascript, p
 
 ---------
 
+## [Prototypes Conditionals Journal](./journal.md)
+
+### Prototype Conditionals assignment 2
+
+> [SleepingMakoto](https://hikki0001.github.io/cart253-testing/Prototyping%20Conditionals%20folder/conditionals-makotosleep/)
+
+> [Code](https://github.com/Hikki0001/cart253-testing/blob/main/Prototyping%20Conditionals%20folder/conditionals-makotosleep/js/script.js)
+
+![Makoto](./images/Makoto.png)
+
+> [SchrodingersCat](https://hikki0001.github.io/cart253-testing/Prototyping%20Conditionals%20folder/conditionals-cat/)
+
+> [Code](https://github.com/Hikki0001/cart253-testing/blob/main/Prototyping%20Conditionals%20folder/conditionals-cat/js/script.js)
+
+![Cat](./images/cat.png)
+
 ## Attribution
 
 **This is where we put code, assets, and any other elements that was from other sources(I'm keeping the p5js line for now.)**
