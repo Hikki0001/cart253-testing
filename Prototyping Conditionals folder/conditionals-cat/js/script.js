@@ -88,12 +88,15 @@ let words = {
     closed: "The box is closed. Is the cat still the same?"
 };
 
+
+
 /**
  * creating the canvas
 */
 async function setup() {
     createCanvas(canvasSize.w, canvasSize.h);
     imageMode(CENTER);
+    rectMode(CENTER);
     textAlign(CENTER);
     
 
@@ -103,8 +106,37 @@ async function setup() {
 
 
 /**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
+ * draws text, the box, and the room
 */
 function draw() {
+    image(backgroundImg, canvasSize.w / 2, canvasSize.h / 2, canvasSize.w, canvasSize.h);
 
+    drawBox();
+    drawText();
 }
+
+function drawBox() {
+    push();
+    noStroke();
+    /**
+     * for the open box state
+     */
+    if (experiment.isOpen) {
+        fill(box.openFill.r, box.openFill.g, box.openFill.b);
+        rect(box.x, box.y, box.w, box.h);
+        drawCat();
+    }
+    /**
+     * for the closed box state
+     */
+    else {
+        fill(box.closedFill.r, box.closedFill.g, box.closedFill.b);
+        rect(box.x, box.y, box.w, box.h);
+
+        fill();
+        textSize();
+        text("?", box.x, box.y + )
+    }
+    pop();
+}
+   
