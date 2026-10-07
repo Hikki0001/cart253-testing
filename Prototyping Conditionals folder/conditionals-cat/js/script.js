@@ -33,7 +33,7 @@ let box = {
         g: 225, 
         b: 205
     }
-}
+};
 
 /**
  * the cat and when its drawn when the box is open
@@ -47,16 +47,58 @@ let cat = {
      * for showing the death of the cat :(
      */
     deadTint: 110
-}
+};
 
+/**
+ * the 50/50 for the expirement 
+ */
+let experiment = {
+    /**
+     * has the box been opened yet or not
+     */
+    decided: false,
+    isOpen: false,
+    /**
+     * both true and false
+     */
+    alive: undefined,
+    /**
+     * 50/50 of the cat being alive or dead
+     */
+    chanceAlive: 0.5
+};
+
+/**
+ * text on the screen
+ */
+let message = {
+    current: "The cat is alive and dead... Maybe try to click the box to see?",
+    x: 240,
+    y: 440,
+    size: 16
+};
+
+/**
+ * different dialogues
+ */
+let words = {
+    start: "The cat is alive and dead... Maybe try to click the box to see?",
+    alive: "The cat is alive!!! Press R to close the box again.",
+    dead: "The cat is dead... Press R to close the box again."
+    closed: "The box is closed. Is the cat still the same?"
+};
 
 /**
  * creating the canvas
 */
 async function setup() {
     createCanvas(canvasSize.w, canvasSize.h);
+    imageMode(CENTER);
+    textAlign(CENTER);
+    
 
-
+    backgroundImg = await loadImage("assets/images/background.png");
+    catImg = await loadImage("assets/images/cat.png");
 }
 
 
