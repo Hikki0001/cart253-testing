@@ -75,6 +75,26 @@
 
 > Hopefully it'll go well!
 
+## October 9th, 2026 
+> **Thoughts on Events and in general the class**
+
+- Straight up I'm not too proud of the work I did this week for the prototyping conditonals. I had a very busy week with other classes, and club stuff so I just couldn't get out my best best work and I know it's not that deep. 
+
+> Still I felt like I had cool Ideas I just have enough time to fully go into them the way I fully wanted to.
+
+- For the Makoto Yuki one I felt like I could of done more like don't get me wrong the idea is cool and did inspire to try to make a tomogachi of my own like this just I don't even know where I would begin with a project like that but yeah.
+
+- If there's something I need to focus on and learn from this week is how can I for one make better time management so that I can complete these prototypes in a way thats satifying to me and really I need to do more research I need to be more experimental as I feel like my previous knowledge is carrying me a bit.
+
+- I'm essentially saying that I need to get out of my comfort zone so for events hopefully I can cook something up for ideas so far... I was really inspire by my classmate Nicholas's noise terrain prototytpe but more so the movement and terrain aspects. 
+
+- Hopefully I can find a way to do something like that and even more I want to try to make a mini very small point and click horror game for the events assignment.
+
+- I know I can do these things I just have to push myself. 
+
+
+
+
 
 
 
