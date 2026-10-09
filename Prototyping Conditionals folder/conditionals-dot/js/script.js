@@ -6,14 +6,22 @@
  */
 
 "use strict";
-
+/**
+ * canvas size
+ */
 let canvasSize = {
     w: 800,
     h: 500
 };
 
+/**
+ * background color
+ */
 let background = "Rebeccapurple";
 
+/**
+ * takumi
+ */
 let takumi = {
     x: 400,
     y: 250,
@@ -27,10 +35,42 @@ let takumi = {
         cornered: [224, 108, 117],
         caught: [184, 242, 201]
     }
+    /**
+     * reminder for self:  3 states
+     */
+    state: "free"
 }
 
 /**
- * OH LOOK I DIDN'T DESCRIBE SETUP!!
+ * controls how takumi behaves 
+ */
+let rules = {
+    /**
+     * how near the mouse has to be before takumi will react
+     */
+    fleeDistance: 150, 
+    /**
+     * speed of running away
+     */
+    fleeSpeed: 0.08,
+    /**
+     * closeness to an edge to cound as cornering takumi
+     */
+    cornerMargin: 30,
+    /**
+     * for catching him 
+     */
+    catchRadius: 20,
+    /**
+     * how close to the edge of the canvas he can go
+     */
+    wallPadding: 10
+};
+
+
+
+/**
+ * sets up the canvas and loads takumi's picture
 */
 async function setup() {
     createCanvas(canvasSize.w, canvasSize.h);
