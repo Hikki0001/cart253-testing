@@ -144,3 +144,32 @@ function updateStates() {
         dialogue.current = messages.default
     }
 }
+
+/**
+ * moves takumi away from mouse
+ */
+function flee() {
+    dot.x += (dot.x - mouseX) * rules.fleeSpeed;
+    dot.y += (dot.y - mouseY) * rules.fleeSpeed;
+
+    dot.x = constrain(dot.x, rules.wallPadding, canvasSize.w = rules.wallPadding);
+    dot.y = constrain(dot.y, rules.wallPadding, canvasSize.h = rules.wallPadding);
+}
+
+/**
+ * will check if the dot is against any of the edges/corners
+ */
+function isCornered() {
+    /**
+     * even if 1 of these 4 checks is true the whole thing is true is what im saying here...
+     * rules.cornerMargin is how close to a wall counts as "against" it means
+     */
+    return dot.x < rules.cornerMargin ||
+        dot.x > canvasSize.w - rules.cornerMargin ||
+        dot.y < rules.cornerMargin ||
+        dot.y > canvasSize.h - rules.cornerMargin;
+}
+
+
+
+
