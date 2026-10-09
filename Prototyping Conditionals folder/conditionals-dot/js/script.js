@@ -25,7 +25,7 @@ let background = "Rebeccapurple";
 let takumi = {
     x: 400,
     y: 250,
-    size: 40, 
+    size: 40,
     image: undefined,
     /**
      * for states to know what state your at like when u win and click him
@@ -33,8 +33,8 @@ let takumi = {
     tints: {
         normal: undefined,
         cornered: [224, 108, 117],
-        caught: [184, 242, 201]
-    }
+        caught: [184, 242, 201],
+    },
     /**
      * reminder for self:  3 states
      */
@@ -48,7 +48,7 @@ let rules = {
     /**
      * how near the mouse has to be before takumi will react
      */
-    fleeDistance: 150, 
+    fleeDistance: 150,
     /**
      * speed of running away
      */
@@ -68,9 +68,9 @@ let rules = {
 };
 
 let messages = {
-    default: "AHHH DONT CATCH ME!"
-    fleeing: "Youre more of a chud than me!"
-    cornered: "No I DONT WANNA GO OUTSIDE!!"
+    default: "AHHH DONT CATCH ME!",
+    fleeing: "Youre more of a chud than me!",
+    cornered: "No I DONT WANNA GO OUTSIDE!!",
     caught: "You caught me..."
 };
 
@@ -79,11 +79,13 @@ let messages = {
  */
 let dialogue = {
     current: messages.default,
-    x: canvasSize.w / 2
+    x: canvasSize.w / 2,
     y: canvasSize.h - 40,
     size: 16,
     fill: 255
 };
+
+let d = dist(mouseX, mouseY, dot.x, dot.y);
 
 /**
  * sets up the canvas and loads takumi's picture
@@ -104,7 +106,41 @@ async function setup() {
 function draw() {
     updateStates();
 
-    background(background);    
+    background(background);
     drawDot();
     drawText();
+}
+
+/**
+ * for deciding the states and what to say when its in the specific state
+ */
+function updateStates() {
+    /**caught check first
+     * setting up for change the state or run again
+     */
+    if (dot.state === "caught") {
+        dialogue.current = messages.current;
+    }
+    /**
+     * another check for cornered
+     */
+    else if (isCornered() && d < rules.fleeDistance) {
+        dot.state = "cornered";
+        dialogue.current = messages.cornered;
+    }
+    /**
+     * fleeing so for when takumis not close to a wall
+     */
+    else if (d < rules.fleeDistance) {
+        dot.states = "free";
+        dialogue.current = messages.fleeing;
+        flee();
+    }
+    else {
+        /**
+         * nothing is happening so will go back to default text
+         */
+        dot.state = isCornered() ? "cornered" : "free;"
+        dialogue.current = messages.default
+    }
 }
