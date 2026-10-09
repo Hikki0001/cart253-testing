@@ -1,17 +1,43 @@
 /**
- * Title of Project
- * Author Name
+ * Chase the Takumi
+ * Matteo Edmonds-Tiano
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * Chase the Takumi with the cursor and click him!
  */
 
 "use strict";
 
+let canvasSize = {
+    w: 800,
+    h: 500
+};
+
+let background = "Rebeccapurple";
+
+let takumi = {
+    x: 400,
+    y: 250,
+    size: 40, 
+    image: undefined,
+    /**
+     * for states to know what state your at like when u win and click him
+     */
+    tints: {
+        normal: undefined,
+        cornered: [224, 108, 117],
+        caught: [184, 242, 201]
+    }
+}
+
 /**
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
-function setup() {
+async function setup() {
+    createCanvas(canvasSize.w, canvasSize.h);
+    imageMode(CENTER);
+    textAlign(CENTER);
+
+    takumi.image = await loadImage("assets/images/takumi.jpg");
 
 }
 
