@@ -17,7 +17,7 @@ let canvasSize = {
 /**
  * background color
  */
-let background = "Rebeccapurple";
+let backgroundColor = "rebeccapurple";
 
 /**
  * takumi
@@ -25,7 +25,7 @@ let background = "Rebeccapurple";
 let takumi = {
     x: 400,
     y: 250,
-    size: 40,
+    size: 80,
     image: undefined,
     /**
      * for states to know what state your at like when u win and click him
@@ -71,7 +71,7 @@ let messages = {
     default: "AHHH DONT CATCH ME!",
     fleeing: "Youre more of a chud than me!",
     cornered: "No I DONT WANNA GO OUTSIDE!!",
-    caught: "You caught me..."
+    caught: "You caught me... I CANT BE A LOSER ANYMORE!!"
 };
 
 /**
@@ -84,8 +84,6 @@ let dialogue = {
     size: 16,
     fill: 255
 };
-
-let d = dist(mouseX, mouseY, dot.x, dot.y);
 
 /**
  * sets up the canvas and loads takumi's picture
@@ -106,7 +104,7 @@ async function setup() {
 function draw() {
     updateStates();
 
-    background(background);
+    background(backgroundColor);
     drawTakumi();
     drawText();
 }
@@ -115,11 +113,13 @@ function draw() {
  * for deciding the states and what to say when its in the specific state
  */
 function updateStates() {
+
+    let d = dist(mouseX, mouseY, takumi.x, takumi.y);
     /**caught check first
      * setting up for change the state or run again
      */
     if (takumi.state === "caught") {
-        dialogue.current = messages.current;
+        dialogue.current = messages.caught;
     }
     /**
      * another check for cornered
@@ -132,7 +132,7 @@ function updateStates() {
      * fleeing so for when takumis not close to a wall
      */
     else if (d < rules.fleeDistance) {
-        takumi.states = "free";
+        takumi.state = "free";
         dialogue.current = messages.fleeing;
         flee();
     }
@@ -140,7 +140,7 @@ function updateStates() {
         /**
          * nothing is happening so will go back to default text
          */
-        takumi.state = isCornered() ? "cornered" : "free;"
+        takumi.state = isCornered() ? "cornered" : "free";
         dialogue.current = messages.default
     }
 }
@@ -152,8 +152,8 @@ function flee() {
     takumi.x += (takumi.x - mouseX) * rules.fleeSpeed;
     takumi.y += (takumi.y - mouseY) * rules.fleeSpeed;
 
-    takumi.x = constrain(takumi.x, rules.wallPadding, canvasSize.w = rules.wallPadding);
-    takumi.y = constrain(takumi.y, rules.wallPadding, canvasSize.h = rules.wallPadding);
+    takumi.x = constrain(takumi.x, rules.wallPadding, canvasSize.w - rules.wallPadding);
+    takumi.y = constrain(takumi.y, rules.wallPadding, canvasSize.h - rules.wallPadding);
 }
 
 /**
@@ -169,19 +169,38 @@ function isCornered() {
         takumi.y < rules.cornerMargin ||
         takumi.y > canvasSize.h - rules.cornerMargin;
 }
-
+/**
+ * changes his color depening on the states hes in
+ */
 function drawTakumi() {
     push();
     if (takumi.state === "caught") {
         tint(takumi.tints.caught);
     }
     else if (takumi.state === "cornered") {
-        tints(takumi.tints.cornered);
+        tint(takumi.tints.cornered);
     }
     else {
         noTint();
     }
-    image(takumi.image, takumi.x)
+    image(takumi.image, takumi.x, takumi.y, takumi.size, takumi.size);
+    pop();
+}
+
+function drawText() {
+    push();
+    noStroke();
+    fill(dialogue.fill);
+    textSize(dialogue.size);
+    text(dialogue.current, dialogue.x, dialogue.y);
+    pop();
+}
+
+function mousePressed() {
+    let d = dist(mouseX, mouseY, takumi.x, takumi.y);
+    if (d < rules.catchRadius && isCornered()) {
+        takumi.state = "caught";
+    }
 }
 
 
