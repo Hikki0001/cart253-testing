@@ -107,7 +107,7 @@ function draw() {
     updateStates();
 
     background(background);
-    drawDot();
+    drawTakumi();
     drawText();
 }
 
@@ -118,21 +118,21 @@ function updateStates() {
     /**caught check first
      * setting up for change the state or run again
      */
-    if (dot.state === "caught") {
+    if (takumi.state === "caught") {
         dialogue.current = messages.current;
     }
     /**
      * another check for cornered
      */
     else if (isCornered() && d < rules.fleeDistance) {
-        dot.state = "cornered";
+        takumi.state = "cornered";
         dialogue.current = messages.cornered;
     }
     /**
      * fleeing so for when takumis not close to a wall
      */
     else if (d < rules.fleeDistance) {
-        dot.states = "free";
+        takumi.states = "free";
         dialogue.current = messages.fleeing;
         flee();
     }
@@ -140,7 +140,7 @@ function updateStates() {
         /**
          * nothing is happening so will go back to default text
          */
-        dot.state = isCornered() ? "cornered" : "free;"
+        takumi.state = isCornered() ? "cornered" : "free;"
         dialogue.current = messages.default
     }
 }
@@ -149,11 +149,11 @@ function updateStates() {
  * moves takumi away from mouse
  */
 function flee() {
-    dot.x += (dot.x - mouseX) * rules.fleeSpeed;
-    dot.y += (dot.y - mouseY) * rules.fleeSpeed;
+    takumi.x += (takumi.x - mouseX) * rules.fleeSpeed;
+    takumi.y += (takumi.y - mouseY) * rules.fleeSpeed;
 
-    dot.x = constrain(dot.x, rules.wallPadding, canvasSize.w = rules.wallPadding);
-    dot.y = constrain(dot.y, rules.wallPadding, canvasSize.h = rules.wallPadding);
+    takumi.x = constrain(takumi.x, rules.wallPadding, canvasSize.w = rules.wallPadding);
+    takumi.y = constrain(takumi.y, rules.wallPadding, canvasSize.h = rules.wallPadding);
 }
 
 /**
@@ -164,10 +164,24 @@ function isCornered() {
      * even if 1 of these 4 checks is true the whole thing is true is what im saying here...
      * rules.cornerMargin is how close to a wall counts as "against" it means
      */
-    return dot.x < rules.cornerMargin ||
-        dot.x > canvasSize.w - rules.cornerMargin ||
-        dot.y < rules.cornerMargin ||
-        dot.y > canvasSize.h - rules.cornerMargin;
+    return takumi.x < rules.cornerMargin ||
+        takumi.x > canvasSize.w - rules.cornerMargin ||
+        takumi.y < rules.cornerMargin ||
+        takumi.y > canvasSize.h - rules.cornerMargin;
+}
+
+function drawTakumi() {
+    push();
+    if (takumi.state === "caught") {
+        tint(takumi.tints.caught);
+    }
+    else if (takumi.state === "cornered") {
+        tints(takumi.tints.cornered);
+    }
+    else {
+        noTint();
+    }
+    image(takumi.image, takumi.x)
 }
 
 
