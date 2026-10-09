@@ -67,7 +67,23 @@ let rules = {
     wallPadding: 10
 };
 
+let messages = {
+    default: "AHHH DONT CATCH ME!"
+    fleeing: "Youre more of a chud than me!"
+    cornered: "No I DONT WANNA GO OUTSIDE!!"
+    caught: "You caught me..."
+};
 
+/**
+ * dialogues value and where its placed
+ */
+let dialogue = {
+    current: messages.default,
+    x: canvasSize.w / 2
+    y: canvasSize.h - 40,
+    size: 16,
+    fill: 255
+};
 
 /**
  * sets up the canvas and loads takumi's picture
@@ -83,8 +99,12 @@ async function setup() {
 
 
 /**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
+ * draws all the functions
 */
 function draw() {
+    updateStates();
 
+    background(background);    
+    drawDot();
+    drawText();
 }
