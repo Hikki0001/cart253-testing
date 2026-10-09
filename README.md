@@ -88,6 +88,12 @@ This is a website that is designed to show the progess of learning javascript, p
 
 ![Cat](./images/cat.png)
 
+> [ChasingTakumi](https://hikki0001.github.io/cart253-testing/Prototyping%20Conditionals%20folder/conditionals-dot/)
+
+> [Code](https://github.com/Hikki0001/cart253-testing/blob/main/Prototyping%20Conditionals%20folder/conditionals-dot/js/script.js)
+
+![Takumi](./images/takumi.png)
+
 ## Attribution
 
 **This is where we put code, assets, and any other elements that was from other sources(I'm keeping the p5js line for now.)**
