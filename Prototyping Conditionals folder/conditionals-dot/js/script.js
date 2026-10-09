@@ -67,6 +67,9 @@ let rules = {
     wallPadding: 10
 };
 
+/**
+ * all the lines he can say depending on his states
+ */
 let messages = {
     default: "AHHH DONT CATCH ME!",
     fleeing: "Youre more of a chud than me!",
@@ -187,6 +190,9 @@ function drawTakumi() {
     pop();
 }
 
+/**
+ * draws the text
+ */
 function drawText() {
     push();
     noStroke();
@@ -196,6 +202,9 @@ function drawText() {
     pop();
 }
 
+/**
+ * adds the mouse clicking takumi functionality and that when he is clicked his state turns into the caught state
+ */
 function mousePressed() {
     let d = dist(mouseX, mouseY, takumi.x, takumi.y);
     if (d < rules.catchRadius && isCornered()) {
