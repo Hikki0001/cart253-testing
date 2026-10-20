@@ -16,25 +16,13 @@ let canvasSize = {
     h: 600
 }
 
-/**
- * shaking of screen when jumpscared
+/** 
+ * both states for title and jumpscare
  */
-let shakeAmount = 10;
-
-/**
- * darkness of screen when mouse isn't interacting
- */
-let maxDarkness = 180;
-/**
- * max and min of volume
- * min is like for darkness when mouse isn't interacting
- */
-let minVolume = 0.3;
-let maxVolume = 0.8;
-
-
-
-
+let game = {
+    started: false,
+    scared: false
+};
 /**
  * so that it knows theres multiple rooms
  */
@@ -44,34 +32,73 @@ let rooms = {
     current: 0,
     enteredAt: 0
 };
-/**
- * the ambience is gonna be the music in the background
- * the scream is jumpscare noise 
- * and the scare is jumpscare png
- */
-let ambience, scream, scare;
-/**
- * tells which room where currently at
- */
 
 /**
- * knows if we started the game or not so false because we dont want it to 
- * automatically start
+ * for jumpscare and shaking
  */
-let started = false;
-/**
- * same with started just want it to only play at a certain point
- */
-let jumpscare = false;
-/**
- * for millis
- */
-
+let scare = {
+    image: undefined,
+    shake: 10
+};
 
 /**
- * for preloading all the pngs/mp3s
-*/
-function preload() {
+ * sound effetcs
+ */
+let sounds = {
+    ambience: undefined,
+    scream: undefined
+};
+
+/**
+ * darken the screen depending on mouse positon
+ */
+let darkness = {
+    /**
+     * for when mouse is far from center
+     */
+    maxAlpha: 180,
+    /**
+     * distance that counts as fully dark
+     */
+    maxDist: canvasSize.w / 2,
+    /**
+     * for volume control for when mouse position
+     */
+    minVolume: 0.3,
+    maxVolume: 0.7
+};
+
+/**
+ * time based things all in millis
+ */
+let timers = {
+    /**
+     * will flicker after this time has passed
+     */
+    flickerAfter: 5000,
+    /**
+     * frames between the flickers
+     */
+    flickerCycle: 25,
+    /**
+     * how long the flickers last
+     */
+    flickerLength: 3,
+    /**
+     * if u stay in the last room for this time the jumpscare should play
+     */
+    finalRoomTimeout: 8000
+
+}
+
+/**
+ * forgot i couldnt preload lol
+ * for preloading all the pngs/mp3s and 
+ * sets up the canvas, text alignment, and event listener
+ */
+async function setup() {
+    createCanvas(canvas_w, canvas_h);
+    textAlign(CENTER, CENTER)
     room[0] = loadImage('assets/images/room1.png');
     room[1] = loadImage('assets/images/room2.png');
     room[2] = loadImage('assets/images/room3.png');
@@ -82,18 +109,10 @@ function preload() {
      * im calling it scream to better remember but I want it to be a vine boom!
      */
     scream = loadSound('assets/sounds/scream.mp3');
-}
-
-/**
- * sets up the canvas, text alignment, and event listener
- */
-function setup() {
-    createCanvas(canvas_w, canvas_h);
-    textAlign(CENTER, CENTER)
     /**
-     * adding this so that the browser will reaction when the player isnt 
-     * interacting with the screen
-     */
+    * adding this so that the browser will reaction when the player isnt 
+    * interacting with the screen
+    */
     document.addEventListener('visibilitychange', onVisibility);
 }
 
