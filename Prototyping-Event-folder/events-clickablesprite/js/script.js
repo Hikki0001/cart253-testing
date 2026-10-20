@@ -58,6 +58,92 @@ let sumika = {
 };
 
 /**
+ * for cropping her sprite
+ */
+let crop = {
+    /**
+     * what I want to keep from her sprite
+     */
+    sw: undefined,
+    sh: undefined,
+    /**
+     * the height of the sprite on screen 
+     */
+    dh: undefined,
+    /**
+     * center Y
+     */
+    y: undefined
+};
+
+/**
+ * final image after spam clicking
+ */
+let ending = {
+    image: undefined,
+    x: canvasSize.w / 2,
+    y: canvasSize.h / 2,
+    w: 800,
+    h: 469
+};
+
+/**
+ * for controlling sumiksa state changes
+ */
+let rules = {
+    /**
+     * how many hits to make her mad
+     */
+    hitsToAngery: 3,
+    ouchDuration: 400,
+    angryDuration: 3000,
+    /**
+     * spam window to get ending
+     */
+    spamClicks: 4,
+    spamWindow: 1500,
+    /**
+     * how far a click can count from her sprite i mean u should just click her but still gotta calculate this
+     */
+    clickZone: 150,
+};
+
+/**
+ * so i can track how the players interacting or clicking sumika
+ */
+let tracker = {
+    hits: 0,
+    ouchUntil: 0,
+    anrgyUntil: 0,
+    /**
+     * a monitor of recent clicks
+     */
+    clickTimes: [],
+    over: false
+};
+
+/**
+ * the text and where its placed
+ */
+let messages = {
+    outlineWeight: 1,
+    ouch: {
+        text: "OWEE!",
+        x: 200,
+        y: 120,
+        size: 20
+    },
+    angry: {
+        text: "CLICK 4 TIMES FOR SOMETHING!",
+        x: canvasSize.w / 2,
+        y: 60,
+        size: 20
+    }
+}
+
+
+
+/**
  * For setting up the Canvas and loading images and text
 */
 async function setup() {
@@ -73,8 +159,23 @@ async function setup() {
 
 
 /**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
+ * draws all the functions 
 */
 function draw() {
+    /**
+     * for the waiting until the last image has loaded
+     */
+    if (!ending.image) return;
+
+    background(colors.background);
+
+    if (sumika.state === "over") {
+        drawEnding();
+    }
+    else {
+        drawSumika();
+        drawText();
+    }
+
 
 }
