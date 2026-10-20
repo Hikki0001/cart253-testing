@@ -54,19 +54,45 @@ function preload(){
     scream = loadSound('assets/sounds/scream.mp3');
 }
 
-
-
-
-
-
+/**
+ * sets up the canvas, text alignment, and event listener
+ */
 function setup() {
+    createCanvas(800, 600);
+    textAlign(CENTER, CENTER)
+    /**
+     * adding this so that the browser will reaction when the player isnt 
+     * interacting with the screen
+     */
+    document.addEventListener('visibilitychange', onVisibility);
 
 }
 
 
 /**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
+ * Draws all the functions
 */
 function draw() {
+    background(0);
 
+    /**
+     * if the started hasnt happened stays at titlescreen
+     */
+    if (!started) {
+        drawTitleScreen();
+        return;
+    }
+
+    /**
+     * if you meet the conditions for the jumpscare i.e reaching the final room
+     * you get jumpscared
+     */
+    if (jumpscare) {
+        drawJumpscare();
+        return;
+    }
+
+    drawRoom();
+    applyMouseDarkness();
+    applyRoomTimer();
 }
