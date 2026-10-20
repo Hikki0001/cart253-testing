@@ -107,16 +107,16 @@ let live = {
 async function setup() {
     createCanvas(canvasSize.w, canvasSize.h);
     textAlign(CENTER, CENTER)
-    rooms[0] = loadImage('assets/images/room1.png');
-    rooms[1] = loadImage('assets/images/room2.png');
-    rooms[2] = loadImage('assets/images/room3.png');
-    rooms[3] = loadImage('assets/images/room4.png');
-    scare = loadImage('assets/images/scare.png');
-    ambience = loadSound('assets/sounds/ambience.mp3');
+    rooms.images[0] = await loadImage('assets/images/room1.png');
+    rooms.images[1] = await loadImage('assets/images/room2.png');
+    rooms.images[2] = await loadImage('assets/images/room3.png');
+    rooms.images[3] = await loadImage('assets/images/room4.png');
+    scare.image = await loadImage('assets/images/scare.png');
+    sounds.ambience = await loadSound('assets/sounds/ambience.mp3');
     /**
      * im calling it scream to better remember but I want it to be a vine boom!
      */
-    scream = loadSound('assets/sounds/scream.mp3');
+    sounds.scream = await loadSound('assets/sounds/scream.mp3');
     /**
     * adding this so that the browser will reaction when the player isnt 
     * interacting with the screen
@@ -235,7 +235,7 @@ function mousePressed() {
      */
     if (!game.started) {
         game.started = true;
-        room.enteredAt = millis();
+        rooms.enteredAt = millis();
         sounds.ambience.loop();
         return;
     }
@@ -249,7 +249,7 @@ function mousePressed() {
  */
 function nextRoom() {
     rooms.current++;
-    rooms.enteredAt
+    rooms.enteredAt = millis();
     if (rooms.current >= rooms.count) {
         /**
          * keeps the draw() from going or reading past the array
@@ -281,6 +281,7 @@ function onVisibility() {
  */
 function triggerJumpscare() {
     game.scared = true;
+    image(scare.image, random(-scare.shake, scare.shake), random(-scare.shake, scare.shake));
     sounds.ambience.stop();
     sounds.scream.play();
 }
