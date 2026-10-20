@@ -14,7 +14,7 @@
 let rooms = [];
 /**
  * the ambience is gonna be the music in the background
- * the scream is jumpscare noise
+ * the scream is jumpscare noise 
  * and the scare is jumpscare png
  */
 let ambience, scream, scare;
@@ -39,8 +39,26 @@ let roomEnteredAt = 0
 
 
 /**
- * OH LOOK I DIDN'T DESCRIBE SETUP!!
+ * for preloading all the pngs/mp3s
 */
+function preload(){
+    room[0] = loadImage('assets/images/room1.png');
+    room[1] = loadImage('assets/images/room2.png');
+    room[2] = loadImage('assets/images/room3.png');
+    room[3] = loadImage('assets/images/room4.png');
+    scare = loadImage('assets/images/scare.png');
+    ambience = loadSound('assets/sounds/ambience.mp3');
+    /**
+     * im calling it scream to better remember but I want it to be a vine boom!
+     */
+    scream = loadSound('assets/sounds/scream.mp3');
+}
+
+
+
+
+
+
 function setup() {
 
 }
