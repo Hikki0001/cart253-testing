@@ -9,6 +9,31 @@
 "use strict";
 
 /**
+ * Canvas size
+ */
+const canvas_w = 800;
+const canvas_h = 600;
+
+/**
+ * shaking of screen when jumpscared
+ */
+let shakeAmount = 10;
+
+/**
+ * darkness of screen when mouse isn't interacting
+ */
+let maxDarkness = 180;
+/**
+ * max and min of volume
+ * min is like for darkness when mouse isn't interacting
+ */
+let minVolume = 0.3;
+let maxVolume = 0.8;
+
+
+
+
+/**
  * so that it knows theres multiple rooms
  */
 let rooms = [];
@@ -36,12 +61,10 @@ let jumpscare = false;
  */
 let roomEnteredAt = 0
 
-
-
 /**
  * for preloading all the pngs/mp3s
 */
-function preload(){
+function preload() {
     room[0] = loadImage('assets/images/room1.png');
     room[1] = loadImage('assets/images/room2.png');
     room[2] = loadImage('assets/images/room3.png');
@@ -58,14 +81,13 @@ function preload(){
  * sets up the canvas, text alignment, and event listener
  */
 function setup() {
-    createCanvas(800, 600);
+    createCanvas(canvas_w, canvas_h);
     textAlign(CENTER, CENTER)
     /**
      * adding this so that the browser will reaction when the player isnt 
      * interacting with the screen
      */
     document.addEventListener('visibilitychange', onVisibility);
-
 }
 
 
@@ -95,4 +117,16 @@ function draw() {
     drawRoom();
     applyMouseDarkness();
     applyRoomTimer();
+}
+
+/**
+ * title screen with basic text thats placed in the middle of the screen
+ */
+function drawTitleScreen() {
+    fill(255);
+    text('Click To Play', width / 2, height / 2);
+}
+
+function drawJumpscare() {
+    image(scare, random(-shakeAmount, shakeAmount), random(-shakeAmount, shakeAmount));
 }
