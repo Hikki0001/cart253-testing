@@ -124,7 +124,6 @@ async function setup() {
     document.addEventListener('visibilitychange', onVisibility);
 }
 
-
 /**
  * Draws all the functions
 */
@@ -152,7 +151,6 @@ function draw() {
     applyMouseDarkness();
     applyRoomTimer();
 }
-
 /**
  * for refreshing the values that change every frame
  */
@@ -161,8 +159,6 @@ function updateLive() {
     live.timeInRoom = millis() - rooms.enteredAt;
     live.inFinalRoom = rooms.current === rooms.count - 1;
 }
-
-
 
 /**
  * title screen with basic text thats placed in the middle of the screen
@@ -184,9 +180,29 @@ function drawJumpscare() {
 }
 
 /**
- * draws the different rooms
+ * draws the different rooms and the one youre currently in
  */
 function drawRoom() {
-    image(rooms[currentRoom], 0, 0, width, height);
+    push();
+    image(rooms.images[currentRoom], 0, 0, width, height);
+    pop();
+}
+
+/**
+ * darkness depending on mouse position
+ */
+function applyMouseDarkness() {
+    push();
+    noStroke();
+    /**
+     * the fill/ darkness changes depending on the mouses distance from the maps range
+     */
+    fill(0, map(live.mouseDist, 0, darkness.maxDist, 0, darkness.maxAlpha, true));
+    rect(0, 0, width, height);
+    pop();
+    /**
+     * same for the fill just with the noise
+     */
+    sounds.ambience.setVolume(map(live.mouseDist, 0, darkness.maxDist, darkness.maxVolume, darkness.minVolume, true));
 }
 
