@@ -227,6 +227,40 @@ function applyRoomTimer() {
 }
 
 /**
+ * m,ouse clicking to start the game and move from room to room
+ */
+function mousePressed() {
+    /**
+     * starts the game and plays music
+     */
+    if (!game.started) {
+        game.started = true;
+        room.enteredAt = millis();
+        sounds.ambience.loop();
+        return;
+    }
+    if (game.scared) return;
+    nextRoom();
+}
+
+/**
+ * moves to the next room or it will trigger the jumpscare after the last room is discovered
+ */
+function nextRoom() {
+    rooms.current++;
+    rooms.enteredAt
+    if (rooms.current >= rooms.count) {
+        /**
+         * keeps the draw() from going or reading past the array
+         */
+        rooms.current = rooms.count - 1;
+        triggerJumpscare();
+    }
+}
+
+
+
+/**
  * plays the jumpscare and stops ambience music
  */
 function triggerJumpscare() {
