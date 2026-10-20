@@ -84,7 +84,7 @@ let ending = {
     x: canvasSize.w / 2,
     y: canvasSize.h / 2,
     w: 800,
-    h: 469
+    h: 600
 };
 
 /**
