@@ -21,7 +21,8 @@ let canvasSize = {
  */
 let game = {
     started: false,
-    scared: false
+    scared: false,
+    needsAmbience: false
 };
 /**
  * so that it knows theres multiple rooms
@@ -65,7 +66,7 @@ let darkness = {
      * for volume control for when mouse position
      */
     minVolume: 0.3,
-    maxVolume: 0.7
+    maxVolume: 1
 };
 
 /**
@@ -175,7 +176,11 @@ function drawTitleScreen() {
  */
 function drawJumpscare() {
     push();
-    image(scare.image, random(-scare.shake, scare.shake), random(-scare.shake, scare.shake));
+    imageMode(CENTER);
+    image(scare.image, width / 2 + random(-scare.shake, scare.shake), height / 2 + random(-scare.shake, scare.shake),
+        width + scare.shake * 2,
+        height + scare.shake * 2
+    );
     pop();
 }
 
@@ -184,7 +189,7 @@ function drawJumpscare() {
  */
 function drawRoom() {
     push();
-    image(rooms.images[currentRoom], 0, 0, width, height);
+    image(rooms.images[rooms.current], 0, 0, width, height);
     pop();
 }
 
@@ -203,7 +208,7 @@ function applyMouseDarkness() {
     /**
      * same for the fill just with the noise
      */
-    sounds.ambience.setVolume(map(live.mouseDist, 0, darkness.maxDist, darkness.maxVolume, darkness.minVolume, true));
+    sounds.ambience.amp(map(live.mouseDist, 0, darkness.maxDist, darkness.maxVolume, darkness.minVolume, true));
 }
 
 /**
@@ -229,17 +234,27 @@ function applyRoomTimer() {
 /**
  * m,ouse clicking to start the game and move from room to room
  */
-function mousePressed() {
+async function mousePressed() {
     /**
      * starts the game and plays music
      */
     if (!game.started) {
         game.started = true;
         rooms.enteredAt = millis();
-        sounds.ambience.loop();
+        await userStartAudio();
+        sounds.ambience.play();
         return;
     }
     if (game.scared) return;
+
+    if (game.needsAmbience) {
+        game.needsAmbience = false;
+        await userStartAudio();
+        sounds.ambience.play();
+    }
+
+
+
     nextRoom();
 }
 
@@ -266,22 +281,19 @@ function nextRoom() {
 function onVisibility() {
     if (!game.started || game.scared) return;
     if (document.hidden) {
-        sounds.ambience.pause();
+        sounds.ambience.stop();
     } else {
-        sounds.ambience.loop();
+        game.needsAmbience = true;
         rooms.current = min(rooms.current + 1, rooms.count - 1);
         rooms.enteredAt = millis();
     }
 }
-
-
 
 /**
  * plays the jumpscare and stops ambience music
  */
 function triggerJumpscare() {
     game.scared = true;
-    image(scare.image, random(-scare.shake, scare.shake), random(-scare.shake, scare.shake));
     sounds.ambience.stop();
     sounds.scream.play();
 }
