@@ -206,3 +206,32 @@ function applyMouseDarkness() {
     sounds.ambience.setVolume(map(live.mouseDist, 0, darkness.maxDist, darkness.maxVolume, darkness.minVolume, true));
 }
 
+/**
+ * setting up the time passing, so that when u leave time passing for too long u are punished
+ */
+function applyRoomTimer() {
+    if (live.timeInRoom > timers.flickerAfter && frameCount % timers.flickerCycle < timers.flickerLength) {
+        push();
+        noStroke();
+        fill(0);
+        rect(0, 0, width, height);
+        pop();
+    }
+
+    /**
+     * for triggering the jumpscare depending on time
+     */
+    if (live.inFinalRoom && live.timeInRoom > timers.finalRoomTimeout) {
+        triggerJumpscare();
+    }
+}
+
+/**
+ * plays the jumpscare and stops ambience music
+ */
+function triggerJumpscare() {
+    game.scared = true;
+    sounds.ambience.stop();
+    sounds.scream.play();
+}
+
