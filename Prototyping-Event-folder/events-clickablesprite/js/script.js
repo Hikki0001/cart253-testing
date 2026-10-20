@@ -296,6 +296,31 @@ function mousePressed() {
         return now - time < rules.spamWindow;
     });
 
+    /**
+     * for spamming so u can get the final ending
+     */
+    if (tracker.clickTimes.length >= rules.spamClicks) {
+        tracker.over = true;
+        return;
+    }
 
+    /**
+     * to stop sumika from saying owee when shes mad
+     */
+    if (now < tracker.anrgyUntil) return;
+
+    /**
+     * for hitting sumika
+     */
+    tracker.hits += 1;
+    tracker.ouchUntil = now + rules.ouchDuration;
+
+    /**
+     * to make sumika get mad after 4 clicks
+     */
+    if (tracker.hits >= rules.hitsToAnger) {
+        tracker.angryUntil = now + rules.angryDuration;
+        tracker.hits = 0;
+    }
 }
 
