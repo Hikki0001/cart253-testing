@@ -88,8 +88,16 @@ let timers = {
      * if u stay in the last room for this time the jumpscare should play
      */
     finalRoomTimeout: 8000
+};
 
-}
+/**
+ * values that get recalculated every frame
+ */
+let live = {
+    mouseDist: 0,
+    timeInRoom: 0,
+    inFinalRoom: false
+};
 
 /**
  * forgot i couldnt preload lol
@@ -126,7 +134,7 @@ function draw() {
     /**
      * if the started hasnt happened stays at titlescreen
      */
-    if (!started) {
+    if (!game.started) {
         drawTitleScreen();
         return;
     }
@@ -135,29 +143,44 @@ function draw() {
      * if you meet the conditions for the jumpscare i.e reaching the final room
      * you get jumpscared
      */
-    if (jumpscare) {
+    if (game.scared) {
         drawJumpscare();
         return;
     }
-
+    updateLive();
     drawRoom();
     applyMouseDarkness();
     applyRoomTimer();
 }
 
 /**
+ * for refreshing the values that change every frame
+ */
+function updateLive() {
+    live.mouseDist = dist(mouseX, mouseY, width / 2, height / 2);
+    live.timeInRoom = millis() - rooms.enteredAt;
+    live.inFinalRoom = rooms.current === rooms.count - 1;
+}
+
+
+
+/**
  * title screen with basic text thats placed in the middle of the screen
  */
 function drawTitleScreen() {
+    push();
     fill(255);
     text('Click To Play', width / 2, height / 2);
+    pop();
 }
 
 /**
  * drawing the jumscare with random shaking on the screen
  */
 function drawJumpscare() {
-    image(scare, random(-shakeAmount, shakeAmount), random(-shakeAmount, shakeAmount));
+    push();
+    image(scare.image, random(-scare.shake, scare.shake), random(-scare.shake, scare.shake));
+    pop();
 }
 
 /**
@@ -167,21 +190,3 @@ function drawRoom() {
     image(rooms[currentRoom], 0, 0, width, height);
 }
 
-/**
- * mouse position affects the darkness of the screen
- */
-function applyMouseDarkness() {
-    /**
-     * how far from the center counts as fully dark
-     */
-    let maxDist = width / 2;
-
-    let d = dist(mouseX, mouseY, width / 2, height / 2);
-
-    noStroke();
-    /**
-     * trying map to have the mouse react in a range
-     */
-    fill(0, map(d, 0, maxDist, 0, maxDarkness, true));
-    rect
-}
