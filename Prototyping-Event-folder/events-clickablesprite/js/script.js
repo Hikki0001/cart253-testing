@@ -273,3 +273,29 @@ function drawText() {
     text(message.text, message.x, message.y);
     pop();
 }
+/**
+ * depending on the clicks sumikas state will change
+ */
+function mousePressed() {
+    if (tracker.over) return;
+
+    /**
+     * only counmds clicks on sumika
+     */
+    if (abs(mouseX - sumika.x) > rules.clickZone) return;
+
+    let now = millis();
+    /**
+     * makes it so hat only the recent clicks count as to not have ghost clicks if u get what i mean lol
+     */
+    tracker.clickTimes.push(now);
+    /**
+     * filters the late clicks
+     */
+    tracker.clickTimes = tracker.clickTimes.filter(function (time) {
+        return now - time < rules.spamWindow;
+    });
+
+
+}
+
