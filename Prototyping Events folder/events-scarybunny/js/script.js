@@ -2,8 +2,8 @@
  * Scary Bunny
  * Matteo Edmonds-Tiano
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * A small little horror game
+ * keep walking and you might meet someone...
  */
 
 "use strict";
@@ -247,14 +247,14 @@ async function mousePressed() {
     }
     if (game.scared) return;
 
+    /**
+     * for when u tab out and click again to resume the ambience
+     */
     if (game.needsAmbience) {
         game.needsAmbience = false;
         await userStartAudio();
         sounds.ambience.play();
     }
-
-
-
     nextRoom();
 }
 
