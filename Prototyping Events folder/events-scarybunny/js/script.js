@@ -105,12 +105,12 @@ let live = {
  * sets up the canvas, text alignment, and event listener
  */
 async function setup() {
-    createCanvas(canvas_w, canvas_h);
+    createCanvas(canvasSize.w, canvasSize.h);
     textAlign(CENTER, CENTER)
-    room[0] = loadImage('assets/images/room1.png');
-    room[1] = loadImage('assets/images/room2.png');
-    room[2] = loadImage('assets/images/room3.png');
-    room[3] = loadImage('assets/images/room4.png');
+    rooms[0] = loadImage('assets/images/room1.png');
+    rooms[1] = loadImage('assets/images/room2.png');
+    rooms[2] = loadImage('assets/images/room3.png');
+    rooms[3] = loadImage('assets/images/room4.png');
     scare = loadImage('assets/images/scare.png');
     ambience = loadSound('assets/sounds/ambience.mp3');
     /**
@@ -243,6 +243,7 @@ function mousePressed() {
     nextRoom();
 }
 
+
 /**
  * moves to the next room or it will trigger the jumpscare after the last room is discovered
  */
@@ -255,6 +256,21 @@ function nextRoom() {
          */
         rooms.current = rooms.count - 1;
         triggerJumpscare();
+    }
+}
+
+/**
+ * 
+ * when u leave the tab the screen will change
+ */
+function onVisibility() {
+    if (!game.started || game.scared) return;
+    if (document.hidden) {
+        sounds.ambience.pause();
+    } else {
+        sounds.ambience.loop();
+        rooms.current = min(rooms.current + 1, rooms.count - 1);
+        rooms.enteredAt = millis();
     }
 }
 
