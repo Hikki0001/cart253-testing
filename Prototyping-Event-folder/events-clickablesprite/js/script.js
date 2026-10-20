@@ -318,9 +318,21 @@ function mousePressed() {
     /**
      * to make sumika get mad after 4 clicks
      */
-    if (tracker.hits >= rules.hitsToAnger) {
+    if (tracker.hits >= rules.hitsToAngry) {
         tracker.angryUntil = now + rules.angryDuration;
         tracker.hits = 0;
+    }
+}
+/**
+ * for restarting it
+ */
+function keyPressed() {
+    if (key === "r" || key === "R") {
+        tracker.over = false;
+        tracker.hits = 0;
+        tracker.clickTimes = [];
+        tracker.ouchUntil = 0;
+        tracker.angryUntil = 0;
     }
 }
 
