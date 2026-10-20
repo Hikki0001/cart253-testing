@@ -94,6 +94,18 @@ This is a website that is designed to show the progess of learning javascript, p
 
 ![Takumi](./images/takumi.png)
 
+---------
+
+## [Prototypes Events Journal](./journal.md)
+
+### Prototype Events assignment 3
+
+> [ScaryBunny](https://hikki0001.github.io/cart253-testing/Prototyping-Event-folder/events-scarybunny/)
+
+> [Code](https://github.com/Hikki0001/cart253-testing/blob/main/Prototyping-Event-folder/events-scarybunny/js/script.js)
+
+![ScaryBunny](./images/scarybunny.png)
+
 ## Attribution
 
 **This is where we put code, assets, and any other elements that was from other sources(I'm keeping the p5js line for now.)**
