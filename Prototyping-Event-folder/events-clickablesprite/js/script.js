@@ -167,6 +167,8 @@ function draw() {
      */
     if (!ending.image) return;
 
+    updateState();
+
     background(colors.background);
 
     if (sumika.state === "over") {
@@ -177,5 +179,63 @@ function draw() {
         drawText();
     }
 
+}
 
+/**
+ * for deciding states of sumika
+ */
+function updateState() {
+    let now = millis();
+
+    if (tracker.over) {
+        sumika.state = "over";
+    }
+    else if (now < tracker.angryUntil) {
+        sumika.state = "angry";
+    }
+    else if (now < tracker.ouchUntil) {
+        sumika.state = "ouch";
+    }
+    else {
+        sumika.state = "normal";
+    }
+
+    /**
+     * for picking the image that matches her state 
+     */
+    if (sumika.images[sumika.state]) {
+        sumika.currentImage = sumika.images[sumika.state];
+    }
+}
+
+/**
+ * draws the top part of her and will cut her off from her stomach
+ */
+function drawSumika() {
+    let img = sumika.currentImage;
+
+    /**
+     * works with the crop numbers that are in the variables
+     */
+    /**
+     * full width
+     */
+    crop.sw = img.width;
+    /**
+     * keeping 47% of her
+     */
+    crop.sh = img.height * sumika.cropAmount;
+    /**
+     * destination height so how tall her sprite is and doesnt make her look stretch as were keeping her
+     * aspect ratio
+     */
+    crop.dh = sumika.w * (crop.sh / crop.sw);
+    /**
+     * where the cropped peice goes
+     */
+    crop.y = canvasSize.h - crop.dh / 2;
+
+    push();
+    image(img, sumika.x, crop.y, sumika.w, crop.dh, 0, 0, crop.sw, crop.sh);
+    pop();
 }
