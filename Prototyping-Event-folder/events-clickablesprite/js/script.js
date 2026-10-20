@@ -21,16 +21,16 @@ let canvasSize = {
  * background, textfill and outline
  */
 let colors = {
-    background: {
-        r: 200,
-        g: 225,
-        b: 250,
-    },
-    textFill: {
-        r: 255,
-        g: 80,
-        b: 80,
-    },
+    background: [
+        200,
+        225,
+        250,
+    ],
+    textFill: [
+        255,
+        80,
+        80,
+    ],
     textOutline: 0
 };
 
@@ -94,7 +94,7 @@ let rules = {
     /**
      * how many hits to make her mad
      */
-    hitsToAngery: 3,
+    hitsToAngry: 3,
     ouchDuration: 400,
     angryDuration: 3000,
     /**
@@ -114,7 +114,7 @@ let rules = {
 let tracker = {
     hits: 0,
     ouchUntil: 0,
-    anrgyUntil: 0,
+    angryUntil: 0,
     /**
      * a monitor of recent clicks
      */
@@ -307,7 +307,7 @@ function mousePressed() {
     /**
      * to stop sumika from saying owee when shes mad
      */
-    if (now < tracker.anrgyUntil) return;
+    if (now < tracker.angryUntil) return;
 
     /**
      * for hitting sumika
@@ -323,4 +323,6 @@ function mousePressed() {
         tracker.hits = 0;
     }
 }
+
+
 
