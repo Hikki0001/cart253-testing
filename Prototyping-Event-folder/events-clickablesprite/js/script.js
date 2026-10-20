@@ -239,3 +239,37 @@ function drawSumika() {
     image(img, sumika.x, crop.y, sumika.w, crop.dh, 0, 0, crop.sw, crop.sh);
     pop();
 }
+
+/**
+ * draws the final image 
+ */
+function drawEnding() {
+    push();
+    image(ending.image, ending.x, ending.y, ending.w, ending.h);
+    pop();
+}
+
+/**
+ * draws the text depending on sumikas states
+ */
+function drawText() {
+    let message;
+
+    if (sumika.state === "ouch") {
+        message = messages.ouch;
+    }
+    else if (sumika.state === "angry") {
+        message = messages.angry;
+    }
+    else {
+        return;
+    }
+
+    push();
+    stroke(colors.textOutline);
+    strokeWeight(messages.outlineWeight);
+    fill(colors.textFill);
+    textSize(message.size);
+    text(message.text, message.x, message.y);
+    pop();
+}
