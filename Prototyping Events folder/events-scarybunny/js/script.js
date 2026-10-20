@@ -11,8 +11,10 @@
 /**
  * Canvas size
  */
-const canvas_w = 800;
-const canvas_h = 600;
+let canvasSize = {
+    w: 800,
+    h: 600
+}
 
 /**
  * shaking of screen when jumpscared
@@ -36,7 +38,12 @@ let maxVolume = 0.8;
 /**
  * so that it knows theres multiple rooms
  */
-let rooms = [];
+let rooms = {
+    images: [],
+    count: 4,
+    current: 0,
+    enteredAt: 0
+};
 /**
  * the ambience is gonna be the music in the background
  * the scream is jumpscare noise 
@@ -46,7 +53,7 @@ let ambience, scream, scare;
 /**
  * tells which room where currently at
  */
-let currentRoom = 0;
+
 /**
  * knows if we started the game or not so false because we dont want it to 
  * automatically start
@@ -59,7 +66,7 @@ let jumpscare = false;
 /**
  * for millis
  */
-let roomEnteredAt = 0
+
 
 /**
  * for preloading all the pngs/mp3s
@@ -127,6 +134,35 @@ function drawTitleScreen() {
     text('Click To Play', width / 2, height / 2);
 }
 
+/**
+ * drawing the jumscare with random shaking on the screen
+ */
 function drawJumpscare() {
     image(scare, random(-shakeAmount, shakeAmount), random(-shakeAmount, shakeAmount));
+}
+
+/**
+ * draws the different rooms
+ */
+function drawRoom() {
+    image(rooms[currentRoom], 0, 0, width, height);
+}
+
+/**
+ * mouse position affects the darkness of the screen
+ */
+function applyMouseDarkness() {
+    /**
+     * how far from the center counts as fully dark
+     */
+    let maxDist = width / 2;
+
+    let d = dist(mouseX, mouseY, width / 2, height / 2);
+
+    noStroke();
+    /**
+     * trying map to have the mouse react in a range
+     */
+    fill(0, map(d, 0, maxDist, 0, maxDarkness, true));
+    rect
 }
