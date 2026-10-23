@@ -64,6 +64,9 @@ let layout = {
     maxH: 450
 };
 
+/**
+ * values for the text
+ */
 let textT = {
     size: 24,
     fill: 255
