@@ -118,6 +118,8 @@ This is a website that is designed to show the progess of learning javascript, p
 
 ![PetMorgana](./images/Morgana.png)
 
+---------
+
 ## Attribution
 
 **This is where we put code, assets, and any other elements that was from other sources(I'm keeping the p5js line for now.)**

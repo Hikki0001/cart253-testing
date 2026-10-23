@@ -92,6 +92,27 @@
 
 - I know I can do these things I just have to push myself. 
 
+## October 23rd, 2026 
+> **Thoughts on functions and in general the class**
+
+- It's been a while since I've written in here but for my prototypes this week I will say I am proud of them as they are mostly pretty simple but I did push myself to try new things that I learned from the lectures in the function class and used them for my events. 
+
+> Like using function parameters and map function
+
+- Overall I think I'm starting to reach a point where I can illustrate what I want to do. I don't know how to fully say it but what I mean is that If I have a simply Idea I'm confident that I can do it now.
+
+> I think the way I learn things overall is I try to make things that'll make me laugh if you couldn't tell by most of my prototypes.
+
+- For function parameters I already have ideas how I can incorporate this into my prototypes and my own personal works and stuff I don't rememeber if I mentioned it before in this journal but I love orginazation so anything in that area is always something interesting to me.
+
+> I want to try to remake a pretty popular meme going around which is the jojo ice tea one for the function prototypes.
+
+- Overall I think I'm getting the hang of it, and event's aren't complicated at least at this level were doing in this class but it made me think espcially with the mini horror game I made how can I use events to tell the player how to play the game without saying it.
+
+> I used the lighting to tell the player where to go as it would get darker on the screen depending on where your mouse is and would get lighter to tell the player where to go.
+
+- I'm somewhat happy with how I've been doing in this class and I'm trying to incorporate the things I'm learning to my own work now so I hope it keeps going well and even if I do have some hiccups it's something to learn from.
+
 
 
 
