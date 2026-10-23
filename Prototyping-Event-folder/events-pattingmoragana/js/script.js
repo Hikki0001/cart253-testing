@@ -30,8 +30,39 @@ let story: {
     }
 };
 
+/**
+ * for how long each part lasts 
+ */
+let timers = {
+    /**
+     * in ms
+     */
+    patDuration: 1000
+    /**
+     * when the praying picture plays after the explosion
+     */
+    prayAfter: 4000
+};
 
+/**
+ * secret word and the letters that were last typed
+ */
+let typing = {
+    word: "pat",
+    current: ""
+};
 
+/**
+ * when picture are drawn and the tallest they can be on the display
+ */
+let layout = {
+    x: 400,
+    y: 300,
+    /**
+     * max height
+     */
+    maxH: 450
+};
 
 /**
  * setup function loading canvas and all the images/gifs
@@ -48,8 +79,11 @@ async function setup() {
 
 
 /**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
+ * draws the functions
 */
 function draw() {
+    background(0);
+    updateStory();
+
 
 }
