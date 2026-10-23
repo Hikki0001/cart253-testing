@@ -64,6 +64,11 @@ let layout = {
     maxH: 450
 };
 
+let text = {
+    size: 24,
+    fill: 255
+}
+
 /**
  * setup function loading canvas and all the images/gifs
 */
@@ -73,7 +78,7 @@ async function setup() {
     textAlign(CENTER, CENTER);
 
     story.images.cat = await loadImage('assets/images/cat.png');
-    story.images.boom = await loadImage('assets/images/explosion.png');
+    story.images.boom = await loadImage('assets/images/explosion.gif');
     story.images.prayer = await loadImage('assets/images/capybara.png');
 }
 
@@ -116,9 +121,7 @@ function draw() {
         drawPicture(story.images.prayer);
         drawText("press R to pray for Morgana!", height - 40);
     }
-
-
-}
+};
 
 /**
  * time passing so the scene changes depending on how long ago "pat"
@@ -145,4 +148,35 @@ function updateStory() {
          */
         story.images.boom.reset();
     }
+};
+
+/**
+ * for drawing the morgana picture 
+ * using offsetY to move up and down from his normal spot 
+ * also just trying to use parameters after learning about them in function class today
+ */
+function drawCat(offsetY) {
+    drawPicture(story.images.cat, offsetY);
+};
+
+/**
+ * draws the pciture with the same porportions it was made in
+ * and at the center
+ */
+function drawPicture(img, offsetY = 0) {
+    let scale = layout.maxH / img.height;
+    image(img, layout.x, layout.y + offsetY, img.width * scale, img.height * scale);
+};
+
+/**
+ * for drawing the text on the screen
+ * message is for the words to show on the screen
+ * y is for how far on the screen its put so around the bottom
+ */
+function drawText(message, y) {
+    push();
+    fill(text.fill);
+    textSize(text.size);
+    text(message, width / 2, y)
+    pop();
 }
