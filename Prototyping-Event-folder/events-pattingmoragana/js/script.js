@@ -20,7 +20,7 @@ let canvaSize = {
  * I think story is a better name for the variabe 
  * but this variable is essientailly the photos and their states
  */
-let story: {
+let story = {
     state: "waiting",
     startedAt: 0,
     images: {
@@ -37,7 +37,7 @@ let timers = {
     /**
      * in ms
      */
-    patDuration: 1000
+    patDuration: 1000,
     /**
      * when the praying picture plays after the explosion
      */
@@ -85,5 +85,64 @@ function draw() {
     background(0);
     updateStory();
 
+    /**
+     * the base screen that shows on the boot
+     * is the pick of the cat and text saying to pet him
+     */
+    if (story.state === "waiting") {
+        drawCat(0);
+        drawText("type in 'pat' to give morgana a head pat!", height - 40);
+    }
+    /** 
+     * for the patting state when succefully typed "pat" in
+     */
+    else if (story.state === "patting") {
+        /**
+         * this is for adding a lil bob so it looks like hes getting pet
+         */
+        drawCat(sin(millis() * 0.03) * 8);
+        drawText("*pat pat pat*", height - 40);
+    }
+    /**
+    * for the eplosion state
+    */
+    else if (story.state === "exploding") {
+        drawPicture(story.images.boom);
+    }
+    /**
+     * after explosion state goes into prayer scene 
+     */
+    else if (story.state === "praying") {
+        drawPicture(story.images.prayer);
+        drawText("press R to pray for Morgana!", height - 40);
+    }
 
+
+}
+
+/**
+ * time passing so the scene changes depending on how long ago "pat"
+ * was typed in and the pat scene happened
+ */
+function updateStory() {
+    if (story.state === "waiting" || story.state === "praying") return;
+
+    let elasped = millis() - story.startedAt;
+
+    /**
+     * for praying scene
+     */
+    if (elasped > timers.prayAfter) {
+        story.state = "praying";
+    }
+    /**
+     * for the explosion scene 
+     */
+    else if (elasped > timers.patDuration && story.state === "patting") {
+        story.state = "exploding";
+        /**
+         *  for reseting the explosion so it loops
+         */
+        story.images.boom.reset();
+    }
 }
