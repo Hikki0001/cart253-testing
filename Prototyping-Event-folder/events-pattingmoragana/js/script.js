@@ -1,9 +1,9 @@
 /**
- * Giving Head pats to Morgana
+ * Giving pats to Morgana
  * Matteo Edmonds-Tiano
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * 
+ * pat morgana by spelling "pat"!
  */
 
 "use strict";
@@ -64,7 +64,7 @@ let layout = {
     maxH: 450
 };
 
-let text = {
+let textT = {
     size: 24,
     fill: 255
 }
@@ -175,8 +175,37 @@ function drawPicture(img, offsetY = 0) {
  */
 function drawText(message, y) {
     push();
-    fill(text.fill);
-    textSize(text.size);
+    fill(textT.fill);
+    textSize(textT.size);
     text(message, width / 2, y)
     pop();
+};
+
+/**
+ *  for keyboard functionality 
+ */
+function keyPressed() {
+    if (story.state === "waiting") {
+        /**
+         * for ignoring shift, arrows, etc.
+         */
+        if (key.length !== 1) return;
+        typing.current = (typing.current + key.toLowerCase()).slice(-typing.word.length);
+
+        /**
+         * to start the patting scene after the word has been typed
+         */
+        if (typing.current === typing.word) {
+            story.state = "patting";
+            story.startedAt = millis();
+        }
+    }
+    /**
+     * for the reset to the R scene
+     */
+    else if (story.state === "praying" && key.toLowerCase() === "r") {
+        story.state = "waiting";
+        typing.current = ";"
+    }
+
 }
