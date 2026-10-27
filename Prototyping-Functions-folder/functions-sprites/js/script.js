@@ -64,7 +64,7 @@ let reaction = {
  */
 let typing = {
     current: "",
-    maxLenght: 12,
+    maxLength: 12,
     fill: [255, 120],
     size: 18
 };
@@ -136,7 +136,7 @@ function reactionProgress(sprite) {
  * to confirm that the letters typed end with the sprites specific names
  */
 function nameWasTyped(sprite) {
-    return typing.current.endsWith(sprite.name);
+    return typing.current.endsWith(sprite.name.toLowerCase());
 };
 
 /**
@@ -182,8 +182,8 @@ function drawSprite(sprite) {
          * will fade out when reaction is done
          */
         fill(255, 255 * (1 - progress));
-        textsize(spriteName.size);
-        text(reaction.text, sprite.x + spritePx, layout.spriteY - layoutPx - progress * progressPx);
+        textSize(spriteName.size);
+        text(reaction.text, sprite.x + layout.spritePx, layout.spriteY - layout.layoutPx - progress * layout.progressPx);
     }
     pop();
 };
@@ -208,9 +208,9 @@ function keyPressed() {
     /**
      * for getting rid of shift, enter, etc
      */
-    if (key.lenght !== 1) return;
+    if (key.length !== 1) return;
 
-    typing.current = (typing.current + key.toLowerCase()).slice(-typing.maxLenght);
+    typing.current = (typing.current + key.toLowerCase()).slice(-typing.maxLength);
 
     /**
      * checking the 3 specific sprites
