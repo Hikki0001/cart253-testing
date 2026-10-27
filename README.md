@@ -120,6 +120,16 @@ This is a website that is designed to show the progess of learning javascript, p
 
 ---------
 
+## [Prototypes Functions Journal](./journal.md)
+
+### Prototype Functions assignment 4
+
+> [ReactableSprites](https://hikki0001.github.io/cart253-testing/Prototyping-Functions-folder/functions-sprites/)
+
+> [Code](https://github.com/Hikki0001/cart253-testing/blob/main/Prototyping-Functions-folder/functions-sprites/js/script.js)
+
+![SpritePhoto](./images/Sprites.png)
+
 ## Attribution
 
 **This is where we put code, assets, and any other elements that was from other sources(I'm keeping the p5js line for now.)**
