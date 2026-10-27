@@ -18,11 +18,9 @@ let canvasSize = {
 };
 
 let bg = {
-    color: {
-        r: 46,
-        g: 38,
-        b: 52
-    }
+    image: undefined,
+    x: 800,
+    y: 500
 };
 
 /**
@@ -108,6 +106,7 @@ async function setup() {
     takuji.image = await loadImage("assets/images/Takuji.png");
     kohaku.image = await loadImage("assets/images/Kohaku.png");
     rabbid.image = await loadImage("assets/images/Rabbid.png");
+    bg.image = await loadImage("assets/images/background.jpg");
 };
 
 
@@ -115,14 +114,17 @@ async function setup() {
  * draws all the functions and everything shown on screen
 */
 function draw() {
-    background(bg.color.r, bg.color.g, bg.color.b);
+    background(0);
+    image(bg.image, width / 2, height / 2, bg.x, bg.y);
 
     drawSprite(takuji);
     drawSprite(kohaku);
     drawSprite(rabbid);
 
+
     drawTyping();
 };
+
 
 /**
  * this is for seeing how far the sprites into the reaction
@@ -183,7 +185,7 @@ function drawSprite(sprite) {
          */
         fill(255, 255 * (1 - progress));
         textSize(spriteName.size);
-        text(reaction.text, sprite.x + layout.spritePx, layout.spriteY - layout.layoutPx - progress * layout.progressPx);
+        text(reaction.text, sprite.x + layout.px.spritePx, layout.spriteY - layout.px.layoutPx - progress * layout.px.progressPx);
     }
     pop();
 };
