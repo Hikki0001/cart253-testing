@@ -206,6 +206,14 @@ function drawTyping() {
  */
 function keyPressed() {
     /**
+     * backspace so you can remove if you messed up with typing
+     */
+    if (key === "Backspace") {
+        typing.current = typing.current.slice(0, -1);
+        return;
+    }
+
+    /**
      * for getting rid of shift, enter, etc
      */
     if (key.length !== 1) return;
