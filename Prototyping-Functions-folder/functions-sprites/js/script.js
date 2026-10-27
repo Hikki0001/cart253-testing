@@ -30,14 +30,14 @@ let bg = {
  */
 let layout = {
     spriteY: 330,
-    spriteSize: 160,
+    spriteSize: 200,
     labelY: 440
 };
 
 /**
  * how they all react when their names are typed
  */
-reaction = {
+let reaction = {
     duration: 1400,
     /**
      * for how hight the bounce goes up (in pixels)
@@ -60,7 +60,7 @@ let typing = {
  */
 function makeSprite(name, x) {
     return {
-        name: name, 
+        name: name,
         /**
          * where it sits across the screen
          */
@@ -103,4 +103,22 @@ function draw() {
     drawSprite(rabbid);
 
     drawTyping();
+};
+
+/**
+ * draws the sprites 
+ * the bounce only happens when a sprite is reacting and should have a small fade out
+ */
+function drawSprite(sprite) {
+
+    let bounce = 0;
+
+
+
+    image(sprite.image, sprite.x, layout.spriteY - bounce, layout.spriteSize, layout.spriteSize);
+
+
+    push();
+    noStroke();
+    pop();
 }
