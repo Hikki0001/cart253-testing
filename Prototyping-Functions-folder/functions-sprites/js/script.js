@@ -30,8 +30,20 @@ let bg = {
  */
 let layout = {
     spriteY: 330,
-    spriteSize: 200,
-    labelY: 440
+    spriteSize: 180,
+    labelY: 440,
+
+    /**
+     * for text offset
+     */
+    px: {
+        spritePx: 70,
+        layoutPx: 110,
+        /**
+         * for drifting up
+         */
+        progressPx: 20
+    }
 };
 
 /**
@@ -54,6 +66,11 @@ let typing = {
     current: "",
     maxLenght: 12,
 };
+
+let spriteName = {
+    fill: [255, 150],
+    size: 16
+}
 
 /**
  * the single sprite data for the 3 of them
@@ -106,19 +123,65 @@ function draw() {
 };
 
 /**
+ * this is for seeing how far the sprites into the reaction
+ * 0 will be if it just started and 1 will be the sprites reaction is finished
+ */
+function reactionProgress(sprite) {
+    return constrain((millis() - sprite.reactedAt) / reaction.duration, 0, 1);
+};
+
+/**
+ * to confirm that the letters typed end with the sprites specific names
+ */
+function nameWasTyped(sprite) {
+    return typing.current.endsWith(sprite.name);
+};
+
+/**
+ * will start the sprites raction.
+ */
+function reactToName(sprite) {
+    sprite.reactedAt = millis();
+};
+
+
+
+/**
  * draws the sprites 
  * the bounce only happens when a sprite is reacting and should have a small fade out
  */
 function drawSprite(sprite) {
+    let progress = reactionProgress(sprite);
+    let reacting = progress < 1;
 
     let bounce = 0;
-
-
+    if (reacting) {
+        /**
+         * is the vertical offset that bounces then will fade 
+         * it should flip the negative half so that the sprites can only bounce up
+         */
+        bounce = abs(sin(progress * PI * reaction.bounces)) * reaction.bounceHeight * (1 - progress);
+    };
 
     image(sprite.image, sprite.x, layout.spriteY - bounce, layout.spriteSize, layout.spriteSize);
 
 
     push();
     noStroke();
+    fill(spriteName.fill);
+    textSize(spriteName.size);
+    /**
+     * shows the name to type
+     */
+    text(sprite.name, sprite.x, layout.labelY);
+
+    if (reacting) {
+        /**
+         * will fade out when reaction is done
+         */
+        fill(255, 255 * (1 - progress));
+        textsize(spriteName.size);
+        text(reaction.text, sprite.x + spritePx, layout.spriteY - layoutPx - progress * progressPx);
+    }
     pop();
 }
