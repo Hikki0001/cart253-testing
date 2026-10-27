@@ -17,6 +17,14 @@ let canvasSize = {
     h: 500,
 };
 
+let bg = {
+    color: {
+        r: 46,
+        g: 38,
+        b: 52
+    }
+};
+
 /**
  * where the sprites sit and how big they're drawn
  */
@@ -45,19 +53,25 @@ reaction = {
 let typing = {
     current: "",
     maxLenght: 12,
-}
+};
+
 
 /**
- * OH LOOK I DIDN'T DESCRIBE SETUP!!
+ * Loading all the images and has createcanvas
 */
-function setup() {
+async function setup() {
+    createCanvas(canvasSize.w, canvasSize.h);
+    imageMode(CENTER);
+    textAlign(CENTER, CENTER);
+
 
 }
 
 
 /**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
+ * draws all the functions and everything shown on screen
 */
 function draw() {
+    background(bg.color.r, bg.color.g, bg.color.b);
 
 }
