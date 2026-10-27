@@ -65,6 +65,8 @@ let reaction = {
 let typing = {
     current: "",
     maxLenght: 12,
+    fill: [255, 120],
+    size: 18
 };
 
 let spriteName = {
@@ -184,4 +186,48 @@ function drawSprite(sprite) {
         text(reaction.text, sprite.x + spritePx, layout.spriteY - layoutPx - progress * progressPx);
     }
     pop();
+};
+
+/**
+ * shows on the screen the letters typed so far at the bottom
+ */
+function drawTyping() {
+    push();
+    noStroke();
+    fill(typing.fill);
+    textSize(typing.size);
+    text("typing: " + typing.current, width / 2, height - 20);
+    pop();
+};
+
+/**
+ * for collecting the letters that the keyboard has last typed and 
+ * will ask if the sprites name was typed
+ */
+function keyPressed() {
+    /**
+     * for getting rid of shift, enter, etc
+     */
+    if (key.lenght !== 1) return;
+
+    typing.current = (typing.current + key.toLowerCase()).slice(-typing.maxLenght);
+
+    /**
+     * checking the 3 specific sprites
+     */
+    checkSprite(takuji);
+    checkSprite(kohaku);
+    checkSprite(rabbid);
+};
+
+/**
+ * if the name of the sprite was typed itll react and the last typed letter will clear
+ */
+function checkSprite(sprite) {
+    if (nameWasTyped(sprite)) {
+        reactToName(sprite);
+        typing.current = "";
+    }
 }
+
+
