@@ -116,6 +116,7 @@ let pool = [bennett, heizou, kirara, ganyu, tartaglia];
 */
 async function setup() {
     createCanvas(canvasSize.w, canvasSize.h);
+    imageMode(CENTER)
     textAlign(CENTER, CENTER);
 
     bg.image = await loadImage("assets/images/background.jpg");
@@ -209,3 +210,22 @@ function drawCard(character, x, y) {
     text(character.rarity.label, 0, card.rarityText.y);
 }
 
+/**
+ * dras the wish text so to what you see before you roll or wish for a character
+ */
+function drawHint() {
+    push();
+    noStroke();
+    fill(hint.fill);
+    textSize(hint.size);
+    text(hint.text, hint.x, hint.y);
+    pop();
+}
+
+
+/**
+ * a wish will happen when you click the screen
+ */
+function mousePressed() {
+    result.character = pullCharacter();
+}
