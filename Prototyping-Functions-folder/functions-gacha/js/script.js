@@ -20,11 +20,7 @@ let canvasSize = {
  * background is colored will change to png soon
  */
 let bg = {
-    color: {
-        r: 29, 
-        g: 32,
-        b: 54
-    }
+    image: undefined
 }
 
 /**
@@ -70,7 +66,7 @@ let result = {
 function makeCharacter(name, rarity) {
     return {
         name: name,
-        rarity: rarity, 
+        rarity: rarity,
         image: undefined
     };
 };
@@ -78,29 +74,45 @@ function makeCharacter(name, rarity) {
 /**
  * all the characters that can be pulled
  */
-let bennet = makeCharacter("Bennet", rarities.four);
+let bennett = makeCharacter("Bennett", rarities.four);
+let heizou = makeCharacter("Heizou", rarities.four);
+let kirara = makeCharacter("Kirara", rarities.four);
+let ganyu = makeCharacter("Ganyu", rarities.five);
+let tartaglia = makeCharacter("Tartaglia", rarities.five);
 
 /**
  * the pool of characters
  */
-let pool = [bennet];
+let pool = [bennett, heizou, kirara, ganyu, tartaglia];
 
 /**
  * loading images and ccreateCanvas
 */
 async function setup() {
     createCanvas(canvasSize.w, canvasSize.h);
-    imageMode(CENTER);
     textAlign(CENTER, CENTER);
 
-
+    bg.image = await loadImage("assets/images/background.jpg");
+    bennett.image = await loadImage("assets/images/Bennett.png");
+    kirara.image = await loadImage("assets/images/Kirara.png");
+    heizou.image = await loadImage("assets/images/Heizou.png");
+    ganyu.image = await loadImage("assets/images/Ganyu.png");
+    tartaglia.image = await loadImage("assets/images/Tartaglia.png");
 }
-
 
 /**
  * draws the functions and the cards being wished or pulled
 */
 function draw() {
-    background(bg.color.r, bg.color.g, bg.color.b);
+    background(bg.image);
 
+    /**
+     * for wish showing if a character was pulled on the screen if not yet than obviously nothing will show up
+     */
+    if (result.character === undefined) {
+        drawHint();
+    }
+    else {
+        drawCard(result.character)
+    }
 }
