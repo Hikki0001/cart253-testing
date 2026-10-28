@@ -30,19 +30,22 @@ let bg = {
  */
 let rarities = {
     four: {
-        label: "4 star"
+        label: "4 star",
+        color: [190, 140, 255]
     },
     five: {
         label: "5 star",
-        chance: 5
+        chance: 5,
+        color: [255, 200, 60]
     }
 };
 
 /**
  * the highest number the rarity roll can be (so the chance above is a percent)
+ * changing it just to see 
  */
 let roll = {
-    max: 500
+    max: 100
 };
 
 /**
@@ -50,24 +53,24 @@ let roll = {
  */
 let card = {
     x: 400,
-    y: 300,
+    y: 250,
     /**
      * where its placed
      */
     portrait: {
         y: -20,
-        w: 240,
-        h: 320
+        w: 600,
+        h: 400
     },
     name: {
-        y: 175,
+        y: 190,
         size: 28,
-        fill: 255
+        fill: [40, 40, 40]
     },
     rarityText: {
-        y: 210,
+        y: 220,
         size: 22,
-        fill: [255, 180]
+        fill: [255, 200, 60]
     }
 };
 
@@ -79,7 +82,7 @@ let hint = {
     x: 400,
     y: 250,
     size: 22,
-    fill: [255, 160]
+    fill: [40, 40, 40]
 };
 
 /**
@@ -116,7 +119,7 @@ let pool = [bennett, heizou, kirara, ganyu, tartaglia];
 */
 async function setup() {
     createCanvas(canvasSize.w, canvasSize.h);
-    imageMode(CENTER)
+    imageMode(CENTER);
     textAlign(CENTER, CENTER);
 
     bg.image = await loadImage("assets/images/background.jpg");
@@ -131,8 +134,7 @@ async function setup() {
  * draws the functions and the cards being wished or pulled
 */
 function draw() {
-    background(bg.image);
-
+    drawBackground();
     /**
      * for wish showing if a character was pulled on the screen if not yet than obviously nothing will show up
      */
@@ -140,8 +142,15 @@ function draw() {
         drawHint();
     }
     else {
-        drawCard(result.character)
+        drawCard(result.character, card.x, card.y)
     }
+}
+
+function drawBackground() {
+    push();
+    imageMode(CORNER);
+    image(bg.image, 0, 0, width, height);
+    pop();
 }
 
 /**
@@ -205,9 +214,10 @@ function drawCard(character, x, y) {
      * the rarity written on the splash card 
      * so either 4 or 5 star
      */
-    fill(card.rarityText.fill);
+    fill(character.rarity.color);
     textSize(card.rarityText.size);
     text(character.rarity.label, 0, card.rarityText.y);
+    pop();
 }
 
 /**
