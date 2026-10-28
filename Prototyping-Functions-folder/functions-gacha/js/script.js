@@ -180,3 +180,32 @@ function pullCharacter() {
     return pickFromRarity(rarity);
 }
 
+/**
+ * draws the splash card
+ */
+function drawCard(character, x, y) {
+    push();
+    translate(x, y);
+
+    /**
+     * the character pngs
+     */
+    image(character.image, 0, card.portrait.y, card.portrait.w, card.portrait.h);
+
+    /**
+     * the splash card name
+     */
+    noStroke();
+    fill(card.name.fill);
+    textSize(card.name.size);
+    text(character.name, 0, card.name.y);
+
+    /**
+     * the rarity written on the splash card 
+     * so either 4 or 5 star
+     */
+    fill(card.rarityText.fill);
+    textSize(card.rarityText.size);
+    text(character.rarity.label, 0, card.rarityText.y);
+}
+
