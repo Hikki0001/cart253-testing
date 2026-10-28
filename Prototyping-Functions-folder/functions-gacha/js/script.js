@@ -28,16 +28,79 @@ let bg = {
 }
 
 /**
- * OH LOOK I DIDN'T DESCRIBE SETUP!!
+ * 2 rarities like in genshin (for characters at least)
+ * 5 star is gonna be checked first with its chance
+ * and then whatever is left over is a 4 star
+ */
+let rarities = {
+    four: {
+        label: "4 star"
+    },
+    five: {
+        label: "5 star",
+        chance: 5
+    }
+};
+
+/**
+ * the highest number the rarity roll can be (so the chance above is a percent)
+ */
+let roll = {
+    max: 500
+};
+
+/**
+ * text shown before you press wish
+ */
+let hint = {
+    text: "Click to wish",
+    x: 400,
+    y: 250,
+    size: 22,
+    fill: [255, 160]
+};
+
+/**
+ * the character from the latest wish, and because you havent wished yet itll show nothing
+ */
+let result = {
+    character: undefined
+};
+
+function makeCharacter(name, rarity) {
+    return {
+        name: name,
+        rarity: rarity, 
+        image: undefined
+    };
+};
+
+/**
+ * all the characters that can be pulled
+ */
+let bennet = makeCharacter("Bennet", rarities.four);
+
+/**
+ * the pool of characters
+ */
+let pool = [bennet];
+
+/**
+ * loading images and ccreateCanvas
 */
-function setup() {
+async function setup() {
+    createCanvas(canvasSize.w, canvasSize.h);
+    imageMode(CENTER);
+    textAlign(CENTER, CENTER);
+
 
 }
 
 
 /**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
+ * draws the functions and the cards being wished or pulled
 */
 function draw() {
+    background(bg.color.r, bg.color.g, bg.color.b);
 
 }
