@@ -46,6 +46,32 @@ let roll = {
 };
 
 /**
+ * how the splash card is drawn 
+ */
+let card = {
+    x: 400,
+    y: 300,
+    /**
+     * where its placed
+     */
+    portrait: {
+        y: -20,
+        w: 240,
+        h: 320
+    },
+    name: {
+        y: 175,
+        size: 28,
+        fill: 255
+    },
+    rarityText: {
+        y: 210,
+        size: 22,
+        fill: [255, 180]
+    }
+};
+
+/**
  * text shown before you press wish
  */
 let hint = {
@@ -116,3 +142,41 @@ function draw() {
         drawCard(result.character)
     }
 }
+
+/**
+ * rolls a number and then returns which rarity ikt landed on
+ */
+function rollRarity() {
+    let number = random(roll.max);
+
+    if (number < rarities.five.chance) {
+        return rarities.five;
+    }
+    else {
+        return rarities.four;
+    }
+}
+
+/**
+ * returns a random character thawt already has the given rarity
+ */
+function pickFromRarity(rairty) {
+    /**
+     * literally took me forever to figure this out btw but I learned about filter()
+     */
+    let options = pool.filter(function (character) {
+        return character.rarity === rairty;
+    });
+    return random(options)
+}
+
+/**
+ * returns one random character 
+ * essentially its so that the rarity is rolled first then a character of that specific
+ * rarity is then chosen making the randomness even in the pool
+ */
+function pullCharacter() {
+    let rarity = rollRarity();
+    return pickFromRarity(rarity);
+}
+
