@@ -238,4 +238,5 @@ function drawHint() {
  */
 function mousePressed() {
     result.character = pullCharacter();
-}
+};
+
