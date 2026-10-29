@@ -2,8 +2,10 @@
  * Genshin wish simulator
  * Matteo Edmonds-Tiano
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * 
+ * A very very simple remake of the genshin wishing/rolling system
+ * just wanted to test myself a bit with this I had to do a lot of research before
+ * completing this prototype...
  */
 
 "use strict";
