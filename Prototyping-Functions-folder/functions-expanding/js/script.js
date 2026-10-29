@@ -1,17 +1,37 @@
 /**
- * Title of Project
- * Author Name
+ * Expanding Kirby's
+ * Matteo Edmonds-Tiano
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * The kirby's keep getting bigger... I wonder how big they can get?
  */
 
 "use strict";
 
 /**
- * OH LOOK I DIDN'T DESCRIBE SETUP!!
+ * canvas size
+ */
+let canvasSize = {
+    w: 800,
+    h: 500
+};
+
+/**
+ * the picture shared by the 4 kirby's
+ */
+let kirbyImage;
+
+/**
+ * how big they are when they start and where the ground is
+ */
+let startSize = 80;
+let ground = 450;
+
+/**
+ * loading canvas and kirby png
 */
-function setup() {
+async function setup() {
+    createCanvas(canvasSize.w, canvasSize.h);
+    imageMode(CENTER);
 
 }
 
