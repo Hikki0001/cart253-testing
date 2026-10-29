@@ -66,7 +66,6 @@ async function setup() {
 
 }
 
-
 /**
  * draws all the functions and background
 */
@@ -77,31 +76,21 @@ function draw() {
     /**
     * the kirby's and the draw and grow
     */
+    growKirby(kirby1)
+    growKirby(kirby2)
+    growKirby(kirby3)
+    growKirby(kirby4)
 
-    /**
-     * kirby 1 grows then gets drawn
-     */
-    kirby1Size += kirby1Speed;
-    image(kirbyImage, 80, ground - kirby1Size / 2, kirby1Size, kirby1Size)
-
-    /**
-     * kirby 2
-     */
-    kirby2Size += kirby2Speed;
-    image(kirbyImage, 200, ground - kirby2Size / 2, kirby2Size, kirby2Size)
-
-    /**
-     * kirby 3
-    */
-    kirby3Size += kirby3Speed;
-    image(kirbyImage, 600, ground - kirby3Size / 2, kirby3Size, kirby3Size)
-
-    /**
-    * kirby 2
-    */
-    kirby4Size += kirby4Speed;
-    image(kirbyImage, 350, ground - kirby4Size / 2, kirby4Size, kirby4Size)
-
-
-
+    drawKirby(kirby1)
+    drawKirby(kirby2)
+    drawKirby(kirby3)
+    drawKirby(kirby4)
 }
+
+/**
+ * makes the kirby's get bigger forever
+ */
+function growKirby(kirby) {
+    kirby.size += kirby.speed;
+}
+
