@@ -124,17 +124,23 @@ This is a website that is designed to show the progess of learning javascript, p
 
 ### Prototype Functions assignment 4
 
-> [ReactableSprites](https://hikki0001.github.io/cart253-testing/Prototyping-Functions-folder/functions-sprites/)
+> [Reactable Sprites](https://hikki0001.github.io/cart253-testing/Prototyping-Functions-folder/functions-sprites/)
 
 > [Code](https://github.com/Hikki0001/cart253-testing/blob/main/Prototyping-Functions-folder/functions-sprites/js/script.js)
 
 ![SpritePhoto](./images/Sprites.png)
 
-> [GenshinWishSimulator](https://hikki0001.github.io/cart253-testing/Prototyping-Functions-folder/functions-gacha/)
+> [Genshin Wish Simulator](https://hikki0001.github.io/cart253-testing/Prototyping-Functions-folder/functions-gacha/)
 
 > [Code](https://github.com/Hikki0001/cart253-testing/blob/main/Prototyping-Functions-folder/functions-gacha/js/script.js)
 
 ![GachaPhoto](./images/Gacha.png)
+
+> [Expanding Kirby's](https://hikki0001.github.io/cart253-testing/Prototyping-Functions-folder/functions-expanding/)
+
+> [Code](https://github.com/Hikki0001/cart253-testing/blob/main/Prototyping-Functions-folder/functions-expanding/js/script.js)
+
+![ExpandingKirbyPhoto](./images/GrowKirby's.png)
 
 ## Attribution
 
