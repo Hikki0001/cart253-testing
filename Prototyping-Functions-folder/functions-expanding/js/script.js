@@ -27,7 +27,7 @@ let kirbyImage;
 /**
  * how big they are when they start and where the ground is
  */
-let sizes = {
+let size = {
     start: 80,
     ground: 450
 }
@@ -39,7 +39,7 @@ let sizes = {
 function makeKirby(x, speed) {
     return {
         x: x,
-        size: sizes.start,
+        size: size.start,
         speed: speed
     }
 }
@@ -92,5 +92,12 @@ function draw() {
  */
 function growKirby(kirby) {
     kirby.size += kirby.speed;
+}
+
+/**
+ * drawing kirby on the screen
+ */
+function drawKirby(kirby) {
+    image(kirbyImage, kirby.x, size.ground - kirby.size / 2, kirby.size, kirby.size);
 }
 
