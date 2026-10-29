@@ -65,4 +65,10 @@ async function setup() {
 function draw() {
     background(bg.image)
 
+    /**
+     * kirby 1 grows then gets drawn
+     */
+    kirby1Size += kirby1Speed;
+    image(kirbyImage, 100, ground - kirby1Size / 2, kirby1Size, kirby1Size)
+
 }
