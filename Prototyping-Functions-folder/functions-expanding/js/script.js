@@ -27,23 +27,31 @@ let kirbyImage;
 /**
  * how big they are when they start and where the ground is
  */
-let startSize = 80;
-let ground = 450;
+let sizes = {
+    start: 80,
+    ground: 450
+}
+
 
 /**
- * the kirby's have different sizes, and growing speeds
+ * the data for one kirby
  */
-let kirby1Size = startSize;
-let kirby1Speed = 0.2;
+function makeKirby(x, speed) {
+    return {
+        x: x,
+        size: sizes.start,
+        speed: speed
+    }
+}
 
-let kirby2Size = startSize;
-let kirby2Speed = 0.5;
+/**
+ * all the kirby's
+ */
+let kirby1 = makeKirby(80, 0.2);
+let kirby2 = makeKirby(200, 0.5);
+let kirby3 = makeKirby(600, 1);
+let kirby4 = makeKirby(350, 0.7);
 
-let kirby3Size = startSize;
-let kirby3Speed = 0.7;
-
-let kirby4Size = startSize;
-let kirby4Speed = 1;
 
 
 /**
@@ -64,6 +72,11 @@ async function setup() {
 */
 function draw() {
     background(bg.image)
+
+
+    /**
+    * the kirby's and the draw and grow
+    */
 
     /**
      * kirby 1 grows then gets drawn
