@@ -40,10 +40,10 @@ let kirby2Size = startSize;
 let kirby2Speed = 0.5;
 
 let kirby3Size = startSize;
-let kirby3Speed = 1;
+let kirby3Speed = 0.7;
 
 let kirby4Size = startSize;
-let kirby4Speed = 2;
+let kirby4Speed = 1;
 
 
 /**
@@ -69,6 +69,26 @@ function draw() {
      * kirby 1 grows then gets drawn
      */
     kirby1Size += kirby1Speed;
-    image(kirbyImage, 100, ground - kirby1Size / 2, kirby1Size, kirby1Size)
+    image(kirbyImage, 80, ground - kirby1Size / 2, kirby1Size, kirby1Size)
+
+    /**
+     * kirby 2
+     */
+    kirby2Size += kirby2Speed;
+    image(kirbyImage, 200, ground - kirby2Size / 2, kirby2Size, kirby2Size)
+
+    /**
+     * kirby 3
+    */
+    kirby3Size += kirby3Speed;
+    image(kirbyImage, 600, ground - kirby3Size / 2, kirby3Size, kirby3Size)
+
+    /**
+    * kirby 2
+    */
+    kirby4Size += kirby4Speed;
+    image(kirbyImage, 350, ground - kirby4Size / 2, kirby4Size, kirby4Size)
+
+
 
 }
