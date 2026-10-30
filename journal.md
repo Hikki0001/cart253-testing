@@ -113,6 +113,23 @@
 
 - I'm somewhat happy with how I've been doing in this class and I'm trying to incorporate the things I'm learning to my own work now so I hope it keeps going well and even if I do have some hiccups it's something to learn from.
 
+## October 29th, 2026 
+> **Thoughts on Arrays and in general the class**
+
+- This week's self challenge and really on the theme for functions at least for the assignment was simplicity. I'm not saying that my past prototypes where the most complicated things of all time, but I just wanted to try to make them simplier but still having the idk my spin I guess.
+
+- On that note something that one of my classmates told me really stuck out to me that just by looking he could tell that my prototypes were mine and that I have a specific way of doing them. I found this interesting as I've always been told this by people, it's just funny to hear it in this class but why am I bringing this up? Well specifically I feel like im getting somewhere with ideas thats why I wanted to make simplier prototypes. So I could focus on my simple ideas and get them done.
+
+> At least I think I did well on them...
+
+- For array's this is a concept I'm not used to used to them but I obviously know how to a certain, I mean very miniscle way um way to use them. I've made visual novels so dialogue and using arrays is not new to me but sometimes I find my self struggling with this concept but I can't wait to focus on the prototypes.
+
+> I already have some ideas espically on the line of visual novels and even for the functions prototypes I did make a gacha simulator which used this a bit to work with the randomness with the character pool.
+
+- I will say I'm quite looking forward for when we are given more time to focus on our prototypes and I've started brainstorming what the final project could be and what I can do but until then I'll just have to wait.
+
+
+
 
 
 
