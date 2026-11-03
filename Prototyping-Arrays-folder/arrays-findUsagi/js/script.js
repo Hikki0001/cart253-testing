@@ -168,7 +168,26 @@ function makePerson(imageIndex) {
  * begins a new round with a new crowd and will try to hide usagi
  */
 function newRound() {
+    crowd = [];
+    game.found = false;
+    game.wrongClicks = 0;
 
+    let count = settings.crowd.start + (game.round - 1) * settings.crowd.perRound;
+
+    /**
+     * random(usagiIndex) will give a number from 0 up to just under usagiIndex,
+     * and the reason im using floor() is cuz itll round it down so that the crowd
+     * is the only decoys on the screen (ahh a lot of writing)
+     */
+    for (let i = 0; i < count; i++) {
+        crowd.push(makePerson(floor(random(usagiIndex))))
+    }
+
+    /**
+     * picks a random character and then will turn him into usagi
+     */
+    let hidingSpot = floor(random(crowd.length));
+    crowd[hidingSpot].imageIndex = usagiIndex;
 }
 
 /**
