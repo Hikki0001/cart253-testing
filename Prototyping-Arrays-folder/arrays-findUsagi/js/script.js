@@ -1,24 +1,63 @@
 /**
- * Title of Project
- * Author Name
+ * Find Usagi
+ * Matteo Edmonds-Tiano
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * It's like wheres waldo but its finding Usagi!
  */
 
 "use strict";
 
 /**
- * OH LOOK I DIDN'T DESCRIBE SETUP!!
+ * canvas size
+ */
+let canvasSize = {
+    w: 800,
+    h: 500
+};
+
+/**
+ * background image
+ */
+let bg = {
+    image: undefined
+};
+
+/**
+ * array holding the 5 characters and I need usagi to be last meaning the other 4 
+ * will be from 0 to 3
+ */
+let images = [];
+let usagiIndex = 4;
+
+/**
+ * all of them being display on the screen
+ */
+let crowd = [];
+
+
+
+/**
+ * loads the background and all images
 */
-function setup() {
+async function setup() {
+    createCanvas(canvasSize.w, canvasSize.h);
+    imageMode(CENTER)
+    bg.image = await loadImage("assets/images/background.jpg");
 
 }
 
 
 /**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
+ * draws the functions
 */
 function draw() {
+    drawBackground();
 
+}
+
+function drawBackground() {
+    push();
+    imageMode(CORNER);
+    image(bg.image, 0, 0, width, height);
+    pop();
 }
