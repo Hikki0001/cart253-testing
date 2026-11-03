@@ -63,7 +63,7 @@ let settings = {
     /**
      * the clickable area I will make it a circle
      */
-    hitRadius: 0.5
+    hitRadius: 0.3
 };
 
 /**
