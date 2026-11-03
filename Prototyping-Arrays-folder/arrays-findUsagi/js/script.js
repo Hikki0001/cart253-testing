@@ -199,5 +199,46 @@ function drawPerson(person) {
     image(images[person.imageIndex], person.x, person.y, person.size, person.size)
 }
 
+/**
+ * draws the top banner for the round and the mini picture of usagi
+ */
+function drawBanner() {
+    push();
+    noStroke();
+    fill(banner.fill);
+    rect(0, 0, width, banner.h);
+
+    fill(banner.textFill);
+    textSize(banner.textSize);
+    /**
+     * plays if hes found
+     */
+    if (game.found) {
+        text(messages.found + (game.round + 1), width / 2, banner.h / 2);
+    }
+    else {
+        text(messages.find + "" + messages.round + game.round + "" + messages.wrong + game.wrongClicks, width / 2 +
+            banner.textOffset, banner.h / 2
+        );
+        image(images[usagiIndex], banner.hint.x, banner.h / 2, banner.hint.size, banner.hint.size);
+    }
+    pop();
+}
+
+/**
+ * the top character under a point 
+ * will count down from the end so that the character drawn on top wins as to not have
+ * mixing or weird looking sprites 
+ */
+function personAt(x, y) {
+    for (let i = crowd.length - 1; i >= 0; i--) {
+        let person = crowd[i];
+        if (dist(x, y, person.x, person.y) < person.size * settings.hitRadius) {
+            return person;
+        }
+    }
+    return undefined;
+}
+
 
 
