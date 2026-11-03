@@ -75,7 +75,34 @@ let game = {
     wrongClicks: 0
 }
 
+/**
+ * banner that will show a picture of usagi so you know who to click and text
+ * to show if you found him and a counter for wrong clicks
+ */
+let banner = {
+    h: 48,
+    fill: [255, 230],
+    textFill: 40,
+    textSize: 20,
+    textOffset: 20,
+    /**
+     * for showing what he looks like
+     */
+    hint: {
+        x: 50,
+        size: 40
+    }
+};
 
+/**
+ * words that are shown on the banner
+ */
+let messages = {
+    find: "Find Usagi!",
+    round: "Round ",
+    wrong: "Wrong clicks: ",
+    found: "Found Usagi! Click for round "
+};
 
 /**
  * loads the background and all images
@@ -93,7 +120,8 @@ async function setup() {
     images[3] = await loadImage("assets/images/Kuri.jpg")
     images[4] = await loadImage("assets/images/Usagi.jpg")
 
-}
+    newRound();
+};
 
 
 /**
@@ -102,6 +130,15 @@ async function setup() {
 function draw() {
     drawBackground();
 
+    /**
+     * will draw every character in order, and later ones that are added in the new rounds
+     * will be drawn on top which will hide usagi and make it harder to find him
+     */
+    for (let i = 0; i < crowd.length; i++) {
+        drawPerson(crowd[i]);
+    }
+
+    drawBanner();
 }
 
 function drawBackground() {
