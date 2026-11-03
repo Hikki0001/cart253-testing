@@ -114,11 +114,11 @@ async function setup() {
 
     bg.image = await loadImage("assets/images/background.jpg");
 
-    images[0] = await loadImage("assets/images/Chiikawa.jpg")
-    images[1] = await loadImage("assets/images/Hachiware.jpg")
-    images[2] = await loadImage("assets/images/Momonga.jpg")
-    images[3] = await loadImage("assets/images/Kuri.jpg")
-    images[4] = await loadImage("assets/images/Usagi.jpg")
+    images[0] = await loadImage("assets/images/Chiikawa.png")
+    images[1] = await loadImage("assets/images/Hachiware.png")
+    images[2] = await loadImage("assets/images/Momonga.png")
+    images[3] = await loadImage("assets/images/Kuri.png")
+    images[4] = await loadImage("assets/images/Usagi.png")
 
     newRound();
 };
@@ -238,6 +238,28 @@ function personAt(x, y) {
         }
     }
     return undefined;
+}
+
+/**
+ * Adds a mouse click and checks if you found usagi if yes start new round
+ * if not count how many times you missed
+ */
+function mousePressed() {
+    if (game.found) {
+        game.round++;
+        newRound();
+        return;
+    }
+
+    let hit = personAt(mouseX, mouseY);
+    if (hit === undefined) return;
+
+    if (hit.imageIndex === usagiIndex) {
+        game.found = true
+    }
+    else {
+        game.wrongClicks++;
+    }
 }
 
 
