@@ -141,9 +141,44 @@ function draw() {
     drawBanner();
 }
 
+/**
+ * draws the background
+ */
 function drawBackground() {
     push();
     imageMode(CORNER);
     image(bg.image, 0, 0, width, height);
     pop();
 }
+
+/**
+ * builds one character so it applies to all
+ * and imageIndex will be which pictures to use for the individual characters
+ */
+function makePerson(imageIndex) {
+    return {
+        x: random(settings.margin.side, width - settings.margin.side),
+        y: random(settings.margin.top, height - settings.margin.bottom),
+        size: random(settings.size.min, settings.size.max),
+        imageIndex: imageIndex
+    };
+}
+
+/**
+ * begins a new round with a new crowd and will try to hide usagi
+ */
+function newRound() {
+
+}
+
+/**
+ * draws the characters
+ * using person as it makes it easier to understand what im doing instead of typing
+ * bunny or I could use animal but eh.
+ */
+function drawPerson(person) {
+    image(images[person.imageIndex], person.x, person.y, person.size, person.size)
+}
+
+
+
