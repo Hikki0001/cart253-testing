@@ -142,6 +142,18 @@ This is a website that is designed to show the progess of learning javascript, p
 
 ![ExpandingKirbyPhoto](./images/GrowKirby's.png)
 
+---------
+
+## [Prototypes Arrays Journal](./journal.md)
+
+### Prototype Arrays assignment 5
+
+> [Where'sUsagi?](https://hikki0001.github.io/cart253-testing/Prototyping-Arrays-folder/arrays-findUsagi/)
+
+> [Code](https://github.com/Hikki0001/cart253-testing/blob/main/Prototyping-Arrays-folder/arrays-findUsagi/js/script.js)
+
+![Where'sUsagiPhoto](./images/WheresUsagi.png)
+
 ## Attribution
 
 **This is where we put code, assets, and any other elements that was from other sources(I'm keeping the p5js line for now.)**
