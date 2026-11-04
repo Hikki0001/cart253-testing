@@ -103,7 +103,7 @@ function drawBackground() {
  * also constraining it to not go past the end
  */
 function currentSprite() {
-    let index = floor(map(mouseX, 0, innerWidth, 0, sprites.length));
+    let index = floor(map(mouseX, 0, width, 0, sprites.length));
     return constrain(index, 0, sprites.length - 1);
 }
 
