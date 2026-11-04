@@ -49,12 +49,12 @@ let picture = {
     h: 450
 };
 
+
 /**
  * loads the images and screen
 */
 async function setup() {
     createCanvas(canvasSize.w, canvasSize.h);
-    imageMode(CENTER);
     textAlign(CENTER, CENTER);
 
     bg.image = await loadImage("assets/images/background.png");
@@ -70,8 +70,22 @@ async function setup() {
 
 
 /**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
+ * draws the functions
 */
 function draw() {
+    background(bg.image);
 
+    let index = currentSprite();
+    drawSprite(sprites[index]);
+
+}
+
+/**
+ * which sprite number the mouse is currently over
+ * using map to turn the mouse's x position into a number from 0 to sprites length
+ * also constraining it to not go past the end
+ */
+function currentSprite() {
+    let index = floor(map(mouseX, 0, innerWidth, 0, sprites.length));
+    return constrain(index, 0, sprites.length - 1);
 }
