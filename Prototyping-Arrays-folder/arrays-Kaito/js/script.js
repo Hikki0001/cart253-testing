@@ -44,8 +44,8 @@ let labels = [
  * where the sprites are going to be on the screen
  */
 let picture = {
-    x: 400,
-    y: 250,
+    x: 380,
+    y: 280,
     h: 450
 };
 
@@ -74,11 +74,17 @@ async function setup() {
  * draws the functions
 */
 function draw() {
-    background(bg.image);
+    drawBackground();
 
     let index = currentSprite();
     drawSprite(sprites[index]);
+}
 
+function drawBackground() {
+    push();
+    imageMode(CORNER);
+    image(bg.image, 0, 0, width, height);
+    pop();
 }
 
 /**
