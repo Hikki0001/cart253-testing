@@ -1,15 +1,23 @@
 /**
- * Title of Project
- * Author Name
+ * Kaito's Emotions
+ * Matteo Edmonds-Tiano
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * He's an emotional guy I think we all wanna see his emotions!
  */
 
 "use strict";
 
+
 /**
- * OH LOOK I DIDN'T DESCRIBE SETUP!!
+ * canvas size
+ */
+let canvasSize = {
+    w: 800,
+    h: 500
+}
+
+/**
+ * loads the images and screen
 */
 function setup() {
 
