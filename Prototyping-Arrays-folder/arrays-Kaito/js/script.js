@@ -55,6 +55,7 @@ let picture = {
 */
 async function setup() {
     createCanvas(canvasSize.w, canvasSize.h);
+    imageMode(CENTER)
     textAlign(CENTER, CENTER);
 
     bg.image = await loadImage("assets/images/background.png");
@@ -88,4 +89,12 @@ function draw() {
 function currentSprite() {
     let index = floor(map(mouseX, 0, innerWidth, 0, sprites.length));
     return constrain(index, 0, sprites.length - 1);
+}
+
+/**
+ * draws which ever sprite is handed in
+ */
+function drawSprite(sprite) {
+    let w = sprite.width * (picture.h / sprite.height);
+    image(sprite, picture.x, picture.y, w, picture.h);
 }
