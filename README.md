@@ -158,7 +158,7 @@ This is a website that is designed to show the progess of learning javascript, p
 
 > [Code](https://github.com/Hikki0001/cart253-testing/blob/main/Prototyping-Arrays-folder/arrays-Kaito/js/script.js)
 
-! [Kaito'sEmotionsPhoto](./images/Kaito'sEmotions.png)
+![Kaito'sEmotionsPhoto](./images/Kaito'sEmotions.png)
 
 ## Attribution
 
