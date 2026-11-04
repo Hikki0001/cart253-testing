@@ -112,7 +112,7 @@ async function setup() {
     imageMode(CENTER);
     textAlign(CENTER, CENTER);
 
-    bg.image = await loadImage("assets/images/background.jpg");
+    bg.image = await loadImage("assets/images/Background.jpg");
 
     images[0] = await loadImage("assets/images/Chiikawa.png")
     images[1] = await loadImage("assets/images/Hachiware.png")
