@@ -54,7 +54,7 @@ let picture = {
  * label over the sprite
  */
 let caption = {
-    y: 180,
+    y: 100,
     size: 22,
     fill: 255
 };
@@ -120,6 +120,10 @@ function drawSprite(sprite) {
  */
 function drawCaption(labels) {
     push();
-
+    stroke(0);
+    strokeWeight(4);
+    fill(caption.fill);
+    textSize(caption.size);
+    text(labels, width / 2, caption.y);
     pop();
 }
