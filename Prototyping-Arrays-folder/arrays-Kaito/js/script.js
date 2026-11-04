@@ -51,6 +51,15 @@ let picture = {
 
 
 /**
+ * label over the sprite
+ */
+let caption = {
+    y: 180,
+    size: 22,
+    fill: 255
+};
+
+/**
  * loads the images and screen
 */
 async function setup() {
@@ -78,6 +87,7 @@ function draw() {
 
     let index = currentSprite();
     drawSprite(sprites[index]);
+    drawCaption(labels[index]);
 }
 
 function drawBackground() {
@@ -103,4 +113,13 @@ function currentSprite() {
 function drawSprite(sprite) {
     let w = sprite.width * (picture.h / sprite.height);
     image(sprite, picture.x, picture.y, w, picture.h);
+}
+
+/**
+ * draws the label thats handed in for the sprites in order
+ */
+function drawCaption(labels) {
+    push();
+
+    pop();
 }
