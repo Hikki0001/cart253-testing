@@ -81,6 +81,13 @@ function makeCat(x) {
 }
 
 /**
+ * moves the selected cat down and then will stop when it the ground
+ */
+function fallCat(cat) {
+    cat.y = min(cat.y + settings.fallSpeed, settings.groundY);
+}
+
+/**
  * draws whichever cat is decided
  */
 function drawCat(cat) {
