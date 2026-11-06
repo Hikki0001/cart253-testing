@@ -24,18 +24,40 @@ let catImages = [];
  */
 let cats = [];
 
+/**
+ * how the cats will fall and how they will be drawn
+ */
+let settings = {
+    /**
+     * whwere the cat lands
+     */
+    groundY: 450, 
+    fallSpeed: 6,
+    size: 80,
+    /**
+     * frames between cats while you drag
+     */
+    dropEvery: 5
+}
 
 /**
- * OH LOOK I DIDN'T DESCRIBE SETUP!!
+ * load images and canvas
 */
-function setup() {
+async function setup() {
+    createCanvas(canvasSize.w, canvasSize.h);
+    imageMode(CENTER);
+
+    catImages[0] = await loadImage("assets/images/cat1.png");
+    catImages[1] = await loadImage("assets/images/cat1.png");
+    catImages[2] = await loadImage("assets/images/cat1.png");
 
 }
 
 
 /**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
+ * draws the functions and background
 */
 function draw() {
+    background("pink")
 
 }
