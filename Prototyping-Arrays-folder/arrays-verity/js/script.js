@@ -93,3 +93,12 @@ function fallCat(cat) {
 function drawCat(cat) {
     image(cat.image, cat.x, cat.y, settings.size, settings.size);
 }
+
+/**
+ *  will drop a cat every frame while you drag the mouse
+ */
+function mouseDragged() {
+    if (frameCount % settings.dropEvery === 0) {
+        cat.push(makeCat(mouseX))
+    }
+}
