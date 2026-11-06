@@ -65,10 +65,24 @@ function draw() {
      */
     for (let i = 0; i < cats.length; i++) {
         fallCat();
-        drawCat();
+        drawCat(cats[i]);
     }
 }
 
+/**
+ * making it so that the random(catImages) will pick one picture out of the array
+ */
+function makeCat(x) {
+    return {
+        x: x,
+        y: 0,
+        image: random(catImages)
+    };
+}
+
+/**
+ * draws whichever cat is decided
+ */
 function drawCat(cat) {
     image(cat.image, cat.x, cat.y, settings.size, settings.size);
 }
