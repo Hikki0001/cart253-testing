@@ -1,12 +1,29 @@
 /**
- * Title of Project
- * Author Name
+ * Cat Dropper 
+ * Matteo Edmonds-Tiano
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * Cats are dropping from the sky!!!!!
  */
 
 "use strict";
+
+/**
+ * canvas size
+ */
+let canvasSize = {
+    w: 800,
+    h: 500
+}
+
+/**
+ * array of images
+ */
+let catImages = [];
+/**
+ * the Array for the cats
+ */
+let cats = [];
+
 
 /**
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
