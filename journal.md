@@ -128,6 +128,18 @@
 
 - I will say I'm quite looking forward for when we are given more time to focus on our prototypes and I've started brainstorming what the final project could be and what I can do but until then I'll just have to wait.
 
+## November 5th, 2026 
+> **Thoughts on Loops and in general the class**
+
+- I'm gonna start this off with for loops are a doozy, but while loops are quite simpler to read. But the problem for me is that I never heard that you could use while loops so I'm so much more used to the standard for loop, but I mean I have to learn it or at least try as if I never try I'll stay ignorant to maybe its potential.
+
+- This week's prototypes where definitly on the fun side as from the moment I started this class I really wanted to make a where's waldo type of game and well now I've completed that issues and all... It was definitly fun challenging myself and my previous knowledge which isnt too good but eh I know the prototype is still jank and the concept isnt too complicated but it can always be better.
+
+- The problem I had was I just didn't know how to make it so that usagi would stop drawing under the sprites after round 20 because their would just be too many images at that point so tbh just for myself I might try to figure that out just as a learning experience for myself.
+
+- I'm very exicted for the final project even though I don't entirely know what it is I'm having ideas of what I could do if I'm assuming its just a big project combining all the theory we've learned and practiced on with our prototypes but whatever it is I want to see what'll make... Like the snake game pipin made I do want to incorporate philosphy's/ideologies into my final project if I can Idk tho maybe im scoping myself a lil bit rn.
+
+- I do wish I did more for the other 2 prototypes but im ngl I was exhausted after the 214 assignment and so... but theres always a next time. 
 
 
 
