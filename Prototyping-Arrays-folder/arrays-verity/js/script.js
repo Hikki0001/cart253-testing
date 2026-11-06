@@ -31,7 +31,7 @@ let settings = {
     /**
      * whwere the cat lands
      */
-    groundY: 450, 
+    groundY: 450,
     fallSpeed: 6,
     size: 80,
     /**
@@ -60,4 +60,15 @@ async function setup() {
 function draw() {
     background("pink")
 
+    /**
+     * for loop that moves and drawas every cat every frame
+     */
+    for (let i = 0; i < cats.length; i++) {
+        fallCat();
+        drawCat();
+    }
+}
+
+function drawCat(cat) {
+    image(cat.image, cat.x, cat.y, settings.size, settings.size);
 }
