@@ -48,8 +48,8 @@ async function setup() {
     imageMode(CENTER);
 
     catImages[0] = await loadImage("assets/images/cat1.png");
-    catImages[1] = await loadImage("assets/images/cat1.png");
-    catImages[2] = await loadImage("assets/images/cat1.png");
+    catImages[1] = await loadImage("assets/images/cat2.png");
+    catImages[2] = await loadImage("assets/images/cat3.png");
 
 }
 
