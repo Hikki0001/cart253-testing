@@ -160,6 +160,14 @@ This is a website that is designed to show the progess of learning javascript, p
 
 ![Kaito'sEmotionsPhoto](./images/Kaito'sEmotions.png)
 
+> [DragForCats](https://open.spotify.com/album/55Wg7ciissxkRRhLzOrhKg?si=OxyK-qFZT32bDUIsdJSwXQ)
+
+> [Code](https://github.com/Hikki0001/cart253-testing/blob/main/Prototyping-Arrays-folder/arrays-cats/js/script.js)
+
+![DragForCatsPhoto](./images/DragForCats.png)
+
+---------
+
 ## Attribution
 
 **This is where we put code, assets, and any other elements that was from other sources(I'm keeping the p5js line for now.)**
