@@ -64,7 +64,7 @@ function draw() {
      * for loop that moves and drawas every cat every frame
      */
     for (let i = 0; i < cats.length; i++) {
-        fallCat();
+        fallCat(cats[i]);
         drawCat(cats[i]);
     }
 }
@@ -99,6 +99,6 @@ function drawCat(cat) {
  */
 function mouseDragged() {
     if (frameCount % settings.dropEvery === 0) {
-        cat.push(makeCat(mouseX))
+        cats.push(makeCat(mouseX))
     }
 }
