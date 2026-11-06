@@ -160,7 +160,7 @@ This is a website that is designed to show the progess of learning javascript, p
 
 ![Kaito'sEmotionsPhoto](./images/Kaito'sEmotions.png)
 
-> [DragForCats](https://open.spotify.com/album/55Wg7ciissxkRRhLzOrhKg?si=OxyK-qFZT32bDUIsdJSwXQ)
+> [DragForCats](https://hikki0001.github.io/cart253-testing/Prototyping-Arrays-folder/arrays-cats/)
 
 > [Code](https://github.com/Hikki0001/cart253-testing/blob/main/Prototyping-Arrays-folder/arrays-cats/js/script.js)
 
