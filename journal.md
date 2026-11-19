@@ -141,6 +141,11 @@
 
 - I do wish I did more for the other 2 prototypes but im ngl I was exhausted after the 214 assignment and so... but theres always a next time. 
 
+## November 19th, 2026
+> **Brainstorming for Final project and Overall Progression**
+
+[Brainstorm File](./brainstorm.md)
+
 
 
 
