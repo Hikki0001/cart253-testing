@@ -144,7 +144,7 @@
 ## November 19th, 2026
 > **Brainstorming for Final project and Overall Progression**
 
-[Brainstorm File](./brainstorm.md)
+# [Brainstorm File](./brainstorm.md)
 
 
 
