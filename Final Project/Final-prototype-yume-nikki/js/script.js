@@ -1,9 +1,10 @@
 /**
- * Title of Project
- * Author Name
+ * Yume Nikki-Like
+ * Matteo Edmonds-Tiano
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * 
+ * Explore the different worlds you might learn something about yourself
+ * 
  */
 
 "use strict";
